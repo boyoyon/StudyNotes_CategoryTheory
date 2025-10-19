@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Exercise 2.1.2.3.</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 20px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>Category Theory for the Sciences<br><span style="color:blue;">科学のための圏論</span></center></h1>
+
+<h5>Exercise 2.1.2.3.　<span style="color:blue;">演習2.1.2.3</span></h5>
+
+<p>
+Here is a simplified account of how the brain receives light. The eye contains about 100 million photoreceptor (PR) cells. Each connects to a retinal ganglion (RG) cell. No PR cell connects to two different RG cells, but usually many PR cells can attach to a single RG cell.
+
+<br><span style="color:blue;">
+脳が光を受け取る仕組みを簡単に説明します。目には約1億個の光受容細胞（PR細胞）があり、それぞれが網膜神経節（RG細胞）に接続しています。PR細胞は2つの異なるRG細胞に接続することはできませんが、通常、複数のPR細胞が1つのRG細胞に接着することができます。
+</span>
+</p>
+
+<p>
+Let PR denote the set of photoreceptor cells, and let RG denote the set of retinal ganglion cells.
+<br><span style="color:blue;">
+PR は光受容細胞の集合を表し、RG は網膜神経節細胞の集合を表すものとします。
+</span>
+
+<div class="styleBullet">
+<ul><li>
+a. According to the above account, does the connection pattern constitute a function RG → PR, a function PR → RG, or neither one?
+
+<br><span style="color:blue;">
+上記の説明によれば、接続パターンは関数 RG → PR を構成するのか、関数 PR → RG を構成するのか、それともどちらでもないのか?<br>
+</span>
+<br><span style="color:purple;">
+●解答<br>
+<br>
+・「PR細胞は2つの異なるRG細胞に接続することはできません」<br>
+　　したがって, この接続パターンは関数 PR → RG を構成する。<br>
+<br>
+・「複数のPR細胞が1つのRG細胞に接着することができます」<br>
+　　したがって, この接続パターンは関数 RG → PR を構成しない。<br>
+</span>
+</li>
+<br>
+<li>
+b. Would you guess that the connection pattern that exists between other areas of the brain are function-like? Justify your answer.
+
+<br><span style="color:blue;">
+脳の他の領域間に存在する接続パターンは関数的なものだと考えられますか？その答えの根拠を説明してください。<br>
+</span>
+<br><span style="color:purple;">
+●解答 ･･･ Copilotに教えてもらった<br>
+<br>
+脳の領域間の接続パターンは、関数的（function-like）であるとは限らない。<br>
+<br>
+[理由] 接続パターン以外の理由も含まれるが, 設問も悪い気がする･･･<br>
+・関数とは、ある入力に対して一意の出力を返すもの。<br>
+・しかし脳の神経接続では、ある領域からの信号が複数の領域に分岐したり、同じ領域に複数の入力が集まることがある。<br>
+・さらに、脳の活動は時間的・状態的に変化するため、同じ入力でも異なる出力が生じる可能性がある。<br>
+・したがって、脳の接続パターンは関数的というよりも関係的（relation-like）であり、圏論的には関数ではなく射（morphism）として捉える方が適切。
+</li>
+</ul></div>
+</p>
+    </body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Exercise 2.1.2.12.</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 20px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>Category Theory for the Sciences<br><span style="color:blue;">科学のための圏論</span></center></h1>
+
+<h5>Exercise 2.1.2.12.  <span style="color:blue;">演習 2.1.2.12. </span></h5>
+<p>
+Let \(A = \{1, 2, 3, 4, 5\}\) and \(B = \{ x, y\}\). <br>
+a. How many elements does \(Hom_{Set}(A, B)\) have?<br>
+b. How many elements does \(Hom_{Set}(B, A)\) have? <br>
+
+<br><span style="color:blue;">
+\(A = \{1, 2, 3, 4, 5\}, B = \{x, y\}\) とします。<br>
+a. \(Hom_{Set}(A, B)\) にはいくつの要素がありますか？<br>
+b. \(Hom_{Set}(B, A)\) にはいくつの要素がありますか？
+</span>
+</p>
+
+<p>
+<span style="color:purple;">
+●解答<br>
+・a. \(Hom_{Set}(A, B)\) の要素の数: \(|B|^{|A|}=2^5=32\)<br>
+\[
+\begin{array}{c|c c c c c}
+& 1 & 2 & 3 & 4 & 5 \\
+\hline
+f_{01} & x & x & x & x & x \\
+f_{02} & x & x & x & x & y \\
+f_{03} & x & x & x & y & x \\
+f_{04} & x & x & x & y & y \\
+f_{05} & x & x & y & x & x \\
+ &  &  & ... &  &  \\
+f_{29} & y & y & y & x & x \\
+f_{30} & y & y & y & x & y \\
+f_{31} & y & y & y & y & x \\
+f_{32} & y & y & y & y & y \\
+\end{array}
+\]
+
+・b. \(Hom_{Set}(B, A)\) の要素の数: \(|A|^{|B|}=5^2=25\)<br>
+
+\[
+\begin{array}{c|c c}
+& x & y \\
+\hline
+f_{01} & 1 & 1 \\
+f_{02} & 1 & 2 \\
+f_{03} & 1 & 3 \\
+f_{04} & 1 & 4 \\
+f_{05} & 1 & 5 \\
+& ... & \\
+f_{21} & 5 & 1 \\
+f_{22} & 5 & 2 \\
+f_{23} & 5 & 3 \\
+f_{24} & 5 & 4 \\
+f_{25} & 5 & 5 \\
+\end{array}
+\]
+
+</span>
+</p>
+    </body>
+</html>

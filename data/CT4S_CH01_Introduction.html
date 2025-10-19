@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <meta charset="utf-8" />
+    <title>CH01 Introduction</title>
+    <style type="text/css">
+      p
+      {
+        padding-left: 2em;
+      }
+      .margin-abstract {
+        margin-left: 60px; /* 左マージンを広くする */
+        margin-right: 60px; /* 右マージンを広くする */
+      }
+    </style>
+  <style>
+    .styleRef { 
+      text-indent: -40px; /* 最初の行の字下げを逆方向に */
+      margin-left: 10px; /* 2行目以降の字下げを調整 */
+      ul {
+         list-style-type: none; /* 箇条書き記号を非表示 */
+         padding-left: 40px; /* 全体の左余白 */
+      }
+      li {
+      }
+    }
+  </style>
+  <style>
+    .styleBullet { 
+      text-indent: -20px; /* 最初の行の字下げを逆方向に */
+      margin-left: 30px; /* 2行目以降の字下げを調整 */
+      ul {
+         list-style-type: none; /* 箇条書き記号を非表示 */
+         padding-left: 0px; /* 全体の左余白 */
+      }
+      li {
+      }
+    }
+  </style>
+<style>
+.container {
+ display: flex;
+ flex-wrap: wrap;
+}
+.column {
+ flex: 0 25%; /* 幅を25%に設定して4列に */
+ box-sizing: border-box;
+ padding: 10px;
+}
+</style>
+
+  </head>
+  <body>
+    <h1><center>Category Theory for the Sciences<br><span style="color:blue;">科学のための圏論</span></center></h1>
+
+
+<h2>Chapter 1<br>Introduction <span style="color:blue;">はじめに</span></h2>
+<p>
+The diagram in Figure 1.1 is intended to evoke thoughts of the scientific method. 
+
+<br><span style="color:blue;">
+図 1.1 の図は、科学的手法についての考えを喚起することを意図としています。
+</span>
+
+</p>
+<center><img src="images/CT4S_fig1_1.svg"></center>
+<center>Figure 1.1 <span style="color:blue;">図1.1</center> 
+<p style="padding-left: 4em;">
+An observation analyzed by a person yields a hypothesis, which analyzed by a person produces a prediction, which motivates the specification of an experiment, which when executed results in an observation. 
+
+<br><span style="color:blue;">
+人が観察を分析すると仮説が生ま​​れ、それを人が分析すると予測が生まれ、それが実験の仕様策定の動機となり、実行されると観察がもたらされます。
+</span>
+
+</p><p>
+
+Its statements look valid, and a good graphic can be very useful for leading a reader through a story that the author wishes to tell. 
+
+<br><span style="color:blue;">
+その記述は妥当であるように思われ、優れたグラフィックは著者が伝えたいストーリーを読者に伝えるのに非常に役立ちます。
+</span>
+
+</p><p>
+But a graphic has the power to evoke feelings of understanding without really meaning much. The same is true for text: it is possible to use a language like English to express ideas that are never made rigorous or clear. When someone says, “I believe in free will,” what does she believe in? We may all have some concept of what she’s saying—something we can conceptually work with and discuss or argue about. But to what extent are we all discussing the same thing, the thing she intended to convey? 
+
+<br><span style="color:blue;">
+しかし、グラフィックには、実際には大した意味を込めなくても、理解しているという感覚を呼び起こす力があります。テキストでも同じことが言えます。英語のような言語を使えば、厳密にも明確にもされていない考えを表現することが可能です。誰かが「私は自由意志を信じています」と言うとき、彼女は何を信じているのでしょうか？
+
+彼女が何を言おうとしているのか、私たちは皆、ある程度は理解しているかもしれません。概念的に捉え、議論したり、言い争ったりできる何かを。しかし、私たちは彼女が伝えようとしたことと, どの程度同じことを議論しているのでしょうか？
+</span>
+
+</p><p>
+Science is about agreement. When we supply a convincing argument, the result of this convincing is agreement. When, in an experiment, the observation matches the hypothesis—success!—that is agreement. When my methods make sense to you, that is agreement. When practice does not agree with theory, that is disagreement. Agreement is the good stuff in science; it is the celebratory moment. 
+
+<br><span style="color:blue;">
+科学とは合意のことです。説得力のある議論を提示すれば、その説得力の結果は合意です。実験において、観察結果が仮説と一致した時――成功です！――それは合意です。私の方法があなたにとって納得のいくものなら、それは合意です。実践が理論と一致しないなら、それは不一致です。合意は科学において素晴らしいものであり、祝福すべき瞬間です。
+</span>
+
+</p><p>
+But it is easy to think we are in agreement, when we really are not. Modeling our thoughts on heuristics and graphics may be convenient for quick travel down the road, but we are liable to miss our turnoff at the first mile. The danger is in mistaking convenient conceptualizations for what is actually there. It is imperative that we have the ability at any time to ground in reality. What does that mean? 
+
+<br><span style="color:blue;">
+しかし、実際にはそうでないのに、意見が一致していると思い込むのは容易です。ヒューリスティックやグラフに基づいて思考をモデル化することは、道を素早く進むには便利かもしれませんが、最初の1マイルで分岐点を見逃してしまう可能性があります。危険なのは、都合の良い概念化を現実と取り違えることです。私たちはいつでも現実に根ざした思考ができることが不可欠です。それはどういう意味でしょうか？
+</span>
+
+</p><p>
+Data. Hard evidence. The physical world. It is here that science is grounded and heuristics evaporate. So let’s look again at Figure 1.1. It is intended to evoke an idea of how science is performed. Do hard evidence and data back up this theory? Can we set up an experiment to find out whether science is actually performed according to such a protocol? To do so we  have to shake off the impressions evoked by the diagram and ask, What does this diagram intend to communicate? 
+
+<br><span style="color:blue;">
+データ。確固たる証拠。物理世界。科学はここに根拠を見出し、ヒューリスティックは消え去ります。それでは、図1.1をもう一度見てみましょう。この図は、科学がどのように行われているのか、その概念を喚起することを目的としています。この理論は確固たる証拠とデータによって裏付けられているでしょうか？科学が実際にこのようなプロトコルに従って行われているかどうかを調べるための実験を行うことは可能でしょうか？そのためには、図から喚起された印象を振り払い、「この図は何を伝えようとしているのか？」と自問する必要があります。
+</span>
+
+</p><p>
+In this book I will use a mathematical tool called ologs, or ontology logs, to give some structure to the kinds of ideas that are often communicated in graphics. Each olog inherently offers a framework in which to record data about the subject. More precisely, it encompasses a database schema, which means a system of interconnected tables that are initially empty but into which data can be entered. For example, consider the following olog: 
+
+<br><span style="color:blue;">
+本書では、オログ（オントロジーログ。知識表現モデル）と呼ばれる数学的なツールを用いて、グラフィックで表現されることが多い概念に構造を与えます。各オログは、本質的に、その主題に関するデータを記録するための枠組みを提供します。より正確には、データベーススキーマ、つまり相互接続されたテーブル群のシステムを含みます。これらのテーブルは最初は空ですが、データを入力することができます。例えば、次のオログを考えてみましょう。
+</span>
+
+</p>
+
+<center><img src="images/CT4S_fig1_2.svg"></center>
+
+<p>
+This olog represents a framework in which to record data about objects held above the ground, their mass, their height, and a comparison (the question mark) between the number of seconds till they hit the ground and a certain real-valued function of their height. Ologs are discussed in detail throughout this book. 
+
+<br><span style="color:blue;">
+このオログは、地面から離れた位置に保持された物体に関するデータ、その質量、高さ、そして地面に着地するまでの秒数と高さの実数値関数との比較（疑問符）を記録するための枠組みを表しています。オログについては、本書全体を通して詳細に解説されています。
+</span>
+
+</p><p>
+Figure 1.1 looks like an olog, but it does not conform to the rules laid out for ologs (see Section 2.3). In an olog, every arrow is intended to represent  a mathematical function. It is difficult to imagine a  function that takes in predictions and outputs experiments, but such a function is necessary in order for the arrow in Figure 1.1 to make sense.
+
+<br><span style="color:blue;">
+図1.1はオログのように見えますが、オログに定められた規則には従っていません（セクション2.3を参照）。オログでは、すべての矢印は数学的な関数を表すことを意図しています。予測を取り込んで実験を出力する関数を想像するのは難しいですが、図1.1の矢印が意味を成すためにはそのような関数が必要です。
+</p>
+
+<p>
+\[
+\begin{CD}
+\boxed{予測}@>\text{実験仕様に動機づけられて}>>\boxed{実験}
+\end{CD}
+\]
+
+ To produce an experiment design from a prediction probably requires an expert, and even then the expert may be motivated to specify a different experiment on Tuesday than he is on Monday. But perhaps this criticism leads to a way forward. If we say that every arrow represents a function when in the context of a specific expert who is actually doing the science at a specific time, then Figure 1.1 begins to make sense. In fact, the figure is recon sidered in Section 7.3  (Example 7.3.3.10), where background methodological context is discussed. 
+
+<br><span style="color:blue;">
+予測から実験計画を作成するにはおそらく専門家が必要であり、たとえ専門家であっても、火曜日と月曜日では異なる実験を指定する動機があるかもしれません。しかし、おそらくこの批判は前進への道筋につながるでしょう。特定の時間に実際に科学研究を行っている特定の専門家の文脈において、すべての矢印が関数を表すと言うならば、図1.1は意味を成し始めます。実際、この図はセクション7.3（例7.3.3.10）で再考され、背景にある方法論的文脈が議論されています。
+</span>
+
+</p><p>
+This book extols the virtues of a new branch of mathematics, category theory, which was invented for powerful communication of ideas between different fields and subfields within mathematics. By powerful communication of ideas I mean something precise. Different branches of mathematics can be formalized into categories. These categories can then be connected by functors. And the sense in which these functors provide powerful communication of ideas is that facts and theorems proven in one category can be transferred through a connecting functor to yield proofs of analogous theorems in another category. A functor is like a conductor of mathematical truth. 
+
+<br><span style="color:blue;">
+本書は、数学の新しい分野である圏論の長所を称賛しています。圏論は、数学内の異なる分野や下位分野間で、アイデアを強力に伝達するために発明されました。アイデアを強力に伝達するとは、明確な意味を持つことを意味します。数学の異なる分野は、圏として形式化できます。そして、これらの圏は関手によって結び付けられます。そして、これらの関手がアイデアを強力に伝達するというのは、ある圏で証明された事実や定理を、接続する関手を通して別の圏における類似の定理の証明へと変換できるという点です。関手は、数学的真理を伝える導体のようなものです。
+</span>
+
+</p><p>
+I believe that the language and tool set of category theory can be useful throughout science. We build scientific understanding by developing models, and category theory is the study of basic conceptual building blocks and how they cleanly fit together to make such models. Certain structures and conceptual frameworks show up again and again in our understanding of reality. No one would dispute that vector spaces are ubiquitous throughout the sciences. But so are hierarchies, symmetries, actions of agents on objects, data models, global behavior emerging as the aggregate of local behavior, self-similarity, and the effect of methodological context. 
+
+<br><span style="color:blue;">
+圏論の言語とツールセットは、科学全般に役立つと考えています。私たちはモデルを構築することで科学的理解を深めますが、圏論とは、基本的な概念的構成要素と、それらがどのように組み合わさってモデルを構築するかを研究するものです。特定の構造や概念的枠組みは、私たちの現実理解において繰り返し現れます。ベクトル空間が科学のあらゆる分野に遍在していることに異論を唱える人はいないでしょう。しかし、階層構造、対称性、エージェントによるオブジェクトへの作用、データモデル、局所的な振る舞いの総和として現れる全体的振る舞い、自己相似性、そして方法論的文脈の影響なども、同様に普遍的です。
+</span>
+
+</p><p>
+Some ideas are so common that our use of them goes virtually undetected, such as set-theoretic intersections. For example, when we speak of a material that is both lightweight and ductile, we are intersecting two sets. But what is the use of even mentioning this set-theoretic fact? The answer is that when we formalize our ideas, our understanding is clarified. Our ability to communicate with others is enhanced, and the possibility for developing new insights expands. And if we are ever to get to the point that we can input our ideas into computers, we will need to be able to formalize these ideas first. 
+
+<br><span style="color:blue;">
+集合論的な交差のように、あまりにも一般的な考え方の中には、私たちがその使い方に気付かないほどのものがあります。例えば、軽量かつ延性のある材料について話すとき、私たちは二つの集合を交差させています。しかし、この集合論的な事実について言及すること自体に何の意味があるのでしょうか？答えは、私たちが自分の考えを形式化することで、理解が明確になるということです。他者とのコミュニケーション能力が向上し、新たな洞察を生み出す可能性が広がります。そして、もし私たちが自分の考えをコンピューターに入力できるようになるためには、まずこれらの考えを形式化できる必要があるでしょう。
+</span>
+
+</p><p>
+It is my hope that this book will offer scientists a new vocabulary in which to think and communicate, and a new pipeline to the vast array of theorems that exist and are considered immensely powerful within mathematics. These theorems have not made their way into the world of science, but they are directly applicable there. Hierarchies are partial orders, symmetries are group elements, data models are categories, agent actions are monoid actions, local-to-global principles are sheaves, self-similarity is modeled by operads, context can be modeled by monads. All of these will be discussed in the book. 
+
+<br><span style="color:blue;">
+本書が、科学者の皆さんに思考とコミュニケーションのための新たな語彙と、数学界に存在し、非常に強力であると考えられている膨大な数の定理への新たなパイプラインを提供することを願っています。これらの定理は科学界には浸透していませんが、直接応用可能です。階層構造は半順序、対称性は群の元、データモデルは圏、エージェントの行動はモノイドの行動、局所から大域への原理は層、自己相似性はオペラドによってモデル化され、コンテキストはモナドによってモデル化できます。これらすべてについて本書で解説します。
+</span>
+
+</p>
+
+<h3>1.1  A brief history of category theory <span style="color:blue;">圏論の簡単な歴史</span></h3>
+<p>
+The paradigm shift brought on by Einstein’s theory of relativity led to a widespread realization that there is no single perspective from which to view the world. There is no background framework that we need to find; there are infinitely many different frameworks and perspectives, and the real power lies in being able to translate between them. It is in this historical context that category theory got its start.1 
+
+<br><span style="color:blue;">
+アインシュタインの相対性理論によってもたらされたパラダイムシフトは、世界を見るための単一の視点は存在しないという認識を広く普及させました。私たちが探すべき背景となる枠組みなどありません。無限に多くの異なる枠組みと視点が存在し、真の力はそれらを相互に翻訳できることにあります。圏論は、このような歴史的背景の中で誕生しました。<sup>1</sup>
+</span>
+
+</p><p style="padding-left: 4em;">
+<sup>1</sup> The following history of category theory is far too 
+ brief and perhaps reflects more of the author’s aesthetic than any kind of objective truth. References are Kromer [19], Marquis [30], and Landry and Marquis [22].
+
+<br><span style="color:blue;">
+以下の圏論の歴史はあまりにも簡潔であり、客観的な真実というよりも著者の美学を反映していると言えるかもしれません。参考文献はKromer [19]、Marquis [30]、Landry and Marquis [22]です。
+</span>
+
+</p><p>
+Category theory was invented in the early 1940s by Samuel Eilenberg and Saunders Mac Lane. It was specifically designed to bridge what may appear to be two quite different fields: topology and algebra. Topology is the study of abstract shapes such as 7-dimensional spheres; algebra is the study of abstract equations such as \(y^2z = x^3 − xz^2\). People had already created important and useful links (e.g., cohomology theory) between these fields, but Eilenberg and Mac Lane needed to precisely compare different links with one another. To do so they first needed to boil down and extract the fundamental nature of these two fields. But in doing so, the ideas they worked out amounted to a framework that fit not only topology and algebra, but many other mathematical disciplines as well. 
+
+<br><span style="color:blue;">
+圏論は1940年代初頭、サミュエル・アイレンバーグとサンダース・マクレーンによって発明されました。圏論は、一見全く異なる二つの分野、位相幾何学と代数学を繋ぐために特別に設計されました。位相幾何学は 7 次元球面のような抽象的な形状の研究であり、代数学は \(y^2z = x^3 − xz^2\) のような抽象的な方程式の研究です。これらの分野の間には既に重要かつ有用な繋がり（例えばコホモロジー理論）が築かれていましたが、アイレンバーグとマクレーンは異なる繋がりを互いに正確に比較する必要がありました。そのためには、まずこの二つの分野の根本的な性質を煮詰め、抽出する必要がありました。しかし、その過程で彼らが導き出したアイデアは、位相幾何学と代数学だけでなく、他の多くの数学分野にも当てはまる枠組みとなりました。
+</span>
+
+</p><p>
+At first category theory was little more than a deeply clarifying language for existing difficult mathematical ideas. However, in 1957 Alexander Grothendieck used category theory to build new mathematical machinery (new cohomology theories) that granted unprecedented insight into the behavior of algebraic equations. Since that time, categories have been built specifically to zoom in on particular features of mathematical subjects and study them with a level of acuity that is unavailable elsewhere. 
+
+<br><span style="color:blue;">
+当初、圏論は既存の難解な数学的概念を深く解明するための言語に過ぎませんでした。しかし、1957年、アレクサンダー・グロタンディークは圏論を用いて、代数方程式の挙動に関する前例のない洞察をもたらす新たな数学的機構（新たなコホモロジー理論）を構築しました。それ以来、圏論は数学的対象の特定の特徴に焦点を当て、他に類を見ない鋭さで研究するために構築されてきました。
+</span>
+
+</p><p>
+Bill Lawvere saw category theory as a new foundation for all mathematical thought. Mathematicians had been searching for foundations in the nineteenth century and were reasonably satisfied with set theory as the foundation. But Lawvere showed that the category of sets is simply one category with certain nice properties, not necessarily the center of the mathematical universe. He explained how whole algebraic theories can be viewed as examples of a single system. He and others went on to show that higher-order logic was beautifully captured in the setting of category theory (more specifically toposes). It is here also that Grothendieck and his school worked out major results in algebraic geometry. 
+
+<br><span style="color:blue;">
+ビル・ローヴェアは、圏論をあらゆる数学的思考の新たな基盤と見なした。19世紀、数学者たちは基礎を模索し、集合論をその基盤として受け入れることにある程度満足していた。しかしローヴェアは、集合の圏は単に特定の優れた性質を持つ一つの圏に過ぎず、必ずしも数学的宇宙の中心ではないことを示した。彼は、代数理論全体を単一の体系の例として捉えることができることを説明した。彼と他の研究者たちは、高階論理が圏論（より具体的にはトポス）の設定において見事に捉えられていることを示した。グロタンディークとその流派が代数幾何学における主要な成果を導き出したのも、まさにこの分野においてであった。
+</span>
+
+</p><p>
+In 1980, Joachim Lambek showed that the types and programs used in computer science form a specific kind of category. This provided a new semantics for talking about programs, allowing people to investigate how programs combine and compose to create other programs, without caring about the specifics of implementation. Eugenio Moggi brought the category-theoretic notion of monads into computer science to encapsulate ideas that up to that point were considered outside the realm of such theory. 
+
+<br><span style="color:blue;">
+1980年、ヨアヒム・ランベックは、コンピュータサイエンスで用いられる型とプログラムが特定の種類の圏を形成することを示しました。これはプログラムについて論じるための新たな意味論をもたらし、実装の詳細を気にすることなく、プログラムがどのように組み合わさり、構成されて他のプログラムを作成するかを研究することを可能にしました。エウジェニオ・モッジは、圏論におけるモナドの概念をコンピュータサイエンスに持ち込み、それまでコンピュータサイエンス理論の範疇外と考えられていた概念を包含しました。
+</span>
+
+</p><p>
+It is difficult to explain the clarity and beauty brought to category theory by people like Daniel Kan and André Joyal. They have each repeatedly extracted the essence of a whole mathematical subject to reveal and formalize a stunningly simple yet extremely powerful pattern of thinking, revolutionizing how mathematics is done. 
+
+<br><span style="color:blue;">
+ダニエル・カンやアンドレ・ジョヤルのような人々が圏論にもたらした明快さと美しさを説明するのは困難です。彼らはそれぞれ、数学という一つの分野全体のエッセンスを繰り返し抽出し、驚くほど単純でありながら極めて強力な思考パターンを明らかにし、定式化することで、数学のあり方に革命をもたらしました。
+</span>
+
+</p><p>
+All this time, however, category theory was consistently seen by much of the mathematical community as ridiculously abstract. But in the twenty-first century it has finally come to find healthy respect within the larger community of pure mathematics. It is the language of choice for graduate-level algebra and topology courses, and in my opinion will continue to establish itself as the basic framework in which to think about and express mathematical ideas. 
+
+<br><span style="color:blue;">
+しかしながら、これまでずっと、圏論は数学界の多くから、途方もなく抽象的だとみなされてきました。しかし21世紀に入り、圏論はついに純粋数学というより広いコミュニティの中で健全な敬意を得るようになりました。大学院レベルの代数学や位相幾何学の講義では、圏論が好んで使われる言語であり、数学的な概念を考え、表現するための基本的な枠組みとして、今後もその地位を確立していくだろうと私は考えています。
+</span>
+
+</p><p>
+As mentioned, category theory has branched out into certain areas of science as well. Baez and Dolan [6] have shown its value in making sense of quantum physics, it is well established in computer science, and it has found proponents in several other fields as well. But to my mind, we are at the very beginning of its venture into scientific methodology. Category theory was invented as a bridge, and it will continue to serve in that role. 
+
+<br><span style="color:blue;">
+前述のように、圏論は科学の特定の分野にも進出しています。BaezとDolan [6]は量子物理学を理解する上で圏論の価値を示し、計算機科学では確固たる地位を築いており、他の多くの分野でも支持者がいます。しかし、私の考えでは、圏論が科学的方法論に進出するのはまだ始まったばかりです。圏論は橋渡しとして発明され、これからもその役割を果たし続けるでしょう。
+</span>
+
+</p>
+
+<h3>1.2 Intention of this book <span style="color:blue;">この本の目的</span></h3>
+<p>
+The world of applied mathematics  is much smaller than the world of applicable mathematics. As mentioned, this book is intended to create a bridge between the vast array of mathematical concepts that are used daily by mathematicians to describe all manner of phenomena that arise in our studies and the models and frameworks of scientific disciplines such as physics, computation, and neuroscience. 
+
+<br><span style="color:blue;">
+応用数学の世界は、応用可能な数学の世界よりもはるかに狭い。前述の通り、本書は、数学者が研究の中で生じるあらゆる現象を記述するために日常的に用いる膨大な数学概念と、物理学、計算科学、神経科学といった科学分野のモデルや枠組みとの間に橋をかけることを目的としている。
+</span>
+
+</p><p>
+For the pure mathematician I try to prove that concepts such as categories, functors, natural transformations, limits, colimits, functor categories, sheaves, monads, and operads—concepts that are often considered too abstract even for math majors—can be communicated to scientists with no math background beyond linear algebra. If this material is as teachable as I think, it means that category theory is not esoteric but well aligned with ideas that already make sense to the scientific mind. Note, however, that this book is example-based rather than proof-based, so it may not be suitable as a reference for students of pure mathematics. 
+
+<br><span style="color:blue;">
+純粋数学者のために、圏、関手、自然変換、極限、余極限、関手圏、層、モナド、オペラドといった概念（数学専攻の学生でさえ抽象的すぎると思われがちな概念）が、線形代数以上の数学の知識を持たない科学者にも理解できることを証明しようと試みています。本書の内容が私の考え通り教えやすいとすれば、圏論は難解なものではなく、科学者にとって既に理解可能な概念と十分に整合していることを意味します。ただし、本書は証明ではなく例題に基づいているため、純粋数学を学ぶ学生の参考書としては適さない可能性があります。
+</span>
+
+</p><p>
+For the scientist I try to prove the claim that category theory includes a formal treatment of conceptual structures that the scientist sees often, perhaps without realizing that there is well-oiled mathematical machinery to be employed. A major topics is the structure of information itself: how data is made meaningful by its connections, both internal and outreaching, to other data.<sup>2</sup> Note, however, that this book should certainly not be taken as a reference on scientific matters themselves. One should assume that any account of physics, materials science, chemistry, and so on, has been oversimplified. The intention is to give a flavor of how category theory may help model scientific ideas, not to explain those ideas in a serious way. 
+
+<br><span style="color:blue;">
+科学者のために、私は圏論が、科学者が頻繁に目にする概念構造を形式的に扱うことを含んでいるという主張を証明しようと試みます。科学者は、おそらく、そこに巧みに機能する数学的機構が存在することに気づいていないかもしれません。主要なトピックは情報そのものの構造、すなわち、データが他のデータとの内的および外的接続によってどのように意味を持つようになるかです。<sup>2</sup> ただし、本書は科学的な事柄そのものに関する参考文献として解釈されるべきではないことに注意してください。物理学、材料科学、化学などの説明は過度に単純化されていることを前提としてください。本書の目的は、圏論が科学的アイデアのモデル化にどのように役立つかを概観することであり、それらのアイデアを真剣に説明することではないのです。
+</span>
+
+</p><p style="padding-left: 4em;">
+<sup>2</sup> The word data 
+ is generally considered to be the plural form of t he word datum. However, individual datum elements are only useful when they are organized into structures (e.g., if one were to shuffle the cells in a spreadsheet, most would consider the data to be destroyed). It is the whole organized structure that really houses the information; the data must be in formation in order to be useful. Thus I use the word data  as a collective noun (akin to sand); it bridges the divide between the individual datum elements  (akin to grains of sand) and the data set (akin to a sand pile). 
+
+<br><span style="color:blue;">
+データという言葉は、一般的にデータムという言葉の複数形と考えられています。しかし、個々のデータ要素は、構造に整理されて初めて有用となります（例えば、スプレッドシートのセルをシャッフルすると、ほとんどの人はデータが破壊されたと考えるでしょう）。情報を実際に収容するのは、整理された構造全体であり、データが有用であるためには、構造化されていなければなりません。したがって、私はデータという言葉を集合名詞（砂に似ている）として使用します。これは、個々のデータ要素（砂粒に似ている）とデータセット（砂山に似ている）の間の橋渡しとなります。
+</span>
+
+
+</p><p>
+Data gathering is ubiquitous in science. Giant databases are currently being mined for unknown patterns, but in fact there are many (many) known patterns that simply have not been catalogued. Consider the well-known case of medical records. In the early twenty-first century, it is often the case that a patient’s medical history is known by various doctor’s offices but quite inadequately shared among them. Sharing medical records often means faxing a handwritten note or a filled-in house-created form from one office to another. 
+
+<br><span style="color:blue;">
+科学の世界では、データ収集は至る所で行われています。現在、巨大なデータベースから未知のパターンが発見されていますが、実際には、単にカタログ化されていない既知のパターンが数多く存在します。よく知られている医療記録の例を考えてみましょう。21世紀初頭には、患者の病歴は複数の診療所で把握されているものの、それらの間で十分に共有されていないことがよくあります。医療記録の共有は、手書きのメモや記入済みの社内用紙をある診療所から別の診療所にファックスで送信することを意味する場合が多くあります。
+</span>
+
+</p><p>
+Similarly, in science there exists substantial expertise making brilliant connections between concepts, but this expertise is conveyed in silos of English prose known as journal articles. Every scientific journal article has a methods section, but it is almost impossible to read a methods section and subsequently repeat the experiment—the English language is inadequate to precisely and concisely convey what is being done. 
+
+<br><span style="color:blue;">
+同様に、科学の世界にも概念間の見事なつながりを生み出す豊富な専門知識が存在します。しかし、こうした専門知識は、ジャーナル論文と呼ばれる英語の散文というサイロの中で伝えられています。すべての科学ジャーナル論文には方法論のセクションがありますが、方法論のセクションを読んで実験を繰り返すことはほぼ不可能です。英語は、何が行われているかを正確かつ簡潔に伝えるには不十分なのです。
+</span>
+
+</p><p>
+The first thought I wish to convey in this book is that reusable methodologies can be formalized and that doing so is inherently valuable. Consider the following analogy. Suppose one wants to add up the area of a region in space (or the area under a curve). One breaks the region down into small squares, each with area A, and then counts the number of squares, say n. One multiplies these numbers together and says that the region has an area of about nA. To obtain a more precise and accurate result, one  repeats the process with half-size squares. This methodology can be used for any area-finding problem (of which there are more than a first-year calculus student generally realizes) and thus it deserves to be formalized. But once we have formalized this methodology, it can be taken to its limit, resulting in integration by Riemann sums. Formalizing the problem can lead to powerful techniques that were unanticipated at the outset. 
+
+<br><span style="color:blue;">
+本書で私がまず伝えたいのは、再利用可能な手法は形式化が可能であり、そうすることには本質的に価値があるということです。次の例を考えてみましょう。空間内の領域の面積（または曲線の下の面積）を合計したいとします。まず、その領域を面積Aの小さな正方形に分割し、その個数をn個とします。これらの数を掛け合わせ、その領域の面積は約nAであるとします。より正確で精密な結果を得るために、半分の大きさの正方形で同じ処理を繰り返します。この手法は、あらゆる面積計算問題（微積分を初めて学ぶ学生が一般的に認識するよりもはるかに多くの問題があります）に適用できるため、形式化に値します。しかし、いったんこの手法を形式化してしまえば、極限まで適用でき、結果としてリーマン和による積分が可能になります。問題を形式化することで、当初は予想もしなかった強力な手法が生まれる可能性があります。
+</span>
+
+</p><p>
+I intend to show that category theory is incredibly efficient as a language for experimental design patterns, introducing formality  while remaining flexible. It forms a rich and tightly woven conceptual fabric that allows the scientist to maneuver between different perspectives whenever the need arises. Once she weaves that fabric into her own line of research, she has an ability to think about models in a way that simply would not occur without it. Moreover, putting ideas into the language of category theory forces a person to clarify her assumptions. This is highly valuable both for the researcher and for her audience. 
+
+<br><span style="color:blue;">
+圏論は、実験設計パターンのための言語として非常に効率的であり、形式性を導入しつつも柔軟性を維持していることを示したいと思います。圏論は豊かで緊密に織り込まれた概念の枠組みを形成し、科学者は必要に応じて様々な視点の間を自由に行き来することができます。この枠組みを自身の研究分野に組み込むことで、圏論なしには決して考えられないようなモデル思考が可能になります。さらに、アイデアを圏論の言語で表現することで、人は自身の仮定を明確にせざるを得なくなります。これは研究者自身にとっても、その聴衆にとっても非常に価値のあることです。
+</span>
+
+</p><p>
+What must be recognized in order to find value in this book is that conceptual chaos is a major problem. Creativity demands clarity of thinking, and to think clearly about a subject requires an organized understanding of how its pieces fit together. Organization and clarity also lead to better communication with others. Academics often say they are paid to think and understand, but that is not the whole truth. They are paid to think, understand, and communicate their findings. Universal languages for science, such as calculus  and differential equations, matrices, or simply graphs and pie charts, already exist, and they grant us a cultural cohesiveness that makes scientific research worthwhile. In this book I attempt to show that category theory can be similarly useful in describing complex scientific understandings. 
+
+<br><span style="color:blue;">
+本書の価値を見出すために認識しなければならないのは、概念の混沌が大きな問題であるということです。創造性には思考の明晰さが求められ、ある主題について明確に考えるには、その構成要素がどのように組み合わさっているかを体系的に理解する必要があります。体系化と明晰さは、他者とのコミュニケーションの向上にもつながります。学者はしばしば、考え理解することで報酬を得ていると言いますが、それは真実の全てではありません。彼らは考え、理解し、そして発見を伝えることで報酬を得ているのです。微積分や微分方程式、行列、あるいは単にグラフや円グラフといった科学の普遍言語は既に存在し、それらは科学研究を価値あるものにする文化的結束力を与えてくれます。本書では、複雑な科学的理解を記述する上で、圏論も同様に役立つことを示そうとします。
+</span>
+
+</p>
+
+<h3>1.3  What is requested from the student <span style="color:blue;">学生に求められること</span></h3>
+<p>
+The only way to learn mathematics is by doing exercises. One does not get fit by merely looking at a treadmill or become a chef by merely reading cookbooks, and one does not learn math by watching someone else do  it. There are about 300 exercises in this book. Some of them have solutions in the text, others have solutions that can only be accessed by professors teaching the class. 
+
+<br><span style="color:blue;">
+数学を学ぶ唯一の方法は、練習することです。トレッドミル (ルームランナー) を見ているだけでは健康になれませんし、料理本を読んでいるだけではシェフになれません。また、誰かがやっているのを見ても数学は身につきません。本書には約300問の練習問題が掲載されています。解答はテキストに掲載されているものもあれば、担当教授のみがアクセスできるものもあります。
+</span>
+
+</p><p>
+A good student can also make up his own exercises or simply play around with the material. This book often uses databases as an entry to category theory. If one wishes to explore categorical database software, FQL  (functorial query language) is a great place to start. It may also be useful in solving some of the exercises. 
+
+<br><span style="color:blue;">
+優秀な学生は、独自の演習問題を作成したり、教材を自由に試したりすることもできます。本書では、データベースを圏論への入門として頻繁に取り上げています。カテゴリーデータベースソフトウェアを探求したい場合は、FQL（関数型クエリ言語）から始めるのが最適です。また、いくつかの演習問題を解く際にも役立つかもしれません。
+</span>
+
+</p>
+
+<h3>1.4  Category theory references <span style="color:blue;">圏論の参考文献</span></h3>
+<p> 
+I wrote this book because the available books on category theory are almost all written for mathematicians (the rest are written for computer scientists). One book, Conceptual Mathematics  by Lawvere and Schanuel [24], offers category theory to a wider audience, but its style is not appropriate for a course or as a reference. Still, it is very well written and clear. 
+
+<br><span style="color:blue;">
+この本を執筆したのは、圏論に関する市販の書籍のほとんどが数学者向けに書かれているためです（残りはコンピュータ科学者向けに書かれています）。ローヴェレとシャヌエルによる『Conceptual Mathematics』[24]は、より幅広い読者層に圏論を提供していますが、そのスタイルは講義や参考文献として適切ではありません。それでも、非常によく書かれており、明快です。
+</span>
+
+</p><p>
+The bible of category theory is Categories for the Working Mathematician  by Mac Lane [29]. But as the title suggests, it was written for working mathematicians and would be opaque to my target audience. However, once a person has read the present book, Mac Lane’s book may become a valuable reference. 
+
+<br><span style="color:blue;">
+圏論のバイブルは、マック・レーン著『Categories for the Working Mathematician』[29]です。しかし、タイトルが示唆するように、本書は現役数学者向けに書かれたものであり、私の対象読者には難解かもしれません。しかし、本書を読めば、マック・レーンの著書は貴重な参考文献となるかもしれません。
+</span>
+
+</p><p>
+Other good books include Awodey’s Category theory  [4], a recent gentle introduction by Simmons [37], and Barr and Wells’s Category Theory for Computing Science, [11]. A paper by Brown and Porter, ‘‘Category Theory: an abstract setting for analogy and comparison” [9] is more in line with the style of this book, only much shorter. Online, I find Wikipedia [46] and a site called nLab [34] to be quite useful. 
+
+<br><span style="color:blue;">
+他に良い書籍としては、Awodeyの『圏論』[4]、Simmonsによる最近の優しい入門書[37]、BarrとWellsの『計算科学のための圏論』[11]などがあります。BrownとPorterによる論文「圏論：類推と比較のための抽象的な設定」[9]は、本書のスタイルに合っていますが、はるかに短いです。オンラインでは、Wikipedia [46]とnLab [34]というサイトが非常に役に立ちます。
+</span>
+
+</p><p>
+This book attempts to explain category theory by examples and exercises rather than by theorems and proofs. I hope this approach will be valuable to the working scientist. 
+
+<br><span style="color:blue;">
+本書は、定理や証明ではなく、例題や演習を通して圏論を解説しようと試みています。このアプローチが、現役の科学者にとって有益なものとなることを願っています。
+</span>
+
+</p>
+  </body>
+</html>
