@@ -245,7 +245,7 @@ a. According to the above account, does the connection pattern constitute a func
 b. Would you guess that the connection pattern that exists between other areas of the brain are function-like? Justify your answer. 
 
 <br><span style="color:blue;">
-脳の他の領域間に存在する接続パターンは機能的なものだと考えられますか？その答えの根拠を説明してください。
+脳の他の領域間に存在する接続パターンは関数的なものだと考えられますか？その答えの根拠を説明してください。
 </span>
 
 </li></ul></div>
@@ -398,14 +398,14 @@ Since \(A = \{−1, 0, 1, 2, 3\}\) and since \(i(a) = a\) for all \(a \in A\), w
 Let \(X\) be a set and \(x \in X\) an element. There is a function \(\{\)  \(\} → X\) that sends \(\quad \mapsto x\). We say that this function represents \(x \in X\). We may denote it \(x: \{\quad \}  → X\).
 
 <br><span style="color:blue;">
-\(X\) を集合、\(x \in X\) を元とする。\(\quad \mapsto x\) を \(x\) に送る関数 \(\{\) \(\} → X\) が存在する。この関数は \(x \in X\) を表すという。これを \(x: \{\quad \} → X\) と表記する。<br>
+\(X\) を集合、\(x \in X\) を元とする。...を \(x\) に送る関数 \(\{\) \(\} → X\) が存在する。この関数は \(x \in X\) を表すという。これを \(x: \{ \} → X\) と表記する。<br>
 </span>
 <br><span style="color:purple;">
 (蛇足)<br>
 ・禅問答のような文章で初見では意味が理解できない。<br>
 ・定義域が空集合なので,どんな集合を終域(余域)として持ってきても(2.3)を満たす関数が存在すると言い張れる。<br>
-　<a href="https://ja.wikipedia.org/wiki/空間数">空間数, 空写像<a/> ･･･ 定義域が空集合である関数, 写像<br>
 　<a href="https://ja.wikipedia.org/wiki/空虚な真">空虚な真</a> ･･･ 前提が偽なので命題の結論が何であっても真になってしまう <br>
+　<a href="https://ja.wikipedia.org/wiki/空関数">空関数, 空写像<a/> ･･･ 定義域が空集合である関数, 写像<br>
 　例外を無くす, 0!=1 の証明などで必要になるらしい。とりあえず飲み込んでおく･･･<br>
 (蛇足おわり)<br>
 </span>
@@ -455,6 +455,8 @@ The notation \(Hom_{Set}(−, −)\) will make more sense later, when it is seen
 <p>
 <span style="color:purple;">
 (蛇足)<br>
+\(Hom_{Set}(-,-)\)の Hom は <strong>Hom</strong>omorphism: 準同型(写像)の略 ⇒ \(Hom_{Set}(-,-)\) は準同型写像の集合<br>
+<br>
 \(A=\{1,2\},　B=\{a,b\}\) の場合,<br>
 
 \[
@@ -472,425 +474,1300 @@ f_4 & b & b
 \]
 
 とすると, \(Hom_{Set}(A,B)=\{f_1,f_2,f_3,f_4\}\)<br>
-\(Hom_{Set}(A,B)\) の要素の数は \(|B|^{|A|}\) となる。<br>
+　↓ (一般化)<br>
+集合 \(X\) の要素の数を \(|X|\) と表すとすると,<br>
+\(A → B\) 写像の 1 つは \(|A|\) 桁の \(|B|\) 進数の 1 つで表すことができる。<br>
+⇒ \(Hom_{Set}(A,B)\) の要素の数は \((各桁の選択肢の数)^{(桁数)}=|B|^{|A|}\) となる。<br>
+
 (蛇足おわり)
 </span>
 </p>
 
 <h5><a href="Exercise_2_1_2_12.html">Exercise 2.1.2.12.</a>  <span style="color:blue;">演習 2.1.2.12. </span></h5>
 <p>
-Let \(A = \{1, 2, 3, 4, 5\}\) and \(B = \{ x, y\}\). <br>
-a. How many elements does \(Hom_{Set}(A, B)\) have?<br>
-b. How many elements does \(Hom_{Set}(B, A)\) have? <br>
+Let \(A = \{1, 2, 3, 4, 5\}\) and \(B = \{ x, y\}\). 
 
 <br><span style="color:blue;">
-\(A = \{1, 2, 3, 4, 5\}, B = \{x, y\}\) とします。<br>
-a. \(Hom_{Set}(A, B)\) にはいくつの要素がありますか？<br>
-b. \(Hom_{Set}(B, A)\) にはいくつの要素がありますか？
+\(A = \{1, 2, 3, 4, 5\}, B = \{x, y\}\) とします。
 </span>
+
+<div class="styleBullet">
+<ul><li>
+a. How many elements does \(Hom_{Set}(A, B)\) have?
+
+<br><span style="color:blue;">
+\(Hom_{Set}(A, B)\) にはいくつの要素がありますか ?
+</span>
+
+</li><br><li>
+b. How many elements does \(Hom_{Set}(B, A)\) have? 
+
+<br><span style="color:blue;">
+\(Hom_{Set}(B, A)\) にはいくつの要素がありますか ?
+</span>
+
+</li></ul></div>
 </p>
 
 <h5>Exercise 2.1.2.13. <span style="color:blue;">演習 2.1.2.13.</span></h5>
 <p>
-a. Find a set \(A\) such that for all sets \(X\) there is exactly one element in \(Hom_{Set}(X,A)\). Hint: Draw a picture of proposed \(A\)’s and \(X\)’s. How many dots should be in \(A\)? <br>
+<div class="styleBullet">
+<ul><li>
+a. Find a set \(A\) such that for all sets \(X\) there is exactly one element in \(Hom_{Set}(X,A)\). Hint: Draw a picture of proposed \(A\)’s and \(X\)’s. How many dots should be in \(A\)? 
+
+<br><span style="color:blue;">
+すべての集合 \(X\) に対して \(Hom_{Set}(X,A)\) にちょうど1つの要素が含まれるような集合 \(A\) を求めなさい。ヒント：提案された \(A\) と \(X\) を図示しなさい。\(A\) にはいくつの点があるでしょうか？<br>
+</span>
+</li><br><li>
 b. Find a set \(B\) such that for all sets \(X\) there is exactly one element in \(Hom_{Set}(B,X)\). 
 
 <br><span style="color:blue;">
-a. すべての集合 \(X\) に対して \(Hom_{Set}(X,A)\) にちょうど1つの要素が含まれるような集合 \(A\) を求めなさい。ヒント：提案された \(A\) と \(X\) を図示しなさい。\(A\) にはいくつの点があるでしょうか？<br>
-b. すべての集合 \(X\) に対して \(Hom_{Set}(B,X)\) にちょうど1つの要素が含まれるような集合 \(B\) を求めなさい。
+すべての集合 \(X\) に対して \(Hom_{Set}(B,X)\) にちょうど1つの要素が含まれるような集合 \(B\) を求めなさい。
+</span>
+</li></ul></div>
+</p>
+
+<h5>Solution 2.1.2.13. <span style="color:blue;">解 2.1.2.13.</span></h5>
+<p>
+
+<div class="styleBullet">
+<ul><li>
+a. Here is one: \(A := \{ \}\). (Here is another, \(A := \{48\}\), and another, \(A := \{a_1\}\)).
+
+<br><span style="color:blue;">
+1つは\(A := \{ \}\)です。(もう1つは\(A := \{48\}\)、もう1つは\(A := \{a_1\}\)です。)
+</span>
+
+<center><img src="images/CT4S_fig2_1_2_13.svg"></center>
+
+Why? We are trying to count the number of functions \(X → A\). Regardless of \(X\) and \(A\), in order to give a function \(X  → A\) one must answer the question, Where do I send \(x\)? several times, once for each element \(x \in X\). Each element of \(X\) is sent to an element in \(A\). For example, if \(X = \{1, 2, 3\}\), then one asks three questions: Where do I send \(1\)? Where do I send \(2\)? Where do I send \(3\)? When \(A\) has only one element, there is only one place to send each \(x\). A function \(X → 
+\{ \}\) would be written \(1 \mapsto 　, 2 \mapsto　, 3 \mapsto　\). There is only one such function, so \(Hom_{Set}(X, \{ \})\) has one element. 
+
+<br><span style="color:blue;">
+なぜでしょうか? 関数 \(X → A\) の数を数えようとします。\(X\) と \(A\) に関わらず、関数 \(X → A\) を与えるためには、「\(x\) をどこに送るか?」という問いに、各要素 \(x \in X\) について 1 回ずつ、複数回答えなければなりません。\(X\) の各要素は、\(A\) の要素に送られます。例えば、\(X = \{1, 2, 3\}\) の場合、「\(1\) をどこに送るか?」「\(2\) をどこに送るか?」「 \(3\) をどこに送るか?」という 3 つの問いが問われます。 \(A\) に要素が 1 つしかない場合、各 \(x\) を送る場所は 1 つしかありません。関数 \(X →
+\{ \}\) は、「\(1 \mapsto　, 2 \mapsto,　3 \mapsto　\)」と書きます。そのような関数は 1 つだけなので、\(Hom_{Set}(X, \{ \})\) には 1 つの要素があります。
+</span>
+<br>
+<br><span style="color:purple;">
+(蛇足)<br>
+　\(Hom_{Set}(X,A)の数=|A|^{|X|}\)<br>
+<br>
+　・\(|A|=1 ⇒ 1^{|X|}=\underbrace{1×1×\cdots ×1}_{|X|個}=1\)<br>
+　・\(|A|=0 ⇒ 0^{|X|}=\underbrace{0×0×\cdots ×0}_{|X|個}=1?\)<br>
+<br>
+　Google AIモードは \(X=\varnothing\) でない限り \(|Hom_{Set}(X,\varnothing)|=0\) と言い張っているが･･･<br>
+　因みに ChatGPT も Copilot も \(X\neq\varnothing ⇒ |Hom_{Set}(X,\varnothing)|=0\) と言っている。<br>
+<br>
+　確かに \(0^0=1,　0^1=0,　0^2=0×0=0,　0^3=0×0×0=0,　\cdots\) とすると<br>
+　\(X=\varnothing⇒|Hom_{Set}(X,\varnothing)|=0^0=1,　X\neq\varnothing⇒|Hom_{Set}(X,\varnothing)|=0^{|x|_{\gt 0}}=0\)<br>
+　の方がしっくりくる。<br>
+<br>
+　定義域が空集合なら「空虚な真」のような屁理屈が使えるが, 終域が空集合は関数なんだろうか???<br>
+　空関数で \(\varnothing → X\) を考えたので \(X→\varnothing \) を考えた方が良いことが出てくるのかも知れない。<br>
+　保留して先に進む。<br>
+(蛇足おわり)
+</span>
+</li>
+<br>
+<li>
+b. \(B = \varnothing\) is the only possibility.
+
+<br><span style="color:blue;">
+\(B = \varnothing\) が唯一の可能性です。
+</span>
+
+\[
+B:=\boxed{
+\begin{array}{c}
+\quad \\
+\end{array}
+}
+\]
+
+To give a function \(B  → X\) one must answer the question, Where do I send \(b\) ? for each \(b \in B\). Because \(B\) has no elements, no questions must be answered in order to provide such a function. There is one way to answer all the necessary questions, because doing so is immediate (“vacuously satisfied”). It is like commanding John to “assign a letter grade to every person who is over 14 feet tall.” John is finished with his job the moment the command is given, and there is only one way for him to finish the job. So \(Hom_{Set}(\varnothing,  X)\) has one element. 
+
+<br><span style="color:blue;">
+関数 \(B → X\) を与えるには、「\(b \in B\) それぞれについて、\(b\) をどこに送るか？」という問いに答えなければなりません。\(B\) には要素がないので、そのような関数を与えるために問いに答える必要はありません。必要な問いすべてに答える方法は1つあります。なぜなら、その答えは即座に得られる（「空虚に満たされる」）からです。これは、ジョンに「身長14フィート(4m強)以上の人全員に等級を付ける」ように命令するようなものです。ジョンは命令を受けた瞬間に仕事を終えており、仕事を終わらせる方法は1つしかありません。つまり、\(Hom_{Set}(\varnothing, X)\) には要素が1つあります。
+</span>
+</li>
+</ul></div>
+
+</p><p>
+For any set \(X\), we define the identity function on \(X\), denoted 
+\(idX: X →X\), to be the function such that for all \(x \in X\), we have \(id_X(x) = x\). 
+
+<br><span style="color:blue;">
+任意の集合 \(X\) に対して、\(X\) 上の恒等関数 (\(idX: X →X\) と表記) を定義し、これはすべての \(x \in X\) に対して \(id_X(x) = x\) が成り立つような関数です。
 </span>
 </p>
 
-<h5>Solution 2.1.2.13. </h5>
+<h5>Definition 2.1.2.14 (Isomorphism)  <span style="color:blue;">
+定義 2.1.2.14 (同型性)</span></h5>
 <p>
-a. Here is one: A 淘 { 』 }. (Here is another, A 淘 {48}, and another, A 淘 { a1}). 
-Why? We are trying to count the number of functions X  → A. Regardless of X 
-and A, in order to give a function X  → A one must answer the question, Where 
-do I send x? several times, once for each element x ︵ X. Each element of X is 
-sent to an element in A. For example, if X = {1, 2, 3}, then one asks three 
-questions: Where do I send 1? Where do I send 2? Where do I send 3? When 
-A has only one element, there is only one place to s end each x. A function X  → 
-{』 } would be written 1 树 』 , 2 树 』 , 3 树 』 . There is only one such 
-function, so HomSet(X, {』 }) has one element. 
-b. B = 犡 is the only possibility. 
+ Let \(X\) and \(Y\) be sets. A function \(f : X  → Y\) is called an isomorphism, denoted \(f : X  →\simeq Y\), if there exists a function \(g : Y  → X\) such that \(g \circ f = id_X\) and \(f \circ g = id_Y\).
 
+<br><span style="color:blue;">
+\(X\) と \(Y\) を集合とする。関数 \(f : X → Y\) は、関数 \(g : Y → X\) が存在し、\(g \circ f = id_X\) かつ \(f \circ g = id_Y\) が成立するとき、同型写像と呼ばれ、\(f : X →\simeq Y\) と表記される。
+</span>
 
-
-To give a function B  → X one must answer the question, Where do I send b? 
-for each b ︵ B. Because B has no elements, no questions must be answered in 
-order to provide such a function. There is one way to answer all the necessary 
-questions, because doing so is immediate (“vacuously satisfied”). It is like 
-commanding John to “assign a letter grade to every person who is over 14 feet 
-tall.” John is finished with his job the moment the command is given, and there 
-is only one way for him to finish the job. So HomSet(犡, X) has one element. 
-For any set X, we define the identity function on X, denoted 
-idX:X →X, 
-to be the function such that for all x ︵ X, we have idX(x) = x. 
 </p>
+<center><img src="images/CT4S_fig2_4.svg"></center>
 
-<h5>Definition 2.1.2.14 (Isomorphism).</h5>
-<p>
- Let X and Y be sets. A function f : X  → Y is called an isomorphism, denoted f : X  →狔Y, if there exists a function g : Y  → X such that g 秤 f = id 
-X 
- and f 秤 g = id 
-Y. 
-Figure 2.4 An isomorphism X →狔Y. 
+<center>Figure 2.4 An isomorphism \(X →\simeq Y\).</center> 
+<center><span style="color:blue;">図 2.4 同型 \(X →\simeq Y\).</span></center>
 
-========38========
-
-In this case we also say that f is invertible and that g is the inverse  of f. If there exists an isomorphism X →狔Y, we say that X and Y are isomorphic sets and may write X 狔 Y. 
-</p>
-
-<h5>Example 2.1.2.15. </h5>
-<p>
-If X and Y are sets and f : X  → Y is an isomorphism, then the analogue of Figure 2.2 will look like a perfect matching, more often call ed a one- to-one correspondence. That means that no two arrows will hit the same element of Y, and every element of Y will be in the image. For example, Figure 2.4 depicts an isomorphism X →狔Y between four element sets. 
-</p>
-
-<h5>Application  2.1.2.16.</h5>
+<center><img src="images/CT4S_fig2_4_2.svg"></center>
 
 <p>
-There is an isomorphism between the set Nuc 
-DNA 
- of nucleotides  found in DNA and the set Nuc 
-RNA 
- of nucleotides found in RNA. Indeed, both sets have four elements, so there are 24 different isomorphisms. But only one is useful in biology. Before we say which one it is, let us say there is also an isomorphism NucDNA 狔 { A, C, G, T} and an isomorphism NucRNA 狔 { A, C, G, U}, and we will use the letters as abbreviations for the nucleotides. 
-The convenient isomorphism NucDNA →狔NucRNA is that given by RNA transcription; it sends 
-A树U, C树G, G树C, T树A. 
-(See also Application 5.1.2.21.) There is also an isomorphism NucDNA →狔NucDNA (the matching in the double helix), given by 
-A树T, C树G, G树C, T树A. 
-Protein production can be modeled as a function from the set of 3-nucleotide sequences to the set of eukaryotic amino acids. However, it cannot be an isomorphism because there are 43 = 64 triplets of RNA nucleotides but only 21 eukaryotic amino acids. 
+In this case we also say that \(f\) is invertible and that \(g\) is the inverse  of \(f\). If there exists an isomorphism \(X →\simeq Y\), we say that \(X\) and \(Y\) are isomorphic sets and may write \(X \simeq Y\). 
+
+<br><span style="color:blue;">
+この場合、\(f\) は可逆であり、\(g\) は \(f\) の逆であるとも言えます。同型 \(X →\simeq Y\) が存在する場合、\(X\) と \(Y\) は同型集合であり、\(X \simeq Y\) と書くことができます。
+</span>
 </p>
 
-<h5>Exercise 2.1.2.17. </h5>
+<h5>Example 2.1.2.15.  <span style="color:blue;">例2.1.2.15. </span></h5>
 <p>
-Let n ︵ 呻 be a natural number, and let X be a set with exactly n elements. a. How many isomorphisms are there from X to itself? 
-b. Does your formula from part (a) hold when n = 0? 
+If \(X\) and \(Y\) are sets and \(f : X  → Y\) is an isomorphism, then the analogue of Figure 2.2 will look like a perfect matching, more often call ed a one- to-one correspondence. That means that no two arrows will hit the same element of \(Y\), and every element of \(Y\) will be in the image. For example, Figure 2.4 depicts an isomorphism \(X →\simeq Y\) between four element sets. 
+
+<br><span style="color:blue;">
+\(X\) と \(Y\) が集合で、\(f : X → Y\) が同型写像である場合、図 2.2 の類似物は完全対応、より一般的には一対一対応と呼ばれます。これは、2 つの矢印が \(Y\) の同じ要素に当たることはなく、\(Y\) のすべての要素が像に収まることを意味します。例えば、図 2.4 は 4 つの要素集合間の同型写像 \(X →\simeq Y\) を示しています。
+</span>
 </p>
 
-<h5>Proposition 2.1.2.18.</h5>
+<h5>Application  2.1.2.16.　<span style="color:blue;">応用2.1.2.16.</span></h5>
+
+<p>
+There is an isomorphism between the set \(Nuc_{DNA}\) of nucleotides  found in DNA and the set \(Nuc_{RNA}\) of nucleotides found in RNA. Indeed, both sets have four elements, so there are 24 different isomorphisms. But only one is useful in biology. Before we say which one it is, let us say there is also an isomorphism \(Nuc_{DNA}\simeq \{ A, C, G, T\}\) and an isomorphism \(Nuc_{RNA}\simeq \{ A, C, G, U\}\), and we will use the letters as abbreviations for the nucleotides. 
+
+<br><span style="color:blue;">
+DNAに含まれるヌクレオチドの集合 \(Nuc_{DNA}\) と RNA に含まれるヌクレオチドの集合 \(Nuc_{RNA}\) の間には同型性が存在します。どちらの集合も 4 つの要素を持つため、24 通りの同型性が存在します。しかし、生物学で有用なのはそのうちの 1 つだけです。どちらが有用なのかを説明する前に、\(Nuc_{DNA}\simeq \{A, C, G, T\}\) という同型性と \(Nuc_{RNA}\simeq \{A, C, G, U\}\) という同型性も存在することを述べておきます。これらの文字はヌクレオチドの略語として使用します。
+</span>
+
+</p><p>
+The convenient isomorphism \(Nuc_{DNA} →\simeq Nuc_{RNA}\) is that given by RNA transcription; it sends 
+
+<br><span style="color:blue;">
+便利な同型性 \(Nuc_{DNA} →\simeq Nuc_{RNA}\) は RNA 転写によって与えられ、<br>
+</span>
+
+\[
+A \mapsto U,　C \mapsto G,　G \mapsto C,　T \mapsto A
+\]
+
+(See also Application 5.1.2.21.) There is also an isomorphism \(Nuc_{DNA} →\simeq Nuc_{DNA}\) (the matching in the double helix), given by
+
+<br><span style="color:blue;"> 
+（応用5.1.2.21も参照）また、同型\(Nuc_{DNA} →\simeq Nuc_{DNA}\)（二重らせん構造のマッチング）も存在し、次式で表される。
+</span>
+<br>
+
+\[
+A \mapsto T,　C \mapsto G,　G \mapsto C,　T \mapsto A
+\]
+
+</p><p>
+Protein production can be modeled as a function from the set of 3-nucleotide sequences to the set of eukaryotic amino acids. However, it cannot be an isomorphism because there are \(4^3 = 64\) triplets of RNA nucleotides but only \(21\) eukaryotic amino acids. 
+
+<br><span style="color:blue;"> 
+タンパク質の生産は、3ヌクレオチド配列の集合から真核生物のアミノ酸の集合への関数としてモデル化できます。しかし、RNAヌクレオチドのトリプレットは \(4^3 = 64\) 個あるのに対し、真核生物のアミノ酸は \(21\) 個しかないため、同型性は成立しません。
+</span>
+</p>
+
+<h5><a href="Exercise_2_1_2_17.html">Exercise 2.1.2.17.</a> <span style="color:blue;"> 演習 2.1.2.17.</span></h5>
+<p>
+Let \(n \in \mathbb{N}\) be a natural number, and let \(X\) be a set with exactly \(n\) elements.
+
+<br><span style="color:blue;"> 
+\(n \in \mathbb{N}\) を自然数とし、\(X\) をちょうど \(n\) 個の要素を持つ集合とします。
+</span>
+<div class="styleBullet">
+<ul><li>
+a. How many isomorphisms are there from \(X\) to itself ? 
+
+<br><span style="color:blue;"> 
+\(X\) からそれ自身への同型はいくつありますか？
+</span>
+</li><br><li>
+b. Does your formula from part (a) hold when \(n = 0\) ?
+
+<br><span style="color:blue;"> 
+(a) の式は \(n = 0\) のときにも成り立ちますか?
+</span>
+</li>
+</ul></div> 
+</p>
+
+<h5>Proposition 2.1.2.18. <span style="color:blue;"> 命題 2.1.2.18.</span></h5>
 <p>
  The following facts hold about isomorphism. 
-1. Any set A is isomorphic to itself; i.e., there exists an isomorphism A  →狔A. 2. For any sets A and B, if A is isomorphic to B, then B is isomorphic to A. 
 
+<br><span style="color:blue;"> 
+同型性については以下の事実が成り立ちます。
+</span>
 
-3. For any sets A, B, and C, if A is isomorphic to B, and B is isomorphic to C, then 
-A is isomorphic to C. 
-Proof.   1. The identity function idA: A  → A is invertible; its inverse is id 
-A 
- because 
-idA 秤 id 
-A 
- = id 
-A. 
-2. If f : A  → B is invertible with inverse g : B  → A, then g is an isomorphism 
-with inverse f. 
-3. If f : A  → B and f荒 : B  → C are each invertible with inverses g : B  → A and 
-g荒: C  → B, then the following calculations show that f荒 秤 f is invertible 
-with inverse g 秤 g荒: 
-(f荒秤f)秤(g秤g荒)=f荒秤(f秤g)秤g荒=f荒秤idB秤g荒=f荒秤g荒=idC(g秤g荒)秤(f荒秤f)=g秤(g荒秤f 荒)秤f=g秤idB秤f=g秤f=idA 
-</p>
+<div class="styleBullet">
+<ul><li>
+1. Any set \(A\) is isomorphic to itself; i.e., there exists an isomorphism \(A →\simeq A\). 
 
-<h5>Exercise 2.1.2.19. </h5>
+<br><span style="color:blue;"> 
+任意の集合 \(A\) はそれ自身と同型である。つまり、同型 \(A →\simeq A\) が存在する。
+</span>
+</li><br><li>
+2. For any sets \(A\) and \(B\), if \(A\) is isomorphic to \(B\), then \(B\) is isomorphic to \(A\). 
+
+<br><span style="color:blue;"> 
+任意の集合 \(A\) と \(B\) について、\(A\) が \(B\) と同型であれば、\(B\) は \(A\) と同型です。
+</span>
+</li><br><li>
+3. For any sets \(A, B,\) and \(C\), if \(A\) is isomorphic to \(B\), and \(B\) is isomorphic to \(C\), then 
+\(A\) is isomorphic to \(C\). 
+
+<br><span style="color:blue;"> 
+任意の集合 \(A, B,\) と \(C\) について、\(A\) が \(B\) と同型であり、\(B\) が \(C\) と同型である場合、
+\(A\) は \(C\) と同型です。
+</span>
+</li></ul></div>
 <p>
-Let A and B be these sets: 
-Note that the sets A and B are isomorphic. Suppose that f : B  → {1, 2, 3, 4, 5} sends “Bob” to 1, sends 隸 to 3, and sends r8 to 4. Is there a canonical function A  → {1, 2, 3, 4, 5} corresponding to f?4 
+
+<h5>Proof. <span style="color:blue;">証明</span></h5>
+
+<p>
+<div class="styleBullet">
+<ul><li>
+1. The identity function \(id_A: A  → A\) is invertible; its inverse is \(id_A\) because \(id_A \circ id_A = id_A\). 
+
+<br><span style="color:blue;"> 
+恒等関数 \(id_A: A → A\) は逆関数です。その逆関数は \(id_A\) です。なぜなら \(id_A \circ id_A = id_A\) だからです。
+</span>
+
+</li><br><li>
+2. If \(f : A  → B\) is invertible with inverse \(g : B  → A\), then \(g\) is an isomorphism with inverse \(f\). 
+
+<br><span style="color:blue;"> 
+\(f : A → B\) が逆関数 \(g : B → A\) と可逆である場合、\(g\) は逆関数 \(f\) と同型です。
+</span>
+
+</li><br><li>
+3. If \(f : A  → B\) and \(f^\prime : B  → C\) are each invertible with inverses \(g : B  → A\) and \(g^\prime: C  → B\), then the following calculations show that \(f^\prime \circ f\) is invertible 
+with inverse \(g \circ g^\prime\): 
+
+<br><span style="color:blue;"> 
+\(f : A → B\) と \(f^\prime : B → C\) がそれぞれ逆関数 \(g : B → A\) と \(g^\prime: C → B\) によって可逆である場合、次の計算により \(f^\prime \circ f\) は逆関数 \(g \circ g^\prime\) によって可逆であることが示されます。
+</span>
+
+<center><img src="images/CT4S_fig2_1_2_18.svg"></center>
+</li>
+</ul></div>
 </p>
 
-<h5>Solution 2.1.2.19. </h5>
+<h5>Exercise 2.1.2.19. <span style="color:blue;"> 演習 2.1.2.19.</span></h5>
+<p>
+Let \(A\) and \(B\) be these sets:
+
+<br><span style="color:blue;"> 
+\(A\) と \(B\) を次の集合とします。
+</span> 
+</p>
+<center><img src="images/CT4S_fig2_1_2_19.svg"></center>
+
+<p>
+Note that the sets \(A\) and \(B\) are isomorphic. Suppose that \(f: B → \{1, 2, 3, 4, 5\}\) sends “Bob” to \(1\), sends ♣ to \(3\), and sends \(r8\) to \(4\). Is there a canonical function \(A → \{1, 2, 3, 4, 5\}\) corresponding to \(f\) ? <sup>4</sup> 
+
+<br><span style="color:blue;"> 
+
+集合 \(A\) と \(B\) は同型であることに注意。\(f: B → \{1, 2, 3, 4, 5\}\) が “Bob” を \(1\) に、♣ を \(3\) に、そして \(r8\) を \(4\) に送るとする。\(f\) に対応する標準的な射 \(A → \{1, 2, 3, 4, 5\}\) は存在するか？ <sup>4</sup>
+</span>
+</p>
+
+<p style="padding-left: 4em;">
+<sup>4</sup> 
+Canonical, as used here, means something like “best choice,” a choice that stands out as the only reasonable one. 
+
+<br><span style="color:blue;"> 
+ここで使用されている「標準」とは、「最良の選択」、つまり唯一合理的なものとして際立つ選択を意味します。
+</span>
+</p>
+
+<h5>Solution 2.1.2.19. <span style="color:blue;"> 解 2.1.2.19.</span></h5>
 <p>
 No. There are a lot of choices, and none is any more reasonable than any other, i.e., none are canonical. (In fact, there are six choices; do you see why?) 
-The point of this exercise is to illustrate that even if one knows that two sets are isomorphic, one cannot necessarily treat them as the same. To treat them as 
 
+<br><span style="color:blue;"> 
+いいえ。選択肢はたくさんありますが、どれが他の選択肢よりも合理的である、つまりどれが正統な選択肢である、ということはありません。（実際には選択肢は6つあります。その理由がお分かりですか？）
+</span>
+<br>
+<br><span style="color:purple;"> 
+(蛇足)<br>
+　\(\{a,7,Q\}\) から \(\{1,3,4\}\) に一対一に写す写像は 3×2×1 で6通り。<br>
+(蛇足おわり)
+</span>
 
-the same, one should have in hand a specified isomorphism g : A  →狔B, such as a 树 r8, 7 树 “ Bob”, Q 树 隸. Now, given f : B  → {1, 2, 3, 4, 5}, there is a canonical function A  → {1, 2, 3, 4, 5} corresponding to f, namely, f 秤 g. 
+</p><p>
+The point of this exercise is to illustrate that even if one knows that two sets are isomorphic, one cannot necessarily treat them as the same. To treat them as the same, one should have in hand a specified isomorphism \(g: A →\simeq B\), such as \(a \mapsto r8, 7 \mapsto\)“ Bob”, \(Q \mapsto\)♣. Now, given \(f: B  → \{1, 2, 3, 4, 5\}\), there is a canonical function \(A → \{1, 2, 3, 4, 5\}\) corresponding to \(f\), namely, \(f \circ g\). 
+
+<br><span style="color:blue;"> 
+この演習のポイントは、2つの集合が同型であると分かっていても、必ずしもそれらを同じものとして扱えるわけではないことを示すことです。それらを同じものとして扱うためには、\(a \mapsto r8, 7 \mapsto\)“ Bob”, \(Q \mapsto\)♣ のような、特定の同型\(g: A →\simeq B\)をあらかじめ用意しておく必要があります。ここで、\(f: B → \{1, 2, 3, 4, 5\}\)が与えられている場合、\(f\) に対応する標準的な関数 \(A → \{1, 2, 3, 4, 5\}\)、すなわち \(f \circ g\) が存在します。
+</span>
+
 </p>
 
-<h5>Exercise 2.1.2.20. </h5>
+<h5>Exercise 2.1.2.20. <span style="color:blue;"> 演習 2.1.2.20.</span></h5>
 <p>
-Find a set A such that for any set X, there is an isomorphism of sets X狔HomSet(A,X). 
-Hint: A function A  → X  points each element of A  to an element of X. When would there be the same number of ways to do that as there are elements of of X? 
+Find a set \(A\) such that for any set \(X\), there is an isomorphism of sets \(X \simeq Hom_{Set}(A,X)\). 
+
+<br><span style="color:blue;"> 
+任意の集合 \(X\) に対して、集合の同型 \(X \simeq Hom_{Set}(A,X)\) が存在するような集合 \(A\) を見つけます。<br>
+</span>
+<br>
+
+Hint: A function \(A  → X\)  points each element of \(A\)  to an element of \(X\). When would there be the same number of ways to do that as there are elements of of \(X\) ? 
+
+<br><span style="color:blue;"> 
+ヒント: 関数 \(A → X\) は、 \(A\) の各要素を \(X\) の要素にポイントします。\(X\) の要素の数と同じ数の方法が存在するのはどのような場合でしょうか？
+</span>
 </p>
 
-<h5>Solution 2.1.2.20. </h5>
+<h5>Solution 2.1.2.20. <span style="color:blue;"> 解 2.1.2.20.</span></h5>
 <p>
-Let A = { 』 }. Then to point each element of A to an element of X, one must simply point 』 to an element of X. The set of ways to do that can be put in one- to-one correspondence with the set of elements of X. For example, if X = {1, 2, 3}, then 』 树 3 is a function A  → X representing the element 3 ︵ X. See Notation 2.1.2.9. 
+Let \(A = \{ \}\). Then to point each element of \(A\) to an element of \(X\), one must simply point ... to an element of \(X\). The set of ways to do that can be put in one- to-one correspondence with the set of elements of \(X\). For example, if \(X = \{1, 2, 3\}\), then \( ... \mapsto 3\) is a function \(A  → X\) representing the element \(3 \in X\). See Notation 2.1.2.9. 
+
+<br><span style="color:blue;"> 
+\(A = \{ \}\) とします。すると、\(A\) の各要素を \(X\) の要素にポイントするには、単に ... を \(X\) の要素にポイントすれば良いことになります。その方法の集合は、\(X\) の要素の集合と一対一に対応させることができます。例えば、\(X = \{1, 2, 3\}\) の場合、\( ... \mapsto 3\) は要素 \(3 \in X\) を表す関数 \(A → X\) です。記法 2.1.2.9 を参照してください。
+</span>
 </p>
 
-<h5>Notation 2.1.2.21.</h5>
+<h5>Notation 2.1.2.21. <span style="color:blue;">表記法 2.1.2.21.</span></h5>
 <p>
-For any natural number n ︵ 呻, define a set 
-n¯淘{1,2,3,…,n}.  (2.4) 
-We call n the numeral set of size n. So, in particular, 2 = {1, 2}, 1 = {1}, and 0 = 犡. 
-Let A be any set. A function f : n  → A can be written as a length n sequence f=(f(1),f(2),…,f(n)).  (2.5) 
-We call this the sequence notation for f. 
+For any natural number \(n \in \mathbb{N}\), define a set 
+
+<br><span style="color:blue;"> 
+任意の自然数\(n \in \mathbb{N}\)に対して、集合を定義する。
+</span>
+
+\[
+\underline{n} := \{1,2,3,…,n\}  \tag{2.4}
+\]
+ 
+We call \(\underline{n}\) the numeral set of size \(n\). So, in particular, \(\underline{2} = \{1, 2\}, \underline{1} = \{1\}\), and \(\underline{0} = \varnothing\). 
+
+<br><span style="color:blue;"> 
+\(\underline{n}\) をサイズ \(n\) の数値集合と呼びます。具体的には、\(\underline{2} = \{1, 2\},　\underline{1} = \{1\}\),　\(\underline{0} = \varnothing\) となります。
+</span>
+
+</p><p>
+Let \(A\) be any set. A function \(f: n  → A\) can be written as a length \(n\) sequence
+
+<br><span style="color:blue;"> 
+\(A\)を任意の集合とする。関数\(f: n → A\)は長さ\(n\)の列として表される。
+</span>
+
+\[
+f=(f(1),f(2),…,f(n))  \tag{2.5}
+\]
+ 
+We call this the sequence notation for \(f\).
+
+<br><span style="color:blue;"> 
+これを\(f\)のシーケンス表記法と呼びます。
+</span>
+
 </p>
 
-<h5>Exercise 2.1.2.22. </h5>
+<h5>Exercise 2.1.2.22. <span style="color:blue;">演習 2.1.2.22</span></h5>
 <p>
-a. Let A = { a, b, c, d}. If f : 10  → A is given in sequence notation by ( a, b, c, c, b, a, 
-d, d, a, b), what is f(4)? 
-b. Let s: 7  → 呻 be given by s(i) = i2. Write s in sequence notation. 
+
+<div class="styleBullet">
+<ul><li>
+a. Let \(A = \{ a, b, c, d\}\). If \(f: \underline{10} → A\) is given in sequence notation by \((a, b, c, c, b, a, d, d, a, b)\), what is \(f(4)\)? 
+
+<br><span style="color:blue;"> 
+\(A = \{ a, b, c, d\}\)とします。\(f: \underline{10} → A\) が \((a, b, c, c, b, a, d, d, a, b)\) と数列表記で表されている場合、\(f(4)\) は何ですか？
+</span>
+
+</li><br><li>
+b. Let \(s: \underline{7} → \mathbb{N}\) be given by \(s(i) = i^2\). Write \(s\) in sequence notation.
+
+<br><span style="color:blue;"> 
+\(s: \underline{7} → \mathbb{N}\) を \(s(i) = i^2\) とします。\(s\) を数列表記で書け。
+</span>
+
+</li></ul></div> 
 </p>
 
-<h5>Solution 2.1.2.22. </h5>
+<h5>Solution 2.1.2.22. <span style="color:blue;"> 解 2.1.2.22.</span></h5>
 <p>
-a. c 
-b. (1, 4, 9, 16, 25, 36, 49) 
+a. \(c\) <br>
+<br>
+b. \((1, 4, 9, 16, 25, 36, 49)\) 
 </p>
 
-<h5>Definition 2.1.2.23 (Cardinality of finite sets).</h5>
+<h5>Definition 2.1.2.23 (Cardinality of finite sets). <span style="color:blue;">定義 2.1.2.23 (有限集合の濃度)</span></h5>
 
 <p>
-Let A be a set and n ︵ 呻 a natural number. We say that A has cardinality n, denoted 
+Let \(A\) be a set and \(n \in \mathbb{N}\) a natural number. We say that \(A\) has cardinality \(n\), denoted 
+
+<br><span style="color:blue;"> 
+\(A\) を集合、\(n \in \mathbb{N}\) を自然数とする。\(A\) の基数は \(n\) であり、
+</span>
+
+\[
 |A|=n, 
-if there exists an isomorphism of sets A 狔 n. If there exists some n ︵ 呻 such that A has cardinality n, then we say that A is finite. Otherwise, we say that A is infinite and write |A|  ∞. 
+\]
+if there exists an isomorphism of sets \(A \simeq n\). If there exists some \(n \in \mathbb{N}\) such that \(A\) has cardinality \(n\), then we say that \(A\) is finite. Otherwise, we say that \(A\) is infinite and write |A|  ∞. 
+
+<br><span style="color:blue;"> 
+集合\(A \simeq n\)の同型が存在する場合。\(n \in \mathbb{N}\)が存在し、\(A\)の濃度が\(n\)である場合、\(A\)は有限であると言う。そうでない場合、\(A\)は無限であり、\(|A|= ∞\)と書く。
+</span>
+
 </p>
 
-<h5>Exercise 2.1.2.24. </h5>
+<h5>Exercise 2.1.2.24. <span style="color:blue;"> 演習 2.1.2.24.</span></h5>
 <p>
-a. Let A = {5, 6, 7}. What is | A|? b. What is |{1, 1, 2, 3, 5}|? c. What is |呻|? 
-d. What is |{n ︵ 呻 | n  5}|? 
-We will see in Corollary 3.4.5.6  that for any m, n ︵ 呻, there is an isomorphism m 狔 n if and only if m = n. So if we find that A has cardinality m and that A has cardinality n, then m = n. 
+<div class="styleBullet">
+<ul><li>
+a. Let \(A = \{5, 6, 7\}\). What is \(|A|\)?
+
+<br><span style="color:blue;"> 
+\(A = \{5, 6, 7\}\)とします。\(|A|\)はいくつか ?
+</span>
+
+</li><br><li>
+b. What is \(|\{1, 1, 2, 3, 5\}|\)?
+
+<br><span style="color:blue;"> 
+\(|\{1, 1, 2, 3, 5\}|\) はいくつか ?
+</span>
+
+</li><br><li>
+c. What is \(|\mathbb{N}|\) ?
+
+<br><span style="color:blue;"> 
+\(|\mathbb{N}|\) はいくつか ?
+</span>
+
+</li><br><li>
+d. What is \(|\{n \in \mathbb{N}|n \leq 5\}|\) ?
+
+<br><span style="color:blue;"> 
+\(|\{n \in \mathbb{N}|n \leq 5\}|\) はいくつか ?
+</span>
+
+</li></ul></div>
+</p><p> 
+We will see in Corollary 3.4.5.6  that for any \(m, n \in \mathbb{N}\), there is an isomorphism \(m \simeq  n\) if and only if \(m = n\). So if we find that \(A\) has cardinality m and that \(A\) has cardinality \(n\), then \(m = n\). 
+
+<br><span style="color:blue;"> 
+系3.4.5.6で、任意の\(m, n \in \mathbb{N}\)に対して、\(m \simeq n\)という同型写像が存在するのは、\(m = n\)のときのみであることがわかります。したがって、\(A\)の基数がmで、\(A\)の基数が\(n\)である場合、\(m = n\)となります。
+</span>
+
 </p>
 
-<h5>Proposition 2.1.2.25.</h5>
+<h5>Proposition 2.1.2.25. <span style="color:blue;"> 命題 2.1.2.25.</span></h5>
 <p>
- Let A and B be finite sets. If there is an isomorphism of sets f : A  → B, then the two sets have the same cardinality, |A| = |B|. 
-Proof. If f  : A  → B  is an isomorphism and B 狔 n, then A 狔 n  because the composition of two isomorphisms is an isomorphism. 
+ Let \(A\) and \(B\) be finite sets. If there is an isomorphism of sets \(f : A  → B\), then the two sets have the same cardinality, \(|A| = |B|\).
+
+<br><span style="color:blue;"> 
+\(A\) と \(B\) を有限集合とする。集合の同型性 \(f : A → B\) が存在する場合、2つの集合の濃度は同じであり、\(|A| = |B|\) となる。
+</span>
+
+</p>
+ 
+<h5>Proof. <span style="color:blue;">証明</span></h5>
+<p>
+If \(f : A → B\)  is an isomorphism and \(B \simeq  n\), then \(A \simeq  n\)  because the composition of two isomorphisms is an isomorphism. 
+
+<br><span style="color:blue;">
+\(f : A → B\) が同型で \(B \simeq n\) ならば、2つの同型の合成も同型なので \(A \simeq n\) となります。
+</span>
+
 </p>
 
-<h3>2.2  Commutative diagrams</h3>
+<h3>2.2  Commutative diagrams <span style="color:blue;">可換図式</span></h3>
 <p> 
-At this point it is difficult to precisely define diagrams or commutative diagrams in general, but we can get a heuristic idea.5 Consider the following picture: 
+At this point it is difficult to precisely define diagrams or commutative diagrams in general, but we can get a heuristic idea.<sup>5</sup> Consider the following picture: 
 
-We say this is a diagram of sets if each of A, B, C is a set and each of f, g, h is a function. We say this diagram commutes if g 秤 f = h. In this case we refer to it as a commutative triangle of sets, or, more generally, as a commutative diagram of sets. 
+<br><span style="color:blue;">
+この時点では、図や可換図一般を正確に定義することは困難ですが、経験的なアイデアを得ることはできます。<sup>5</sup> 次の図を考えてみましょう。
+</span>
+
+</p><p style="padding-left: 4em;">
+<sup>5</sup>
+Commutative diagrams are precisely defined in Section 6.1.2. 
+
+<br><span style="color:blue;">
+可換図式はセクション6.1.2で正確に定義されています。
+</span>
 </p>
 
-<h5>Application 2.2.1.1.</h5>
+<center><img src="images/CT4S_fig2_6.svg"></center>
+
+<p>
+We say this is a diagram of sets if each of \(A, B, C\) is a set and each of \(f, g, h\) is a function. We say this diagram commutes if \(g \circ f = h\). In this case we refer to it as a commutative triangle of sets, or, more generally, as a commutative diagram of sets. 
+
+<br><span style="color:blue;">
+\(A, B, C\) がそれぞれ集合で、\(f, g, h\) がそれぞれ関数であるとき、これは集合図であるといいます。\(g \circ f = h\) であるとき、この図は可換であるといいます。この場合、これを集合の可換三角形、またはより一般的には集合の可換図と呼びます。
+</span>
+
+</p>
+
+<h5>Application 2.2.1.1. <span style="color:blue;">応用 2.2.1.1.</span></h5>
 <p>
  In its most basic form, the central dogma of molecular biology is that DNA codes for RNA codes for protein. That is, there is a function from DNA triplets to RNA triplets and a function from RNA triplets to amino acids. But sometimes we just want to discuss the translation from DNA to amino acids, and this is the composite of the other two. The following commutative diagram is a picture of this fact 
+
+<br><span style="color:blue;">
+分子生物学のセントラルドグマは、最も基本的な形では、DNAがRNAをコードし、RNAがタンパク質をコードしているというものです。つまり、DNAトリプレットからRNAトリプレットへの機能と、RNAトリプレットからアミノ酸への機能が存在するということです。しかし、DNAからアミノ酸への翻訳についてのみ議論したい場合もあり、これは他の2つの機能を組み合わせたものです。以下の可換図はこの事実を図示したものです。
+</span>
+</p>
+
+<center><img src="images/CT4S_fig2_2_1_1.svg"></center>
+
+<p>
 Consider the following picture: 
 
-========44========
+<br><span style="color:blue;">
+次の図を考えてみましょう。
+</span>
+<center><img src="images/CT4S_fig2_2_1_1_2.svg"></center>
 
-We say this is a diagram of sets if each of A, B, C, D is a set and each of f, g, h, i is a function. We say this diagram commutes if g 秤 f = i 秤 h. In this case we refer to it as a commutative square of sets. More generally, it is a commutative diagram of sets. 
+</p><p>
+We say this is a diagram of sets if each of \(A, B, C, D\) is a set and each of \(f, g, h, i\) is a function. We say this diagram commutes if \(g \circ f = i \circ h\). In this case we refer to it as a commutative square of sets. More generally, it is a commutative diagram of sets. 
+
+<br><span style="color:blue;">
+\(A, B, C, D\) がそれぞれ集合で、\(f, g, h, i\) がそれぞれ関数であるとき、これは集合図と呼ばれます。\(g \circ f = i \circ h\) であるとき、この図は可換であるといいます。この場合、これを集合の可換な平方と呼びます。より一般的には、集合の可換な図です。
+</span>
 </p>
 
-<h5>Application  2.2.1.2.</h5>
+<h5>Application  2.2.1.2. <span style="color:blue;">応用 2.2.1.2.</span></h5>
 <p>
- Given a physical system S, there may be two mathematical approaches f : S  → A and g : S  → B  that can be applied to it. Either of those results in a prediction of the same sort, f荒 : A  → P and g荒 : B  → P. For example, in mechanics  we can use either the Lagrangian approach or the H amiltonian approach to predict future states. To say that the diagram 
-commutes would say that these approaches give the same result. 
+ Given a physical system S, there may be two mathematical approaches \(f : S  → A\) and \(g : S  → B\)  that can be applied to it. Either of those results in a prediction of the same sort, \(f^\prime : A  → P\) and \(g^\prime : B  → P\). For example, in mechanics  we can use either the Lagrangian approach or the H amiltonian approach to predict future states. To say that the diagram commutes would say that these approaches give the same result. 
+
+<br><span style="color:blue;">
+物理系Sが与えられたとき、それに適用できる数学的アプローチ\(f : S → A\)と\(g : S → B\)の2つがあるかもしれません。どちらのアプローチも、\(f^\prime : A → P\)と\(g^\prime : B → P\)という同じ種類の予測をもたらします。例えば、力学では、未来の状態を予測するためにラグランジュ的アプローチとHアミルトン的アプローチのどちらかを使用できます。この図が可換であると言うことは、これらのアプローチが同じ結果をもたらすと言うことを意味します。
+</span>
+</p>
+
+<center><img src="images/CT4S_fig2_2_1_2.svg"></center>
+
+<p>
 Note that diagram (2.6) is considered to be the same diagram as each of the following: 
-In all these we have h = g 秤 f, or in diagrammatic order, h = f; g. 
+
+<br><span style="color:blue;">
+図(2.6)は次の図と同じであるとみなされることに注意してください。<br>
+</span>
+</p>
+
+<center><img src="images/CT4S_fig2_2_1_2_2.svg"></center>
+
+<p>
+In all these we have \(h = g \circ f\), or in diagrammatic order, \(h = f; g\). 
+
+<br><span style="color:blue;">
+これらすべてにおいて、\(h = g \circ f\)、または図式的に言えば、\(h = f; g\) となります。
+</span>
 </p>
 
 
-<h3>2.3  Ologs </h3>
+<h3>2.3  Ologs <span style="color:blue;">オログ</span></h3>
 <p>
 In this book I ground the mathematical ideas in applications whenever possible. To that end I introduce ologs, which serve as a bridge between mathematics and various conceptual landscapes. The following material is taken from Spivak and Kent [43], an introduction to ologs. 
-</p>
 
-<h4>2.3.1  Types </h4>
+<br><span style="color:blue;">
+本書では、可能な限り数学的概念を応用に根ざしたものにしています。そのために、数学と様々な概念的ランドスケープとの橋渡しとなるオログ（olog）を導入します。以下の内容は、オログ入門書であるSpivak and Kent [43]から引用したものです。
+</span>
+</p>
+<center><img src="images/CT4S_fig2_7.svg"></center>
+
+<h4>2.3.1  Types <span style="color:blue;">型</span></h4>
 <p>
 A type is an abstract concept, a distinction the author has made. Each type is represented as a box containing a singular indefinite noun phrase. Each of the following four boxes is a type: 
-Each of the four boxes in (2.8) represents a type of thing, a whole class of things, and the label on that box is what one should call each example of that class. Thus 窝a man我 does not represent a single man but the set of men , each example of which is called “a man.” Similarly, the bottom right box represents an abstract type of thing, which probably has more than a million examples, but the label on the box indicates the common name for each such example. 
-Typographical problems emerge when writing a text box in a line of text, e.g., the text box a man seems out of place, and the more in-line text boxes there are, the worse it gets. To remedy this, I denote types that occur in a line of text with corner symbols; e.g., I write 窝a man我 instead of a man . 
+
+<br><span style="color:blue;">
+型とは抽象的な概念であり、著者が区別したものです。それぞれの型は、単数形の不定名詞句を含むボックスで表されます。以下の4つのボックスはそれぞれ型です。
+</span>
+
+</p>
+<center><img src="images/CT4S_fig2_8.svg"></center>
+
+<p>
+Each of the four boxes in (2.8) represents a type of thing, a whole class of things, and the label on that box is what one should call each example of that class. Thus 「a man」 does not represent a single man but the set of men , each example of which is called “a man.” Similarly, the bottom right box represents an abstract type of thing, which probably has more than a million examples, but the label on the box indicates the common name for each such example. 
+
+<br><span style="color:blue;">
+(2.8) の 4 つの箱はそれぞれ、事物のタイプ、つまり事物のクラス全体を表しており、その箱のラベルは、そのクラスの各例に付けられるべき名称です。例えば、「a man（男性）」は一人の男性を表すのではなく、男性の集合を表しており、その各例は "a man（男性）" と呼ばれています。同様に、右下の箱は抽象的な事物のタイプを表しており、おそらく百万以上の例があると思われますが、箱のラベルは、そのような各例の一般的な名称を示しています。
+</span>
+
+</p><p>
+Typographical problems emerge when writing a text box in a line of text, e.g., the text box \(\boxed{\text{a man}}\) seems out of place, and the more in-line text boxes there are, the worse it gets. To remedy this, I denote types that occur in a line of text with corner symbols; e.g., I write 「a man」 instead of \(\boxed{\text{a man}}\) . 
+
+<br><span style="color:blue;">
+テキストボックスを行内に書くと、誤植の問題が発生します。例えば、テキストボックス \(\boxed{男性}\) は場違いに見え、行内テキストボックスの数が増えるほど、問題は悪化します。これを改善するために、私は行内に出現する文字を「」で示しています。例えば、 \(\boxed{男性}\) ではなく「男性」と書きます。
+</span>
 </p>
 
-<h5>2.3.1.1  Types with compound structures </h5>
+<h5>2.3.1.1  Types with compound structures <span style="color:blue;">複合構造を持つ型</span></h5>
 <p>
 Many types have compound structures, i.e., they are composed of smaller units. Examples include 
+
+<br><span style="color:blue;">
+多くの型は複合構造、つまりより小さな単位で構成されています。例としては、
+</span>
+</p>
+<center><img src="images/CT4S_fig2_9.svg"></center>
+
+<p>
 It is good practice to declare the variables in a compound type, as in the last two cases of (2.9). In other words, it is preferable to replace the first box in (2.9) with something like 
 
-========49========
-
-so that the variables (m, w) are clear. 
-Rules of good practice 2.3.1.2. A type is presented as a text box. The text in that box should 
- (i) begin with the word a or an; 
- (ii) refer to a distinction made and recognizable by the olog’s author; 
-(iii) refer to a distinction for which instances can be documented; 
-(iv) be the common name that each instance of that distinction can be called; 
-and 
- (v) declare all variables in a compound structure. 
-The first, second, third, and fourth rules ensure that the class of things represented by each box appears to the author to be a well defined set, and that the class is appropriately named. The fifth rule encourages good readability of arrows (see Section 2.3.2). 
-I do not always follow the rules of good practice throughout this book. I think of these rules being as followed “in the background,” but I have nicknamed various boxes. So 窝Steve我  may stand as a nickname for 窝a thing classified as Steve我 and 窝arginine我 as a nickname for 窝a molecule of arginine我. However, one should always be able to rename each type according to the rules of good practice. 
+<br><span style="color:blue;">
+（2.9）の最後の2つの例のように、変数を複合型で宣言するのが良い方法です。言い換えれば、（2.9）の最初のボックスを次のように置き換えるのが望ましいでしょう。
+</span>
 </p>
 
+<center><img src="images/CT4S_fig2_9_2.svg"></center>
 
-<h4>2.3.2  Aspects </h4>
 <p>
-An aspect of a thing x is a way of viewing it, a particular way in which x can be regarded or measured. For example, a woman can be regarded as a person; hence “being a person” is an aspect of a woman. A molecule has a molecular mass (say in daltons), so “having a molecular mass” is an aspect of a molecule. In other words, when it comes to ologs, the word aspect simply means function. The domain A of the function f : A  → B is the thing we are measuring, and the codomain is the set of possible answers or results of the measurement. 
-So for the arrow in (2.10), the domain is the set of women (a set with perhaps 3 billion elements); the codomain is the set of persons (a set with perhaps 6 billion elements). We can imagine drawing an arrow  from each dot in the “woman” set to a unique dot in the “person” set, just as in Figure 2.2. No woman points to two different people nor to zero people—each woman is exactly one person—so the rules for a function are satisfied. Let us now concentrate briefly on the arrow in (2.11). The domain is the set of molecules, the codomain is the set 审>0 of positive real numbers. We can imagine drawing a n arrow from each dot in the “molecule” set to a single dot in the “positive real number” set. No molecule points to two different masses, nor can a molecule have no mass: each molecule has exactly one mass. Note, however, that two different molecules can point to the same mass. 
+so that the variables (m, w) are clear. 
+
+<br><span style="color:blue;">
+変数 (m, w) が明確になるようにします。
+</span>
 </p>
 
-<h5>2.3.2.1  Invalid aspects </h5>
+<h5>Rules of good practice 2.3.1.2. <span style="color:blue;">良い実践のルール 2.3.1.2.</span></h5>
+
+<p>
+A type is presented as a text box. The text in that box should 
+
+<br><span style="color:blue;">
+型はテキストボックスとして表示されます。そのボックス内のテキストは
+</span>
+<div class="styleBullet">
+<ul><li>
+ (i) begin with the word a or an; 
+
+<br><span style="color:blue;">
+a または an という単語で始まる。(一般名詞で始まる)
+</span>
+</li><br><li>
+ (ii) refer to a distinction made and recognizable by the olog’s author; 
+
+<br><span style="color:blue;">
+olog の著者によって認識可能な区別を指します。
+</span>
+
+</li><br><li>
+(iii) refer to a distinction for which instances can be documented; 
+
+<br><span style="color:blue;">
+インスタンスを明文化できる区別を指します。
+</span>
+</li><br><li>
+(iv) be the common name that each instance of that distinction can be called; 
+
+<br><span style="color:blue;">
+その区別の各インスタンスを呼ぶことができる共通の名前であること。
+</span>
+</li><br><li>
+ (v) declare all variables in a compound structure. 
+
+<br><span style="color:blue;">
+すべての変数を複合構造で宣言します。
+</span>
+</li></ul></div>
+
+</p><p>
+The first, second, third, and fourth rules ensure that the class of things represented by each box appears to the author to be a well defined set, and that the class is appropriately named. The fifth rule encourages good readability of arrows (see Section 2.3.2). 
+
+<br><span style="color:blue;">
+第一、第二、第三、第四のルールは、各ボックスが表すもののクラスが著者にとって明確に定義された集合であること、そしてそのクラスが適切に命名されていることを保証するものです。第五のルールは、矢印の読みやすさを向上させます（セクション2.3.2を参照）。
+</span>
+
+</p><p>
+I do not always follow the rules of good practice throughout this book. I think of these rules being as followed “in the background,” but I have nicknamed various boxes. So 「Steve」  may stand as a nickname for 「a thing classified as Steve」 and 「arginine」 as a nickname for 「a molecule of arginine」. However, one should always be able to rename each type according to the rules of good practice. 
+
+<br><span style="color:blue;">
+本書全体を通して、必ずしもグッドプラクティスのルールに従っているわけではありません。これらのルールは「裏で」守られていると考えていますが、様々なボックスにニックネームを付けています。例えば、「スティーブ」は「スティーブに分類されるもの」のニックネームとして、「アルギニン」は「アルギニン分子」のニックネームとして使用できます。ただし、グッドプラクティスのルールに従って、各タイプのニックネームは常に変更可能であるべきです。
+</span>
+</p>
+
+
+<h4>2.3.2  Aspects <span style="color:blue;">アスペクト(側面)</span></h4>
+<p>
+An aspect of a thing \(x\) is a way of viewing it, a particular way in which \(x\) can be regarded or measured. For example, a woman can be regarded as a person; hence “being a person” is an aspect of a woman. A molecule has a molecular mass (say in daltons), so “having a molecular mass” is an aspect of a molecule. In other words, when it comes to ologs, the word aspect simply means function. The domain \(A\) of the function \(f: A  → B\) is the thing we are measuring, and the codomain is the set of possible answers or results of the measurement. 
+
+<br><span style="color:blue;">
+事物 \(x\) の側面とは、それを見る方法、つまり \(x\) を捉えたり測定したりする特定の方法のことです。例えば、女性は人間とみなすことができます。したがって、「人間である」ことは女性の側面です。分子には分子量（例えばダルトン）があります。したがって、「分子量を持つ」ことは分子の側面です。言い換えれば、ologsにおいて「側面」という言葉は単に関数を意味します。関数 \(f: A → B\) の定義域 \(A\) は測定対象であり、余域は測定の可能な答えまたは結果の集合です。
+</span>
+</p>
+
+<center><img src="images/CT4S_fig2_10.svg"></center>
+
+<p>
+So for the arrow in (2.10), the domain is the set of women (a set with perhaps 3 billion elements); the codomain is the set of persons (a set with perhaps 6 billion elements). We can imagine drawing an arrow  from each dot in the “woman” set to a unique dot in the “person” set, just as in Figure 2.2. No woman points to two different people nor to zero people—each woman is exactly one person—so the rules for a function are satisfied. Let us now concentrate briefly on the arrow in (2.11). The domain is the set of molecules, the codomain is the set 审>0 of positive real numbers. We can imagine drawing a n arrow from each dot in the “molecule” set to a single dot in the “positive real number” set. No molecule points to two different masses, nor can a molecule have no mass: each molecule has exactly one mass. Note, however, that two different molecules can point to the same mass. 
+
+<br><span style="color:blue;">
+したがって、(2.10) の矢印の場合、定義域は女性の集合 (おそらく 30 億の要素を持つ集合) であり、余定義域は人の集合 (おそらく 60 億の要素を持つ集合) です。図 2.2 と同様に、「女性」集合の各点から「人」集合の 1 つの点に矢印を描くことができます。女性が 2 人の異なる人を指すことも、0 人の人を指すこともありません (各女性はちょうど 1 人の人です)。したがって、関数の規則は満たされています。ここで、(2.11) の矢印に少し注目してみましょう。定義域は分子の集合であり、余定義域は正の実数の集合 Γ>0 です。「分子」集合の各点から「正の実数」集合の 1 つの点に矢印を描くことができます。2 つの異なる質量を指す分子はなく、質量を持たない分子もありません。各分子はちょうど 1 つの質量を持ちます。ただし、2 つの異なる分子が同じ質量を指す場合があることに注意してください。
+</span>
+</p>
+
+<h5>2.3.2.1  Invalid aspects <span style="color:blue;">無効なアスペクト</span></h5>
 <p>
 To be valid an aspect must be a functional relationship. Arrows may on their face appear to be aspects, but on closer inspection they are not functional (and hence not valid as aspects). 
+
+<br><span style="color:blue;">
+アスペクトが有効であるためには、関数的な関係性が必要です。矢印は一見するとアスペクトのように見えますが、よく見ると関数的ではありません（したがって、アスペクトとしては有効ではありません）。
+</span>
+
+</p><p>
 Consider the following two arrows: 
 
-========52========
+<br><span style="color:blue;">
+次の 2 つの矢印を考えてみましょう。
+</span>
+</p>
 
-A person may have no children or may have more than  one child, so the first arrow is invalid: it is not a function. Similarly, if one drew an arrow from each mechanical pencil to each piece of lead it uses, one would not have a function. Warning 2.3.2.2. The author of an olog has a worldview, some f ragment of which is captured in the olog. When person A examines the olog of person B, person A may or may not agree with it. For example, person B may have the following olog 
+<center><img src="images/CT4S_fig2_12.svg"></center>
+
+<p>
+A person may have no children or may have more than  one child, so the first arrow is invalid: it is not a function. Similarly, if one drew an arrow from each mechanical pencil to each piece of lead it uses, one would not have a function. 
+
+<br><span style="color:blue;">
+人は子供を持たない場合もあれば、複数の子供を持つ場合もあるため、最初の矢印は無効です。つまり、関数ではないのです。同様に、それぞれのシャープペンシルからそれぞれの芯へと矢印を引いたとしても、関数にはなりません。
+</span>
+</p>
+
+<h5>Warning 2.3.2.2. <span style="color:blue;">警告 2.3.2.2.</span></h5>
+
+<p>
+The author of an olog has a worldview, some f ragment of which is captured in the olog. When person A examines the olog of person B, person A may or may not agree with it. For example, person B may have the following olog 
 which associates to each marriage a man and a woman. Person A may take the position that some marriages involve two men or two  women and thus see B’s olog as wrong. Such disputes are not “problems” with either A’s olog or B’s olog; they are discrepancies between worldviews. Hence, a reader R may see an olog in this book and notice a discrepancy between R’s worldview and my own, but this is not a problem with the olog. Rules are enforced to ensure that an olog is structurally sound, not to ensure that it “correctly reflects reality,” since worldviews can differ. 
-Consider the aspect 窝an object我 →has窝a weight我. At some point in history, this would have been considered a valid function. Now we know that the same object would have a different weight on the moon than it has on earth. Thus, as worldviews change, we often need to add more information to an olog. Even the validity of 窝an object on earth我 →has窝a weight我  is questionable, e.g., if I am considered to be the same object on earth before and after I eat Thanksgiving dinner. However, to build a model we need to choose a level of granularity and try to stay within it, or the whole model would evaporate into the nothingness of truth. Any level of granularity is called a stereotype; e.g., we stereotype objects on earth by saying they each have a weight. A stereotype is a lie, more politely a conceptual simplification, that is convenient for the way we want to do business. 
+
+<br><span style="color:blue;">
+オログの著者は世界観を持っており、その世界観の一部はオログに捉えられています。AさんがBさんのオログを読んだとき、Aさんはそれに同意するかもしれませんし、しないかもしれません。例えば、Bさんは、それぞれの結婚に男性と女性を関連付けた次のようなオログを持っているとします。Aさんは、結婚の中には男性2人、女性2人に関わるものがあるという立場を取り、Bさんのオログを間違っていると考えるかもしれません。このような論争は、AさんのオログやBさんのオログのどちらかの「問題」ではなく、世界観間の食い違いです。したがって、読者Rさんがこの本のオログを見て、Rさんの世界観と私自身の世界観の食い違いに気づくかもしれませんが、これはオログの問題ではありません。ルールは、オログが構造的に健全であることを保証するために適用されるのであり、オログが「現実を正しく反映している」ことを保証するために適用されるのではありません。なぜなら、世界観は異なる場合があるからです。
+</span>
 </p>
 
+<center><img src="images/CT4S_fig2_3_2_2.svg"></center>
 
-<h5>Remark  2.3.2.3.</h5>
 <p>
- In keeping with Warning 2.3.2.2, the arrows in (2.12*) and (2.13*) may not be wrong but simply reflect that the author has an idiosyncratic worldview or vocabulary. Maybe the author believes that every mechanical pencil uses exactly one piece of lead. If this is so, then 窝a mechanical pencil我 →uses窝a piece of lead我 is indeed a valid aspect. Similarly, suppose the author meant to say that each person was once a child, or that a person has an inner child. Since every person has one and only one inner child (according to the author), the map 窝a person我 →has as inner child窝a child我 is a valid aspect. We cannot fault the olog for its author’s view, but note that we have changed the name of the label to make the intention more explicit. 
+Consider the aspect 「an object」 →has 「a weight」. At some point in history, this would have been considered a valid function. Now we know that the same object would have a different weight on the moon than it has on earth. Thus, as worldviews change, we often need to add more information to an olog. Even the validity of 「an object on earth」→ has「a weight」is questionable, e.g., if I am considered to be the same object on earth before and after I eat Thanksgiving dinner. However, to build a model we need to choose a level of granularity and try to stay within it, or the whole model would evaporate into the nothingness of truth. Any level of granularity is called a stereotype; e.g., we stereotype objects on earth by saying they each have a weight. A stereotype is a lie, more politely a conceptual simplification, that is convenient for the way we want to do business. 
+
+<br><span style="color:blue;">
+「物体」→「重さ」を持つという側面を考えてみましょう。歴史のある時点では、これは有効な機能と考えられていたでしょう。今では、同じ物体でも月面では地球上とは異なる重さを持つことがわかっています。したがって、世界観が変化すると、オログに情報を追加する必要があることがよくあります。「地球上の物体」→「重さ」を持つという妥当性でさえ、例えば、私が感謝祭のディナーを食べる前と食べた後で地球上で同じ物体であると見なされるかどうかなど、疑問があります。ただし、モデルを構築するには、粒度レベルを選択し、その範囲内にとどまるようにする必要があります。そうしないと、モデル全体が真実の虚無の中に蒸発してしまいます。粒度レベルはすべてステレオタイプと呼ばれます。例えば、地球上の物体にはそれぞれ重さがあると言ってステレオタイプ化します。ステレオタイプは嘘であり、より丁寧に言えば、ビジネスのやり方に都合の良い概念の単純化です。
+</span>
 </p>
 
-<h5>2.3.2.4  Reading aspects and paths as English phrases</h5>
+<h5>Remark  2.3.2.3. <span style="color:blue;">備考 2.3.2.3.</span></h5>
+<p>
+ In keeping with Warning 2.3.2.2, the arrows in (2.12*) and (2.13*) may not be wrong but simply reflect that the author has an idiosyncratic worldview or vocabulary. Maybe the author believes that every mechanical pencil uses exactly one piece of lead. If this is so, then 「a mechanical pencil」 →uses 「a piece of lead」 is indeed a valid aspect. Similarly, suppose the author meant to say that each person was once a child, or that a person has an inner child. Since every person has one and only one inner child (according to the author), the map 「a person」 →has as inner child「a child」 is a valid aspect. We cannot fault the olog for its author’s view, but note that we have changed the name of the label to make the intention more explicit. 
+
+<br><span style="color:blue;">
+警告2.3.2.2に則り、(2.12*)と(2.13*)の矢印は誤りではなく、著者の独特な世界観や語彙を反映しているだけかもしれません。著者は、すべてのシャープペンシルには必ず1本の鉛が使われていると考えているのかもしれません。もしそうであれば、「シャープペンシル」→「1本の芯を使う」は確かに有効なアスペクトです。同様に、著者が「人は皆、かつては子供だった」、あるいは「人は内なる子供を持っている」と言いたかったとしましょう。著者によると、すべての人には内なる子供が1人しかいないので、「人」→「内なる子供として『子供』を持つ」というマップは有効なアスペクトです。著者の見解を非難することはできませんが、意図をより明確にするためにラベル名を変更したことに注意してください。
+</span>
+</p>
+
+<h5>2.3.2.4  Reading aspects and paths as English phrases <br><span style="color:blue;">アスペクトと経路を英語のフレーズとして読み取る</span></h5>
 <p> 
-Each arrow (aspect) X →fY can be read by first reading the label on its source box X, then the label on the arrow f, and finally the label on its target box Y. For example, the arrow 
+Each arrow (aspect) \(X \overset{f}{→} Y\) can be read by first reading the label on its source box \(X\), then the label on the arrow \(f\), and finally the label on its target box \(Y\). For example, the arrow 
 is read “a book has as first author a person.” 
+
+<br><span style="color:blue;">
+それぞれの矢印（アスペクト）\(X \overset{f}{→}Y\) は、まずそのソースボックス \(X\) のラベルを読み、次に矢印 \(f\) のラベルを読み、最後にそのターゲットボックス \(Y\) のラベルを読むことで読み取ることができます。たとえば、矢印
+は「ある本には第一著者がいる」と読みます。
+</span>
 </p>
 
-<h5>Remark  2.3.2.5.</h5>
+<center><img src="images/CT4S_fig2_14.svg"></center>
+
+<h5>Remark  2.3.2.5. <span style="color:blue;">備考 2.3.2.5.</span></h5>
 <p>
- Note that the map in ( 2.14) is a valid aspect, but a similarly benign-looking map 窝a book我 →has as author窝a person我  would not be valid, because it is not functional. When creating an olog, one must be vigilant about this type of mistake because it is easy to miss, and it can corrupt the olog. 
+ Note that the map in ( 2.14) is a valid aspect, but a similarly benign-looking map 「a book」 →has as author 「a person」 would not be valid, because it is not functional. When creating an olog, one must be vigilant about this type of mistake because it is easy to miss, and it can corrupt the olog. 
+
+<br><span style="color:blue;">
+（2.14）の写像は有効なアスペクトですが、同じように無害に見える写像「a book」→「a person」は著者として「has as author」であり、これは関数型ではないため有効ではありません。ologを作成する際には、このような間違いには注意が必要です。見落としやすく、ologを壊してしまう可能性があるからです。
+</span>
+
+</p><p>
 Sometimes the label on an arrow can be shortened or dropped altogether if it is obvious from context (see Section 2.3.3). Here is a common example from the way I write ologs. 
 
-
-
-Neither arrow is readable by the preceding protocol (e.g., “a pair ( x, y), where x and y are integers x an integer” is not an English sentence), and yet i t is clear what each map means. For example, given (8, 11) in A, arrow x would yield 8 and arrow y would yield 11. The label x can be thought of as a nickname for the full name “yields as the value of x,” and similarly for y. I do not generally use the full name, so as not to clutter the olog. 
-One can also read paths through an olog by inserting the word which  (or who) after each intermediate box. For example, olog (2.16) has two paths of length 3 (counting arrows in a chain): 
-The top path is read “a child is a person, who has as parents a pair (w, m), where w is a woman and m is a man, which yields, as the value of w, a woman.” The reader should read and understand the content of the bottom path, which associates to every child a year. 
+<br><span style="color:blue;">
+文脈から明らかな場合は、矢印のラベルを短くしたり、完全に省略したりすることもできます（セクション2.3.3を参照）。以下は、私がオログを書く際によく使う例です。
+</span>
 </p>
 
-<h5>2.3.2.6  Converting nonfunctional relationships to aspects </h5>
+<center><img src="images/CT4S_fig2_15.svg"></center>
+
+<p>
+Neither arrow is readable by the preceding protocol (e.g., “a pair (\(x, y\)), where \(x\) and \(y\) are integers \(x\) an integer” is not an English sentence), and yet it is clear what each map means. For example, given (\(8, 11\)) in \(A\), arrow \(x\) would yield \(8\) and arrow \(y\) would yield \(11\). The label \(x\) can be thought of as a nickname for the full name “yields as the value of \(x\),” and similarly for \(y\). I do not generally use the full name, so as not to clutter the olog. 
+
+<br><span style="color:blue;">
+どちらの矢印も、前述のプロトコルでは読み取れません（例えば、「(\(x, y\)) のペア、\(x\) と \(y\) は整数 \(x\) は整数」という文は英語ではありません）。しかし、それぞれのマップが何を意味するかは明らかです。例えば、\(A\) に(\(8, 11\)) がある場合、矢印 \(x\) は \(8\) を、矢印 \(y\) は \(11\) を生成します。ラベル \(x\) は、「\(x\) の値として得られる」という完全な名前のニックネームと考えることができます。\(y\) についても同様です。私は通常、オログが乱雑にならないように完全な名前を使用しません。
+</span>
+
+</p><p>
+One can also read paths through an olog by inserting the word which  (or who) after each intermediate box. For example, olog (2.16) has two paths of length 3 (counting arrows in a chain): 
+
+<br><span style="color:blue;">
+olog の各中間ボックスの後に which (または who) という単語を挿入することで、olog のパスを読み取ることもできます。例えば、olog (2.16) には長さ 3 のパスが 2 つあります（連鎖内の矢印の数を数えると次のようになります）。
+</span>
+</p>
+
+<center><img src="images/CT4S_fig2_16.svg"></center>
+
+<p>
+The top path is read “a child is a person, who has as parents a pair (\(w, m\)), where \(w\) is a woman and \(m\) is a man, which yields, as the value of w, a woman.” The reader should read and understand the content of the bottom path, which associates to every child a year. 
+
+<br><span style="color:blue;">
+上のパスは「子供とは、両親が (\(w, m\)) というペアを持つ人物であり、\(w\) は女性、\(m\) は男性であり、w の値は女性となる」と解釈されます。読者は、すべての子供に 1 年ずつ関連付けられている下のパスの内容を読んで理解する必要があります。
+</span>
+</p>
+
+<h5>2.3.2.6  Converting nonfunctional relationships to aspects <br><span style="color:blue;">非関数的関係を側面に変換する</span></h5>
 <p>
 There are many relationships that are not functional, and these cannot be 
+considered aspects. Often the word has indicates a relationship—sometimes it is functional, as in 「a person」 →has 「a stomach」, and sometimes it is not, as in 「a father」→has 「a child」. Clearly, a father may have more than one child. This one is easily fixed by realizing that the arrow should go the other way: there is a function 「a child」→has 「a father」. 
 
+<br><span style="color:blue;">
+関数的ではない関係も数多く存在し、これらはアスペクトとはみなされません。「has」という単語はしばしば関係性を示します。「a person」→「a stomach」のように関数的な関係である場合もあれば、「a dad」→「a child」のように関数的でない関係である場合もあります。明らかに、父親は複数の子供を持つ可能性があります。この問題は、矢印が逆方向に向いていることに気づけば簡単に修正できます。つまり、「a child」→「a dad」という関数があるということです。
+</span>
+</p><p>
+What about 「a person」 →owns 「a car」. Again, a person may own no cars or more than one car, but this time a car can be owned by more than one person too. A quick fix would be to replace it by 「a person」→owns 「a set of cars」. This is okay, but the relationship between 「a car」and 「a set of cars」then becomes an issue to deal with later. There is another way to indicate such nonfunctional relationships. In this case it would look like this: 
 
-considered aspects. Often the word has indicates a relationship—sometimes it is functional, as in 窝a person我 →has窝a stomach我, and sometimes it is not, as in 窝a father我 →has窝a child我. Clearly, a father may have more than one child. This one is easily fixed by realizing that the arrow should go the other way: there is a function 窝a child我 →has窝a father我. 
-What about 窝a person我 →owns窝a car我. Again, a person may own no cars or more than one car, but this time a car can be owned by more than one person too. A quick fix would be to replace it by 窝a person我 →owns窝a set of cars我. This is okay, but the relationship between 窝a car我 and 窝a set of cars我 then becomes an issue to deal with later. There is another way to indicate such nonfunctional relationships. In this case it would look like this: 
+<br><span style="color:blue;">
+「a person」→「a car」を所有している場合はどうでしょうか。この場合も、1人の人が車を所有していない、あるいは複数台所有している可能性がありますが、今回は1台の車が複数の人に所有されている場合もあります。手っ取り早い解決策としては、「a person」→「a set of cars」を所有している、と置き換えることができます。これは問題ありませんが、「a car」と「a set of cars」の関係は後で対処する問題になります。このような非機能的関係を示す別の方法があります。この場合、次のように記述します。
+</span>
+
+</p>
+
+<center><img src="images/CT4S_fig2_3_2_6.svg"></center>
+
+<p>
 This setup will ensure that everything is properly organized. In general, relationships can involve more than two types, and in olog form looks like this: 
 
-========56========
+<br><span style="color:blue;">
+この設定により、すべてが適切に整理されます。一般的に、関係は2つ以上のタイプを含む場合があり、オログ形式では次のようになります。
+</span>
+</p>
 
+<center><img src="images/CT4S_fig2_3_2_6_2.svg"></center>
+
+<p>
 For example, 
-Exercise 2.3.2.7. 
-On page 25, the arrow in (2.12*) was indicated as an invalid aspect: 
 
-========57========
+<br><span style="color:blue;">
+例えば
+</span>
+</p>
 
-Create a valid olog that captures the parent-child relationship; your olog should still have boxes 窝a person我 and 窝a child我 but may have an additional box. Rules of good practice 2.3.2.8. An aspect is presented as a labeled arrow poi nting from a source box to a target box. The arrow label text should 
+<center><img src="images/CT4S_fig2_3_2_6_3.svg"></center>
+
+<p>
+<h5>Exercise 2.3.2.7. <span style="color:blue;">演習 2.3.2.7.</span></h5>
+<p>
+The arrow in (2.12*) was indicated as an invalid aspect: 
+
+<br><span style="color:blue;">
+（2.12*）の矢印は無効なアスペクトとして示されました。
+</span>
+</p>
+
+<center><img src="images/CT4S_fig2_3_2_6_4.svg"></center>
+
+<p>
+Create a valid olog that captures the parent-child relationship; your olog should still have boxes 「a person」 and 「a child」 but may have an additional box. 
+
+<br><span style="color:blue;">
+親子関係を表す有効なオログを作成します。オログには「人」と「子」のボックスがまだ含まれますが、追加のボックスが含まれる場合があります。
+</span>
+</p>
+
+<h5>Rules of good practice 2.3.2.8. <span style="color:blue;">良い実践のルール 2.3.2.8.</span></h5>
+
+<p>
+ An aspect is presented as a labeled arrow poi nting from a source box to a target box. The arrow label text should 
+
+<br><span style="color:blue;">
+アスペクトは、ソースボックスからターゲットボックスを指すラベル付き矢印として表示されます。矢印のラベルテキストは
+</span>
+<div class="styleBullet">
+<ul><li>
   (i) begin with a verb; 
+
+<br><span style="color:blue;">
+動詞で始まる;
+</span>
+</li><br><li>
  (ii) yield an English sentence, when the source b ox text followed by the arrow 
 text followed by the target box text is read; 
+
+<br><span style="color:blue;">
+ソースボックスのテキスト、矢印のテキスト、ターゲットボックスのテキストの順に読み取ると、英語の文が生成されます。
+</span>
+</li><br><li>
  (iii) refer to a functional relationship: each ins tance of the source type should 
 give rise to a specific instance of the target type; 
-(iv) constitute a useful description of that functional relationship. 
+
+<br><span style="color:blue;">
+関数的な関係を参照します。ソースタイプの各インスタンスは、ターゲットタイプの特定のインスタンスを生成する必要があります。
+</span>
+</li><br><li>
+(iv) constitute a useful description of that functional relationship.
+
+<br><span style="color:blue;">
+その関数的関係の有用な説明を構成します。
+</span>
+</li></ul></div> 
 </p>
 
-<h4>2.3.3  Facts </h4>
+<h4>2.3.3  Facts <span style="color:blue;">ファクト</span></h4>
 <p>
 In this section I discuss facts, by which I mean path equivalences in an olog. It is the notion of path equivalences that makes category theory so powerful. 
+
+<br><span style="color:blue;">
+この節では、事実、つまりオログにおけるパス同値性について論じます。パス同値性という概念こそが、圏論を非常に強力なものにしているのです。
+</span>
+
+</p><p>
 A path in an olog is a head-to-tail sequence of arrows. T hat is, any path starts at some box B0, then follows an arrow emanating from B0  (moving in the appropriate direction), at which point it lands at another box B1, then follows any arrow emanating from B1, and so on, eventually landing at a box Bn and stopping there. The number of arrows is the length of the path. So a path of length 1 is just an arrow, and a path of length 0 is just a box. We call B0 the source and Bn  the target of the path. 
-Given an olog, its author may want to declare that two paths are equivalent. For example, consider the two paths from A to C in the olog 
-We know as English speakers that a woman parent is called a mother, so these two paths A  → C should be equivalent. A mathematical way to say th is is that the triangle in olog (2.17) commutes. That is, path equivalences are simply commutative diagrams, as in Section 2.2. In the preceding example we concisely say “a woman parent is equivalent to a mother.” We declare this by defining the diagonal map in (2.17) to be the composition of the horizontal map and the vertical map. 
-I generally prefer to indicate a commutative diagram by drawing a check mark, 捌, in the region bounded by the two paths, as in olog (2.17). Sometimes, however, one cannot do this unambiguously on the two-dimensional page. In such a case I indicate the commutative diagram (fact) by writing an equation. For example, to say that the diagram 
 
+<br><span style="color:blue;">
+オログ内のパスは、矢印の頭から尾までの列です。つまり、どのパスもボックス B0 から始まり、B0 から発せられる矢印に沿って（適切な方向に）進み、別のボックス B1 に到達します。さらに B1 から発せられる矢印に沿って進み、これを繰り返して、最終的にボックス Bn に到達してそこで停止します。矢印の数はパスの長さです。つまり、長さ 1 のパスは単なる矢印であり、長さ 0 のパスは単なるボックスです。B0 をパスのソース、Bn をパスのターゲットと呼びます。
+</span>
 
+</p><p>
+Given an olog, its author may want to declare that two paths are equivalent. For example, consider the two paths from A to C in the olog
 
-commutes, we could either draw a check mark inside the square or write the equation 
-A[f,g]狓A[h,i] 
-above it.6 Either way, it means that starting from A, “doing f, then g” is equivalent to “doing h, then i.” 
-Here is another example: 
-Note how this diagram gives us the established terminology for the various ways in which DNA, RNA, and protein are related in this context. 
+<br><span style="color:blue;">
+オログが与えられた場合、その作成者は 2 つのパスが同等であると宣言したい場合がある。例えば、オログにおけるAからCへの2つのパスを考えてみよう。
+</span>
 </p>
 
-<h5>Exercise 2.3.3.1. </h5>
+<center><img src="images/CT4S_fig2_17.svg"></center>
+
+<p>
+We know as English speakers that a woman parent is called a mother, so these two paths A  → C should be equivalent. A mathematical way to say th is is that the triangle in olog (2.17) commutes. That is, path equivalences are simply commutative diagrams, as in Section 2.2. In the preceding example we concisely say “a woman parent is equivalent to a mother.” We declare this by defining the diagonal map in (2.17) to be the composition of the horizontal map and the vertical map. 
+
+<br><span style="color:blue;">
+英語圏の私たちは、女性の親は「母」と呼ばれることを知っています。したがって、これら2つのパスA → Cは同値であるはずです。数学的に言えば、olog (2.17) の三角形は可換です。つまり、パスの同値性は、セクション2.2で述べたように、単に可換図式です。前の例では、「女性の親は母親と同値である」と簡潔に述べています。これは、(2.17) の対角線写像を水平写像と垂直写像の合成として定義することで宣言しています。
+</span>
+
+</p><p>
+I generally prefer to indicate a commutative diagram by drawing a check mark, ✔, in the region bounded by the two paths, as in olog (2.17). Sometimes, however, one cannot do this unambiguously on the two-dimensional page. In such a case I indicate the commutative diagram (fact) by writing an equation. For example, to say that the diagram commutes, we could either draw a check mark inside the square or write the equation 
+
+<br><span style="color:blue;">
+私は通常、olog (2.17) のように、2つのパスで囲まれた領域にチェックマーク ✔ を描くことで可換図を示すことを好みます。しかし、2次元の紙面ではこれを一義的に行うことができない場合もあります。そのような場合は、可換図（事実）を等式で示します。例えば、図が可換であることを示すには、四角形の中にチェックマークを描くか、等式を書きます。
+</span>
+</p>
+
+<center><img src="images/CT4S_fig2_2_1_1_2.svg"></center>
+
+<p>
+\[
+A[f,g] \simeq A[h,i]
+\]
+ 
+above it.<sup>6</sup> Either way, it means that starting from \(A\), “doing \(f\), then \(g\)” is equivalent to “doing \(h\), then \(i\).” 
+
+<br><span style="color:blue;">
+どちらにしても、\(A\) から始めて「\(f\) を実行してから \(g\) を実行する」ことは、「\(h\) を実行してから \(i\) を実行する」ことと同じであることを意味します。
+</span>
+
+</p><p style="padding-left: 4em;">
+<sup>6</sup>
+We defined function composition in Section 2.1.2, but here we are using a
+different notation. There we used classical order, and our path equivalence would
+be written \(g \circ f = i \circ h\). As discussed in Remark 2.1.2.11, category theorists and
+others often prefer the diagrammatic order for writing compositions, which is \(f; g = h; i\). For ologs, we roughly follow the latter because it makes for better English sentences, and for the same reason, we add the source object to the equation,
+writing \(A[f,g] \simeq A[h,i]\).
+
+<br><span style="color:blue;">
+2.1.2節で関数合成を定義しましたが、ここでは異なる表記法を用います。そこでは古典的な順序を用い、パス同値は
+\(g \circ f = i \circ h\) と書きます。注2.1.2.11で述べたように、圏論者などは、合成の表記に図式的な順序、つまり \(f; g = h; i\) を好むことが多いです。ologsでは、英語の文章がより見やすくなるため、概ね後者に従います。また、同様の理由で、方程式にソースオブジェクトを追加し、
+\(A[f,g] \simeq A[h,i]\) と書きます。
+</span>
+</p>
+
+<p>
+Here is another example: 
+
+<br><span style="color:blue;">
+次に別の例を示します。
+</span>
+
+</p>
+
+<center><img src="images/CT4S_fig2_3_3.svg"></center>
+
+<p>
+Note how this diagram gives us the established terminology for the various ways in which DNA, RNA, and protein are related in this context. 
+
+<br><span style="color:blue;">
+この図では、この文脈において DNA、RNA、タンパク質がさまざまな方法で関連していることを表す確立された用語が示されていることに注目してください。
+</span>
+</p>
+
+<h5>Exercise 2.3.3.1. 演習 2.3.3.1.</h5>
 <p>
 Create an olog for human nuclear biological families that includes the concepts of person, man, woman, parent, father, mother, and child. Make sure to label all the arrows and that each arrow indicates a valid aspect in the sense of Section 2.3.2.1. Indicate with check marks (捌) the diagrams that are intended to commute. If the 2-dimensionality of the page prevents a check mark from being unambiguous, indicate the intended commutativity with an equation. 
+
+<br><span style="color:blue;">
+人、男性、女性、親、父、母、子の概念を含む、ヒト核生物学的家族の図表を作成してください。すべての矢印にラベルを付け、各矢印がセクション2.3.2.1の意味で有効なアスペクトを示していることを確認してください。交換可能な図にはチェックマーク（捌）を付けてください。ページが2次元であるため、チェックマークを付けても明確に区別できない場合は、意図した交換性を式で示してください。
+</span>
 </p>
 
-<h5>Solution 2.3.3.1. </h5>
+<h5>Solution 2.3.3.1. <span style="color:blue;">解 2.3.3.1.</span></h5>
+
+<center><img src="images/CT4S_fig2_3_3_1.svg"></center>
+
 <p>
-
-
-
 Note that neither of the two triangles from child to person commute. To say that they did commute would be to say that “a child and its mother are the same person” and that “a child and its father are the same person.” 
+
+<br><span style="color:blue;">
+子どもから人へと繋がる2つの三角形はどちらも可換ではないことに注意してください。可換であるとすれば、「子どもとその母親は同一人物である」と「子どもとその父親は同一人物である」ということになります。
+</span>
 </p>
 
-<h5>Example 2.3.3.2 (Noncommuting diagram).</h5>
+<h5>Example 2.3.3.2 (Noncommuting diagram) 例2.3.3.2（非可換図）</h5>
 <p>
- In my conception of t he world, the following diagram does not commute: 
-The noncommutativity of diagram (2.18) does not imply that no person lives in the same city as his or her father. Rather it implies that it is not the case that every person lives in the same city as his or her father. 
+ In my conception of the world, the following diagram does not commute:
+
+<br><span style="color:blue;">
+私の世界観では、次の図は可換ではありません。
+</span>
 </p>
 
-<h5>Exercise 2.3.3.3. </h5>
+<center><img src="images/CT4S_fig2_3_3_2.svg"></center>
+
+<p>
+The noncommutativity of diagram (2.18) does not imply that no person lives in the same city as his or her father. Rather it implies that it is not the case that every person lives in the same city as his or her father. 
+
+<br><span style="color:blue;">
+図(2.18)の非可換性は、誰も父親と同じ都市に住んでいないことを意味するのではなく、むしろ、すべての人が父親と同じ都市に住んでいるわけではないことを意味する。
+</span>
+</p>
+
+<h5>Exercise 2.3.3.3. <span style="color:blue;">演習 2.3.3.3.</span></h5>
 <p>
 Create an olog about a scientific subject, preferably one you think about often. The olog should have at least five boxes, five arrows, and one commutative diagram. 
+
+<br><span style="color:blue;">
+科学的なテーマ、できればよく考えるテーマについて、オログを作成してください。オログには、少なくとも 5 つのボックス、5 つの矢印、そして 1 つの交換法則図を含める必要があります。
+</span>
 </p>
 
-<h5>2.3.3.4  A formula for writing facts as English </h5>
+<h5>2.3.3.4  A formula for writing facts as English <span style="color:blue;">事実を英語で書くための公式</span></h5>
 <p>
-Every fact consists of two paths, say, P and Q, that are to be declared equivalent. The paths P and Q will necessarily have the same source, say, s, and target, say, t, but their lengths may be different, say, m  and n  respectively. 
-7 
- We draw these paths as 
-P:•a0=s →f1•a1 →f2•a2 →f3 →fm−1•am 
-−1 →fm•am=tQ:•b0=s →g1•b1 →g2•b2 →g3 →gn−1•bn 
-−1 →gn•bn=t        (2.19) 
-Every part ℓ of an olog (i.e., every box and every arrow) has a n associated English phrase, which we write as 蜵蜵ℓ蜶蜶. Using a dummy variable x, we can convert a fact into English too. The following general formula may be a bit difficult to understand (see Example 2.3.3.5). The fact P 狓 Q from ( 2.19) can be Englished as follows: 
-Given x, 蜵蜵s蜶蜶  consider the following.We know that x is 蜵蜵s蜶蜶,which 蜵蜵f1蜶蜶蜵蜵a1蜶蜶, which 蜵蜵f2蜶蜶 蜵蜵a2蜶蜶, which … 蜵蜵fm−1蜶蜶蜵蜵am−1蜶蜶, which 蜵蜵fm蜶蜶 蜵蜵t蜶蜶,that we call P(x).We also know that x is 蜵蜵s蜶蜶,which 蜵蜵g1蜶蜶 蜵蜵b1蜶蜶, which 蜵蜵g2蜶蜶蜵蜵b2蜶蜶, which … 蜵蜵gn−1蜶蜶蜵蜵bn −1蜶蜶, which 蜵蜵gn蜶蜶蜵蜵t蜶蜶,that we call Q(x).Fact: Whenever x is 蜵蜵s蜶蜶, we will have P(x)=Q(x).  (2.20) 
+Every fact consists of two paths, say, P and Q, that are to be declared equivalent. The paths P and Q will necessarily have the same source, say, s, and target, say, t, but their lengths may be different, say, m  and n  respectively.<sup>7</sup> 
+
+<br><span style="color:blue;">
+あらゆる事実は、例えば \(P\) と \(Q\) といった 2 つのパスから成り、それらは同等であると宣言されます。パス \(P\) と \(Q\) は、必然的に同じソース（例えば \(s\)）とターゲット（例えば \(t\)）を持ちますが、長さはそれぞれ \(m\)と \(n\) のように異なる場合があります。<sup>7</sup>
+</span>
+
+</p><p style="padding-left: 4em;">
+<sup>7</sup> 
+If the source equals the target, \(s = t\), then it is possible to have \(m = 0\) or \(n = 0\), and the ideas that follow still make sense.
+
+<br><span style="color:blue;">
+ソースがターゲットと等しい場合、\(s = t\)、\(m = 0\) または \(n = 0\) になる可能性があり、それに続くアイデアは依然として意味を成します。
+</span>
+
+</p><p>
+ 
+We draw these paths as 
+
+<br><span style="color:blue;">
+これらのパスを次のように描きます
+</span>
+
+\[
+\begin{align}
+&P: \overset{a_0=s}{\text{●}}\overset{f_1}{\longrightarrow}
+\overset{a_1}{\text{●}}\overset{f_2}{\longrightarrow}
+\overset{a_2}{\text{●}}\overset{f_3}{\longrightarrow}
+\cdots
+\overset{f_{m-1}}{\longrightarrow}\overset{a_{m-1}}{\text{●}}
+\overset{f_m}{\longrightarrow}\overset{a_m=t}{\text{●}} \\
+\\
+&Q: \overset{b_0=s}{\text{●}}\overset{g_1}{\longrightarrow}
+\overset{b_1}{\text{●}}\overset{g_2}{\longrightarrow}
+\overset{b_2}{\text{●}}\overset{g_3}{\longrightarrow}
+\cdots
+\overset{g_{m-1}}{\longrightarrow}\overset{b_{n-1}}{\text{●}}
+\overset{g_m}{\longrightarrow}\overset{b_n=t}{\text{●}} 
+\end{align}
+\tag{2.19}
+\]
+
+Every part \(ℓ\) of an olog (i.e., every box and every arrow) has a \(n\) associated English phrase, which we write as \(\langle\langle ℓ \rangle\rangle\). Using a dummy variable x, we can convert a fact into English too. The following general formula may be a bit difficult to understand (see Example 2.3.3.5). The fact \(P \simeq  Q\) from (2.19) can be Englished as follows: 
+
+<br><span style="color:blue;">
+オログの各部分 \(ℓ\)（つまり、すべてのボックスとすべての矢印）には、\(n\)個の英語フレーズが関連付けられています。これは \(\langle\langle ℓ \rangle\rangle\) と書きます。ダミー変数 \(x\) を用いることで、事実を英語に変換することもできます。以下の一般式は少し分かりにくいかもしれません（例2.3.3.5を参照）。(2.19)の事実 \(P \simeq Q\) は、次のように英語化できます。
+</span>
+
+</p><p>
+Given \(x\), \(\langle\langle s \rangle\rangle\) consider the following.We know
+that \(x\) is \(\langle\langle s \rangle\rangle\),which \(\langle\langle f_1 \rangle\rangle \langle\langle a_1 \rangle\rangle\), which \(\langle\langle f_2 \rangle\rangle\)
+\(\langle\langle a_2 \rangle\rangle\), which … \(\langle\langle f_{m−1}\rangle\rangle \langle\langle a_{m−1}\rangle\rangle\), which \(\langle\langle f_m \rangle\rangle \langle\langle t \rangle\rangle\),that we call \(P(x)\).We also know that \(x\) is \(\langle\langle s \rangle\rangle\),which \(\langle\langle g_1 \rangle\rangle \langle\langle b_1 \rangle\rangle\), which \(\langle\langle g_2 \rangle\rangle \langle\langle b_2 \rangle\rangle\), which … \(\langle\langle g_{n−1} \rangle\rangle \langle\langle b_{n−1} \rangle\rangle\), which \(\langle\langle g_n \rangle\rangle \langle\langle t \rangle\rangle\),that we
+call \(Q(x)\).Fact: Whenever \(x\) is \(\langle\langle s \rangle\rangle\), we will have \(P(x)=Q(x)\). (2.20)
+
 </p>
 
-<h5>Example 2.3.3.5. Consider the olog</h5>
+<h5>Example 2.3.3.5. <span style="color:blue;">例 2.3.3.5.</span></h5>
+<p>
+Consider the olog
+
+<br><span style="color:blue;">
+以下のオログを考えてみよう。
+</span>
+</p>
+
+<center><img src="images/CT4S_fig2_3_3_5.svg"></center>
+
 <p> 
-To put the fact that diagram (2.21) commutes into English, we first English the two paths: F = “a person has an address which is in a city” and G = “a person lives in a city.” The source of both is s = “a person” and the target of both is t = “a city.” Write: 
+To put the fact that diagram (2.21) commutes into English, we first English the two paths: \(F\) = “a person has an address which is in a city” and \(G\) = “a person lives in a city.” The source of both is \(s\) = “a person” and the target of both is \(t\) = “a city.” Write: 
 
-========63========
+<br><span style="color:blue;">
+図(2.21)が可換であるという事実を英語にするには、まず2つのパスを英語に書きます。\(F\) =「ある人物が都市に住所を持っている」、\(G\) =「ある人物が都市に住んでいる」です。どちらのパスもソースは\(s\) =「人物」、ターゲットは\(t\) =「都市」です。次のように書きます。
+</span>
 
-Given x, a person, consider the following. 
-We know that x is a person, 
-who has an address, which is in a city, 
-that we call P(x). 
-We also know that x is a person, 
-who lives in a city 
-that we call Q(x). 
-Fact: Whenever x is a person, we will have P(x) = Q(x). 
+</p><p style="padding-left: 4em;">
+Given \(x\), a person, consider the following. <br>
+We know that \(x\) is a person, <br>
+who has an address, which is in a city, <br>
+that we call \(P(x)\). <br>
+We also know that \(x\) is a person, <br>
+who lives in a city <br>
+that we call \(Q(x)\). <br>
+Fact: Whenever \(x\) is a person, we will have \(P(x) = Q(x)\). <br>
+
+<br><span style="color:blue;">
+\(x\) が人であると仮定して、次のことを考えてみましょう。<br>
+\(x\) は人であり、<br>
+住所は都市にあり、<br>
+これを \(P(x)\) と呼びます。<br>
+また、\(x\) は人であり、<br>
+都市に住んでいて、<br>
+これを \(Q(x)\) と呼びます。<br>
+事実: \(x\) が人である場合は常に、\(P(x) = Q(x)\) となります。<br>
+</span>
+
+</p><p>
 More concisely, one reads olog 2.21 as 
-A person x has an address, which is in a city, and this is th e city x lives in. 
-Exercise 2.3.3.6. 
+
+<br><span style="color:blue;">
+より簡潔に言えば、オログ 2.21 は次のように解釈できる。
+</span>
+
+</p><p style="padding-left: 4em;">
+A person \(x\) has an address, which is in a city, and this is the city \(x\) lives in.
+
+<br><span style="color:blue;">
+ある人物 \(x\) には都市内の住所があり、それが \(x\) が住んでいる都市です。
+</span>
+</p>
+ 
+<h5>Exercise 2.3.3.6. <span style="color:blue;">演習 2.3.3.6.</span></h5>
+<p>
 This olog was taken from Spivak [38]. 
-It says that a landline phone is physically located in the region to which its phone number is assigned. Translate this fact into English using the formula from (2.20). 
+
+<br><span style="color:blue;">
+このオログは Spivak[38] からの引用です。
+</span>
 </p>
 
-<h5>Exercise 2.3.3.7. </h5>
+<center><img src="images/CT4S_fig2_3_3_6.svg"></center>
+
 <p>
-In olog (2.22), suppose that the box 窝an operational landline phone我  is replaced with the box 窝an operational cell phone我. Would the diagram still commute? 
+It says that a landline phone is physically located in the region to which its phone number is assigned. Translate this fact into English using the formula from (2.20). 
+
+<br><span style="color:blue;">
+固定電話は、その電話番号が割り当てられている地域に物理的に設置されていると書かれています。この事実を（2.20）の式を使って英語に訳しなさい。
+</span>
+</p>
+
+<h5>Exercise 2.3.3.7. <span style="color:blue;">演習 2.3.3.7.</span></h5>
+<p>
+In olog (2.22), suppose that the box 「an operational landline phone」 is replaced with the box 「an operational cell phone」. Would the diagram still commute? 
+
+<br><span style="color:blue;">
+オログ (2.22)において、「使える固定電話」という箱を「使える携帯電話」という箱に置き換えたと仮定します。この図は依然として可換でしょうか？
+</span>
 </p>
 
 <h5>2.3.3.8  Images </h5>
 <p>
-This section discusses a specific kind of fact, generated by any aspect. Recall that every function has an image (2.3), meaning the subset of elements in the codomain that are “hit” by the function. For example, the function f  : 生  → 生 given by f(x) = 2 * x: 生  → 生 has as image the set of all even numbers. 
+This section discusses a specific kind of fact, generated by any aspect. Recall that every function has an image (2.3), meaning the subset of elements in the codomain that are “hit” by the function. For example, the function \(f: \mathbb{Z}→ \mathbb{Z}\) given by \(f(x) = 2 * x: \mathbb{Z} → \mathbb{Z}\) has as image the set of all even numbers. 
+
+<br><span style="color:blue;">
+この節では、任意の側面によって生成される特定の種類の事実について議論します。すべての関数には像(2.3)があることを思い出してください。像とは、関数が「ヒット」する余地のある、終域の元の部分集合のことです。例えば、\(f(x) = 2 * x: \mathbb{Z} → \mathbb{Z}\) で与えられる関数 \(f: \mathbb{Z}→ \mathbb{Z}\) は、すべての偶数からなる集合を像として持ちます。
+</span>
+
+</p><p>
 Similarly, the set of mothers arises as the image of  the “has as mother” function: 
-Exercise 2.3.3.9. 
+
+<br><span style="color:blue;">
+同様に、母親の集合は「母親である」という関数の像として生じます。
+</span>
+</p>
+
+<center><img src="images/CT4S_fig2_3_3_8.svg"></center>
+
+<h5>Exercise 2.3.3.9.  <span style="color:blue;">演習 2.3.3.9.</span>
+</h5>
+
+<p>
 For each of the following types, write a function for which it is the image, or write “not clearly useful as an image type.” 
-a. 窝a book我 
-b. 窝a material that has been fabricated by a working process of type T 我 c. 窝a bicycle owner我 
-d. 窝a child我 
-e. 窝a used book我 
-f. 窝a primary residence我 
-__________________ 
 
-1Note that the symbol x荒, read “x-prime,” has nothing to do with calculus or derivatives. It is simply notation used to name a symbol that is somehow like x. This suggestion of kinship between x and x荒 is meant only as an aid for human cognition, not as part of the mathematics. 
+<br><span style="color:blue;">
+以下の各タイプについて、その画像がどのような機能を果たすのか、または「画像タイプとして明らかに役に立たない」と記述してください。
+</span>
 
-========65========
+<div class="styleBullet">
+<ul><li>
 
+a. 「a book」
 
+<br><span style="color:blue;">
+「本」
+</span>
 
-4Canonical, as used here, means something like “best 
- choice,” a choice that stands out as the only reasonable one. 
-5Commutative diagrams are precisely defined in Section 6.1.2. 
-6We defined function composition in Section 2.1.2, but here we are using a different notation. There we used classical order, and our path equivalence would be written g 秤 f = i 秤 h. As discussed in Remark 2.1.2.11, category theorists and others often prefer the diagrammatic order for writing compositions, which is f; g = h; i. For ologs, we roughly follow the latter because it makes for better English sentences, and for the same reason, we add the source object to the equation, writing A[f, g] 狓 
-A[h, i]. 
-7If the source equals the target, s 
- = t, then it is possible to have m = 0 or n = 0, and the ideas that follow still make sense. 
+</li><br><li> 
+b. 「a material that has been fabricated by a working process of type T」
 
-<br><span style="color:blue;"> </span></p>
+<br><span style="color:blue;">
+「T型加工工程によって製造された材料」
+</span>
+
+</li><br><li> 
+c. 「a bicycle owner」 
+
+<br><span style="color:blue;">
+「自転車の所有者」
+</span>
+
+</li><br><li> 
+d. 「a child」
+
+<br><span style="color:blue;">
+「子ども」
+</span> 
+
+</li><br><li> 
+e. 「a used book」
+
+<br><span style="color:blue;">
+「古本」
+</span>
+
+</li><br><li> 
+f. 「a primary residence」 
+
+<br><span style="color:blue;">
+「主な居住地」
+</span>
+
+</li>
+</ul></div>
+</p>
+
   </body>
 </html>

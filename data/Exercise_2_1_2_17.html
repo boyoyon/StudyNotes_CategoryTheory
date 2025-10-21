@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Exercise 2.1.2.17.</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 20px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>Category Theory for the Sciences<br><span style="color:blue;">科学のための圏論</span></center></h1>
+
+<h5>Exercise 2.1.2.17. <span style="color:blue;"> 演習 2.1.2.17.</span></h5>
+<p>
+Let \(n \in \mathbb{N}\) be a natural number, and let \(X\) be a set with exactly \(n\) elements.
+
+<br><span style="color:blue;"> 
+\(n \in \mathbb{N}\) を自然数とし、\(X\) をちょうど \(n\) 個の要素を持つ集合とします。
+</span>
+<div class="styleBullet">
+<ul><li>
+a. How many isomorphisms are there from \(X\) to itself ? 
+
+<br><span style="color:blue;"> 
+\(X\) からそれ自身への同型はいくつありますか?
+</span>
+
+<br><br>
+
+<span style="color:purple;">
+●解答<br>
+<br>
+<ul>
+<li>
+1)　\(X\) の 1番目の要素の行き先として、\(X\) の \(n\) 個の要素からいずれか 1つを選ぶことができる。
+
+</li><li>
+2)　\(X\) の 2番目の要素の行き先として、残った \(n-1\) 個の要素からいずれか 1つを選ぶことができる。
+
+</li><li>
+：
+</li><li>
+
+n)　これを \(n\) 番目の要素まで繰り返す。 
+
+</li></ul>
+<br>
+したがって、写像の総数は \(n\times (n-1)\times \dots \times 1=n!\) となる。 
+</span>
+
+</li><br><li>
+b. Does your formula from part (a) hold when \(n = 0\) ?
+
+<br><span style="color:blue;"> 
+(a) の式は \(n = 0\) のときにも成り立ちますか?
+</span>
+<br>
+<br><span style="color:purple;"> 
+●解答 ･･･ Google AIモードに教えてもらった<br>
+<br>
+\(n=0\) のとき、\(X\) は要素を持たない空集合 \(\varnothing \) です。<br>
+・空集合から空集合への写像は、定義域が空であるため、ただ一つ存在します。<br>
+　( ... → ... のみ)<br>
+・この唯一の写像は、全単射であり、恒等写像とみなせます。 <br>
+　(写像されない要素が存在しない (元々要素が存在しないので･･･) ので全単射)<br>
+　( ... を ... への写像するので恒等写像)<br>
+<br>
+一方、\(0!\) の値は \(1\) と定義されています。<br>
+したがって、\(n=0\) の場合も、同型写像の数は \(0!=1\) となり、一般式と一致します。
+</span>
+</li>
+</ul></div> 
+</p>
+
+    </body>
+</html>
