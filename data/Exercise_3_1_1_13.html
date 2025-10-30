@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Exercise 3.1.1.13.</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 20px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>Category Theory for the Sciences<br><span style="color:blue;">科学のための圏論</span></center></h1>
+
+<h5>Exercise 3.1.1.13. <span style="color:blue;">演習 3.1.1.13.</span> </h5>
+<p> 
+For every set \(A\) there is some relationship between the following three sets:<br>\(HomSet(A,X),\quad  HomSet(A,Y)\) and \(HomSet(A,X×Y)\).<br> 
+What is it? 
+
+<br><span style="color:blue;">
+任意の集合 \(A\) に対して、以下の3つの集合の間には何らかの関係が存在します。<br> \(HomSet(A,X),\quad  HomSet(A,Y)\) および \(HomSet(A,X×Y)\)。<br>
+それはどのような関係でしょうか？
+</span> 
+</p><p>
+Hint: This problem is somewhat recursive in that you will use products in your formula. 
+
+<br><span style="color:blue;">
+ヒント：この問題は、数式の中に積の計算が含まれるという点で、ある種の再帰的な性質を持っています。
+</span> 
+</p>
+
+<p>
+<span style="color:purple;">
+●解答<br>
+</span>
+<br>
+There is an isomorphism
+
+<br><span style="color:purple;">
+同型性がある
+</span>
+
+\[
+Hom_{Set}(A,X×Y)\overset{\simeq}{\longrightarrow}Hom_{Set}(A,X)×Home_{Set}(A,Y)
+\]
+
+In an attempt to make this more concrete, suppose we have a height function from
+the set \(P\) of people to the set Z of integers and a name function from the set of people
+to the set \(S\) of strings. That is, we have an element of \(Hom_{Set}(P, \mathbb{Z})\) and an element of \(Hom_{Set}(P, S)\). From this we get an element of \(Hom_{Set}(P, \mathbb{Z})×Hom_{Set}(P, S)\). That is,
+the two pieces of information combine into a single piece of information if we pack the
+height and the name into a single datum, i.e., an element of \(\mathbb{Z}×S\).<br>
+<br><span style="color:purple;">
+これをより具体的に説明するために、人々の集合 \(P\) から整数の集合 \(\mathbb{Z}\) への身長関数と、人々の集合から文字列の集合 \(S\) への名前関数があると仮定しましょう。つまり、\(Hom_{Set}(P, \mathbb{Z})\) の要素と \(Hom_{Set}(P, S)\) の要素があるということです。これから、\(Hom_{Set}(P, \mathbb{Z})×Hom_{Set}(P, S)\) の要素が得られます。つまり、身長と名前という2つの情報を1つのデータ、すなわち \(\mathbb{Z}×S\) の要素としてまとめれば、これらの情報は1つの情報に統合されるということです。
+</span>
+</p>
+
+
+
+
+
+   </body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Exercise 3.1.1.8.</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 20px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>Category Theory for the Sciences<br><span style="color:blue;">科学のための圏論</span></center></h1>
+
+<h5>Exercise 3.1.1.8. <span style="color:blue;">演習 3.1.1.8.</span> </h5>
+
+<p>
+Let \(\mathbb{Z}\) denote the set of integers, and let \(+: \mathbb{Z}×\mathbb{Z}→\mathbb{Z}\) denote the addition function and \(･: \mathbb{Z}× \mathbb{Z}→\mathbb{Z}\) denote the multiplication function. Which of the following diagrams commute? 
+
+<br><span style="color:blue;">
+\(\mathbb{Z}\) を整数の集合とし、\(+: \mathbb{Z}×\mathbb{Z}→\mathbb{Z}\) を加算関数、\(･: \mathbb{Z}× \mathbb{Z}→\mathbb{Z}\) を乗算関数とします。次の図のうち、可換なのはどれですか？
+</span> 
+</p>
+
+<center><img src="images/CT4S_fig3_1_1_8.svg"></center>
+
+<p>
+<span style="color:purple;">
+●解答<br>
+</span>
+<div class="styleBullet">
+<ul><li>
+a. This diagram does not commute because \(a･b+a･c \neq (a+b)･c\), at least for some integers \(a, b, c \in \mathbb{Z}\), e.g., \(a=0, b=1, c=1\).<br>
+
+<br><span style="color:purple;">
+この図式は可換ではありません。なぜなら、少なくともいくつかの整数 \(a, b, c \in \mathbb{Z}\) に対して \(a･b+a･c \neq (a+b)･c\) が成り立つからです。例えば、\(a=0, b=1, c=1\) の場合などが挙げられます。
+</span>
+
+</li><br><li>
+b. This diagram does not commute because \(x･0 \neq x\), at least for some integers \(x \in \mathbb{Z}\).<br>
+
+<br><span style="color:purple;">
+この図式は可換ではありません。なぜなら、少なくとも一部の整数 \(x \in \mathbb{Z}\) に対して \(x･0 \neq x\) だからです。
+</span>
+
+</li><br><li>
+c. This diagram commutes. For every integer \(x \in \mathbb{Z}\), we have \(x･1=x\).<br>
+
+<br><span style="color:purple;">
+この図式は可換である。すべての整数 \(x \in \mathbb{Z}\) に対して、\(x･1=x\) が成り立つ。
+</span>
+
+</li></ul></div>
+</p>
+
+
+   </body>
+</html>

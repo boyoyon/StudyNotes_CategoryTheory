@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <meta charset="utf-8" />
+    <title>Ch03</title>
+    <style type="text/css">
+      p
+      {
+        padding-left: 2em;
+      }
+      .margin-abstract {
+        margin-left: 60px; /* 左マージンを広くする */
+        margin-right: 60px; /* 右マージンを広くする */
+      }
+    </style>
+  <style>
+    .styleRef { 
+      text-indent: -40px; /* 最初の行の字下げを逆方向に */
+      margin-left: 10px; /* 2行目以降の字下げを調整 */
+      ul {
+         list-style-type: none; /* 箇条書き記号を非表示 */
+         padding-left: 40px; /* 全体の左余白 */
+      }
+      li {
+      }
+    }
+  </style>
+  <style>
+    .styleBullet { 
+      text-indent: -20px; /* 最初の行の字下げを逆方向に */
+      margin-left: 30px; /* 2行目以降の字下げを調整 */
+      ul {
+         list-style-type: none; /* 箇条書き記号を非表示 */
+         padding-left: 30px; /* 全体の左余白 */
+      }
+      li {
+      }
+    }
+  </style>
+<style>
+.container {
+ display: flex;
+ flex-wrap: wrap;
+}
+.column {
+ flex: 0 25%; /* 幅を25%に設定して4列に */
+ box-sizing: border-box;
+ padding: 10px;
+}
+</style>
+
+  </head>
+  <body>
+    <h1><center>Category Theory for the Sciences<br><span style="color:blue;">科学のための圏論</span></center></h1>
+
+
+<h2>Chapter 3<br>Fundamental Considerations in Set <span style="color:blue;">集合に関する基本的な考慮事項</span></h2>
+<p>
+In this chapter we continue to pursue an understanding of sets. We begin by examining how to combine sets in various ways to get new sets. To that end, products and coproducts are introduced, and then more complex limits and colimits, with the aim of conveying a sense of their universal properties. The chapter ends with some additional interesting constructions in Set. 
+
+<br><span style="color:blue;">
+この章では、集合の理解をさらに深めていきます。まず、様々な方法で集合を組み合わせて新しい集合を作る方法を検討します。そのために、積と余積を導入し、さらに複雑な極限と余極限を導入することで、それらの普遍的な性質を理解してもらいます。最後に、集合における興味深い構成をいくつか紹介します。
+</span>
+</p>
+
+<h3>3.1  Products and coproducts <span style="color:blue;">積と余積</span></h3>
+<p>
+This section introduces two concepts that are likely to be familiar, although perhaps not by their category-theoretic names: product and coproduct. Each is an example of a large class of ideas that exist far beyond the realm of sets (see Section 6.1.1).
+
+<br><span style="color:blue;">
+この節では、圏論的な名称は知らないかもしれないが、おそらく馴染みのある2つの概念、すなわち積と余積について紹介します。これらはいずれも、集合の領域をはるかに超えた概念の大きな集合の例です（6.1.1節参照）。
+</span> 
+</p>
+
+<h4>3.1.1 Products　<span style="color:blue;">積</span></h4>
+
+<h5>Definition 3.1.1.1.　<span style="color:blue;">定義 3.1.1.1</span></h5>
+
+<p>
+Let \(X\) and \(Y\) be sets. The product of \(X\) and \(Y\), denoted \(X × Y\), is defined as the set of ordered pairs \((x, y)\), where \(x \in  X\) and \(y \in Y\). Symbolically, 
+
+<br><span style="color:blue;">
+\(X\) と \(Y\) を集合とする。\(X\) と \(Y\) の積 \(X × Y\) は、\(x \in X\) および \(y \in Y\) である順序付き対 \((x, y)\) の集合として定義される。記号的に、以下のようになる。
+</span> 
+
+\[
+X×Y=\{(x,y)|x \in X, y \in Y \}
+\] 
+
+</p><p>
+There are two natural projection functions, \(π_1: X×Y → X\) and \(π_2: X × Y → Y\). 
+
+<br><span style="color:blue;">
+自然な射影関数は2つあり、\(π_1: X×Y → X\) と \(π_2: X × Y → Y\) です。
+</span> 
+</p>
+
+<center><img src="images/CT4S_fig3_1_1.svg"></center>
+
+<h5>Example 3.1.1.2 (Grid of dots).　<span style="color:blue;">例 3.1.1.2 (格子点)</span> </h5>
+
+<p>
+Let \(X = \{1, 2, 3, 4, 5, 6\}\) and \(Y = \{♣, ♢, ♡, ♠\}\). Then we can draw \(X×Y\) as a \(6\) by \(4\) grid of dots, and the projections as projections 
+
+<br><span style="color:blue;">
+\(X = \{1, 2, 3, 4, 5, 6\}\)、\(Y = \{♣, ♢, ♡, ♠\}\) とします。すると、\(X×Y\) を \(6\)×\(4\) の点の格子として描き、その射影を射として描くことができます。
+</span> 
+</p>
+
+<center><img src="images/CT4S_fig3_1_1_2.svg"></center>
+
+<h5>Application  3.1.1.3. <span style="color:blue;">応用 3.1.1.3.</span> </h5>
+
+<p>
+A traditional (Mendelian) way to predict the genotype of offspring based on the genotype of its parents is by the use of Punnett squares. If \(F\)
+ is the set of possible genotypes for the female pa rent, and \(M\) is the set of possible genotypes of the male parent, then \(F × M\) is drawn as a square, called a Punnett square, in which every combination is drawn. 
+
+<br><span style="color:blue;">
+親の遺伝子型に基づいて子の遺伝子型を予測する伝統的な（メンデルの法則に基づく）方法は、パネット方陣を用いることです。\(F\) を雌親の遺伝子型の可能な集合、\(M\) を雄親の遺伝子型の可能な集合とすると、\(F × M\) はパネット方陣と呼ばれる正方形として描かれ、その中にあらゆる組み合わせが描かれます。
+</span> 
+</p>
+
+<h5><a href="Exercise_3_1_1_4.html">Exercise 3.1.1.4.</a> <span style="color:blue;">演習 3.1.1.4.</span> </h5>
+
+<p>
+How many elements does the set \(\{a, b, c, d\} × \{1, 2, 3\}\) have? 
+
+<br><span style="color:blue;">
+集合 \(\{a, b, c, d\} × \{1, 2, 3\}\) にはいくつの要素がありますか?
+</span> 
+</p>
+
+<h5>Application 3.1.1.5. <span style="color:blue;">応用 3.1.1.5.</span> </h5>
+<p>
+Suppose we are conducting experiments about th e mechanical properties of materials, as in Application 2.1.2.2. For each material sample we will produce multiple data points in the set 「extension」×「force」\(\simeq \mathbb{R} ×\mathbb{R}\). 
+
+<br><span style="color:blue;">
+応用2.1.2.2のように、材料の機械的特性に関する実験を行っているとします。各材料サンプルについて、「伸び」×「力」\(\simeq \mathbb{R} ×\mathbb{R}\) の集合内の複数のデータポイントを生成します。
+</span> 
+</p>
+
+<h5>Remark 3.1.1.6. <span style="color:blue;">備考3.1.1.6.</span></h5>
+
+<p>
+It is possible to take the product of more t han two sets as well. For example, if \(A, B,\) and \(C\) are sets, then \(A×B×C\) is the set of triples 
+
+<br><span style="color:blue;">
+2つ以上の集合の積をとることも可能です。例えば、\(A, B\) と \(C\) が集合である場合、\(A×B×C\) は三つ組の集合です。
+</span> 
+
+\[
+A×B×C :=\{(a,b,c)|a \in A,b \in B,c \in C \}
+\] 
+
+</p><p>
+This kind of generality is useful in understanding multiple dimensions, e.g., what physicists mean by ten-dimensional space. It comes under the heading of limits (see Section 6.1.3). 
+
+<br><span style="color:blue;">
+この種の一般性は、例えば物理学者が10次元空間と呼ぶものなど、多次元を理解する上で有用である。これは極限の範疇に含まれる（6.1.3節参照）。
+</span> 
+
+</p>
+
+<h5>Example  3.1.1.7. <span style="color:blue;">例 3.1.1.7.</span> </h5>
+
+<p>
+Let \(\mathbb{R}\)  be the set of real numbers. By \(\mathbb{R}^2\) we mean \(\mathbb{R}×\mathbb{R}\). Similarly, for any \(n \in \mathbb{N}\), we define \(\mathbb{R}^n\) to be the product of \(n\) copies of \(\mathbb{R}\). 
+
+<br><span style="color:blue;">
+実数の集合を \(\mathbb{R}\) とします。\(\mathbb{R}^2\) は \(\mathbb{R}×\mathbb{R}\) を意味します。同様に、任意の \(n \in \mathbb{N}\) に対して、\(\mathbb{R}^n\) を \(\mathbb{R}\) の \(n\) 個の積と定義します。
+</span> 
+
+</p><p>
+According to Penrose [35], Aristotle seems to have conceived of space as something like \(S := \mathbb{R}^3\) and of time as something like \(T := \mathbb{R}\). Space-time, had he conceived of it, would probably have been \(S×T \simeq \mathbb{R}^4\). He, of course, did not have access to this kind of abstraction, which was probably due to Descartes. (The product \(X × Y\) is often called Cartesian product, in his honor.) 
+
+<br><span style="color:blue;">
+ペンローズ[35]によれば、アリストテレスは空間を \(S := \mathbb{R}^3\) のような、時間を \(T := \mathbb{R}\) のようなものとして考えていたようです。もし彼が時空を概念化していたとしたら、おそらく \(S×T \simeq \mathbb{R}^4\) のような概念になっていたでしょう。もちろん、彼はこの種の抽象概念を理解することができませんでした。これはおそらくデカルトによるものでしょう。積 \(X × Y\) は、彼に敬意を表してしばしばデカルト積(直積)と呼ばれます。）
+</span> 
+</p>
+
+<h5><a href="Exercise_3_1_1_8.html">Exercise 3.1.1.8.</a> <span style="color:blue;">演習 3.1.1.8.</span> </h5>
+
+<p>
+Let \(\mathbb{Z}\) denote the set of integers, and let \(+: \mathbb{Z}×\mathbb{Z}→\mathbb{Z}\) denote the addition function and \(･: \mathbb{Z}× \mathbb{Z}→\mathbb{Z}\) denote the multiplication function. Which of the following diagrams commute? 
+
+<br><span style="color:blue;">
+\(\mathbb{Z}\) を整数の集合とし、\(+: \mathbb{Z}×\mathbb{Z}→\mathbb{Z}\) を加算関数、\(･: \mathbb{Z}× \mathbb{Z}→\mathbb{Z}\) を乗算関数とします。次の図のうち、可換なのはどれですか？
+</span> 
+</p>
+
+<center><img src="images/CT4S_fig3_1_1_8.svg"></center>
+
+<h5>3.1.1.9  Universal property for products <span style="color:blue;">積の普遍的な特性</span></h5>
+<p>
+A universal property is an abstract quality that characterizes a given construction. For example, the following proposition says that the product construction is characterized as possessing a certain quality. 
+
+<br><span style="color:blue;">
+普遍的性質とは、ある構成を特徴付ける抽象的な性質のことです。例えば、次の命題は、積構成が特定の性質を有すると特徴付けられることを示しています。
+</span> 
+
+</p>
+
+<h5>Proposition 3.1.1.10 (Universal property for product) <span style="color:blue;">命題 3.1.1.10 (積の不変特性)</span></h5>
+<p>
+ Let \(X\) and \(Y\) be sets. For any set \(A\) and functions \(f: A → X\) and \(g: A → Y\), there exists a unique function \(A → X × Y\) such that the following diagram commutes: 
+
+<br><span style="color:blue;">
+\(X\) と \(Y\) を集合とする。任意の集合 \(A\) と関数 \(f: A → X\) および \(g: A → Y\) に対して、次の図が可換となるような関数 \(A → X × Y\) が唯一存在する。
+</span> 
+</p>
+
+<center><img src="images/CT4S_fig3_1_1_10.svg"></center>
+
+<p>
+We say this function is induced by \(f\) and \(g\), and we denote it 
+
+<br><span style="color:blue;">
+この関数は\(f\)と\(g\)によって誘導されると言い、
+</span> 
+
+\[
+\langle f.g \rangle :A→X×Y,\quad where \quad \langle f,g \rangle (a)=(f(a),g(a)))
+\]
+
+
+That is, we have \(π_1 \circ \langle f,g \rangle = f\) and \(π_2 \circ \langle f, g \rangle = g\), and \(\langle f, g \rangle\) is the only function for which that is so. 
+
+<br><span style="color:blue;">
+つまり、\(π_1 \circ \langle f,g \rangle = f\) および \(π_2 \circ \langle f, g \rangle = g\) が成り立ち、\(\langle f, g \rangle\) はこれらの条件を満たす唯一の関数である。
+</span> 
+
+</p>
+
+<h5>Proof. <span style="color:blue;">証明</span> </h5>
+<p>
+Suppose given \(f, g\) as in the proposition statement. To provide a func tion \(ℓ: A → X × Y\) is equivalent to providing an element \(ℓ(a) \in X × Y\) for each \(a \in A\). We need such a function \(ℓ = \langle f, g \rangle\), for which \(π_1 \circ \langle f, g \rangle = f\) and \(π_2 \circ \langle f, g \rangle = g\). An element of \(X × Y\) is an ordered pair \((x, y)\), and we can use \(\langle f, g \rangle (a) = (x, y)\) if and only if \(x  = π_1(x, y) = f(a)\) and \(y = π_2(x, y) = g(a)\). So it is necessary and sufficient to define
+
+<br><span style="color:blue;">
+命題の記述にあるように、関数 \(f, g\) が与えられているとします。関数 \(ℓ: A → X × Y\) を与えることは、各 \(a \in A\) に対して要素 \(ℓ(a) \in X × Y\) を与えることと同値です。私たちは、\(π_1 \circ \langle f, g \rangle = f\) および \(π_2 \circ \langle f, g \rangle = g\) を満たすような関数 \(ℓ = \langle f, g \rangle\) を必要としています。\(X × Y\) の要素は順序対 \((x, y)\) であり、\(\langle f, g \rangle (a) = (x, y)\) となるのは、\(x = π_1(x, y) = f(a)\) かつ \(y = π_2(x, y) = g(a)\) である場合にかぎります。したがって、次のように定義すれば必要十分です。
+</span> 
+
+\[ 
+\langle f,g \rangle (a) := (f(a),g(a))
+\]
+ 
+for all \(a \in A\).
+
+<br><span style="color:blue;">
+すべての \(a \in A\) に対して。
+</span> 
+
+</p>
+
+<h5>Example 3.1.1.11 (Grid of dots, continued). <span style="color:blue;">例 3.1.1.11 (格子点 つづき)</span> </h5>
+<p>
+ It is important th at the reader sees the universal property for products as completely intuitive. 
+
+<br><span style="color:blue;">
+読者にとって、積に関する普遍的な性質が完全に直感的に理解できることが重要である。
+</span> 
+
+</p><p>
+Recall that if \(X\)  and \(Y\)  are sets, say, of cardinalities \(|X| = m\)  and \(|Y| = n\) respectively, then \(X × Y\) is an \(m × n\) grid of dots, and it comes with two canonical projections \(X \overset{π_1}{\longleftarrow}X×Y\overset{π_2}{\longrightarrow}Y\). These allow us to extract from every grid element \(z \in X × Y\) its column \(π_1(z) \in  X\) and its row \(π_2(z) \in  Y\). 
+
+<br><span style="color:blue;">
+思い出してください。もし \(X\) と \(Y\) がそれぞれ濃度が \(|X| = m\) と \(|Y| = n\) である集合であるならば、\(X × Y\) は \(m × n\) 個の点からなるグリッドであり、2つの標準的な射影 \(X \overset{π_1}{\longleftarrow}X×Y\overset{π_2}{\longrightarrow}Y\) が存在します。これらを用いることで、グリッドの各要素 \(z \in X × Y\) から、その列 \(π_1(z) \in X\) と行 \(π_2(z) \in Y\) を取り出すことができます。
+</span> 
+
+</p><p>
+Suppose that each person in a classroom picks an element of \(X\)  and an element of \(Y\). Thus we have functions \(f: C → X\) and \(g: C→Y\). But is not picking a column and a row the same thing as picking an element in the grid? The two functions \(f\) and \(g\) induce a unique function \(C→ X × Y\). How does this function C ù X × Y compare with the original functions \(f\) and \(g\)? The commutative diagram (3.2) sums up the connection. 
+
+<br><span style="color:blue;">
+教室にいる各人が集合 \(X\) の要素を一つ選び、さらに集合 \(Y\) の要素を一つ選ぶとします。すると、関数 \(f: C → X\) と \(g: C→Y\) が得られます。しかし、列と行を選ぶことは、グリッド内の要素を選ぶことと同じではないでしょうか？ 2つの関数 \(f\) と \(g\) は、一意な関数 \(C→ X × Y\) を導きます。この関数 \(C→ X × Y\) は、元の関数 \(f\) と \(g\) とどのように関係しているのでしょうか？ 可換図式 (3.2) がこの関係をまとめています。
+</span> 
+</p>
+
+<h5>Example 3.1.1.12. <span style="color:blue;">例 3.1.1.12.</span> </h5>
+<p>
+Let \(\mathbb{R}\) be the set of real numbers, and let \(0 \in \mathbb{R}\) be the origin. As in Notation 2.1.2.9, it is represented by a function \(z: { }→\mathbb{R}\), with \(z(\quad) = 0\). Thus we can draw functions 
+
+<br><span style="color:blue;">
+\(\mathbb{R}\)を実数全体の集合とし、\(0 \in \mathbb{R}\)を原点とする。表記2.1.2.9にあるように、これは関数\(z: { }→\mathbb{R}\)で表され、\(z(\quad) = 0\)となる。したがって、関数を描くことができる。
+</span> 
+</p>
+
+<center><img src="images/CT4S_fig3_1_1_12.svg"></center>
+
+<p>
+The universal property for products guarantees a function \(\langle z, z \rangle:\{\quad \}→\mathbb{R}×\mathbb{R}\), which represents the origin in \((0, 0) \in \mathbb{R}^2\). 
+
+<br><span style="color:blue;">
+積の普遍性により、関数 \(\langle z, z \rangle:\{\quad \}→\mathbb{R}×\mathbb{R}\) が存在することが保証され、これは \(\mathbb{R}^2\) における原点 \((0, 0)\) を表す。
+</span> 
+</p>
+
+<h5><a href="Exercise_3_1_1_13.html">Exercise 3.1.1.13.</a> <span style="color:blue;">演習 3.1.1.13.</span> </h5>
+<p> 
+For every set \(A\) there is some relationship between the following three sets:<br>\(HomSet(A,X),\quad  HomSet(A,Y)\) and \(HomSet(A,X×Y)\).<br> 
+What is it? 
+
+<br><span style="color:blue;">
+任意の集合 \(A\) に対して、以下の3つの集合の間には何らかの関係が存在します。<br> \(HomSet(A,X),\quad  HomSet(A,Y)\) および \(HomSet(A,X×Y)\)。<br>
+それはどのような関係でしょうか？
+</span> 
+</p><p>
+Hint: This problem is somewhat recursive in that you will use products in your formula. 
+
+<br><span style="color:blue;">
+ヒント：この問題は、数式の中に積の計算が含まれるという点で、ある種の再帰的な性質を持っています。
+</span> 
+</p>
+
+<h5><a href="Exercise_3_1_1_14.html">Exercise 3.1.1.14.</a> <span style="color:blue;">演習 3.1.1.14.</span> </h5>
+<p>
+<div class="styleBullet">
+<ul><li>
+a. Let \(X\) and \(Y\) be sets. Construct the swap map \(s:X×Y→ Y×X\) using only the universal property for products. If \(π_1: X×Y→X, π_2:X×Y→Y, p_1:Y×X→Y\), and \(p_2:Y×X→X\) are the projection functions, write \(s\) in terms of the 
+symbols \(π_1, π_2, p_1, p_2, \circ\) and \(\langle,\rangle\).
+
+<br><span style="color:blue;">
+\(X\)と\(Y\)を集合とする。積の普遍性のみを用いて、写像\(s:X×Y→ Y×X\)を構成せよ。もし、\(π_1: X×Y→X, π_2:X×Y→Y, p_1:Y×X→Y\)、および\(p_2:Y×X→X\)が射影関数であるならば、\(s\)を記号\(π_1, π_2, p_1, p_2, \circ\)および\(\langle,\rangle\)を用いて表せ。
+</span> 
+
+</li><br><li>
+b. Can you prove that \(s\) is an isomorphism using only the universal propert y for 
+products? 
+
+<br><span style="color:blue;">
+積の普遍性のみを用いて、\(s\) が同型写像であることを証明できるか？
+</span> 
+
+</li></ul></div></p>
+
+<h5>Example 3.1.1.15. <span style="color:blue;">例 3.1.1.15.</span> </h5>
+<p>
+ Suppose given sets \(X, X^\prime, Y, Y^\prime\) and functions \(m: X → X^\prime\) and \(n: Y → Y^\prime\). We can use the universal property for products to construct a function \(s: 
+X×Y →X^\prime×Y^\prime\). 
+
+<br><span style="color:blue;">
+集合 \(X, X^\prime, Y, Y^\prime\) と関数 \(m: X → X^\prime\) および \(n: Y → Y^\prime\) が与えられているとする。積集合に関する普遍性を用いることで、関数 \(s: X×Y → X^\prime×Y^\prime\) を構成することができる。
+</span> 
+
+</p><p>
+The universal property (Proposition 3.1.1.10) says that to get a function from any set \(A\) to \(X^\prime× Y^\prime\), we need two functions, namely, some \(f : A →X^\prime\) and some \(g : A →Y^\prime\). Here we want to use \(A:= X × Y\). 
+
+<br><span style="color:blue;">
+普遍性（命題3.1.1.10）によれば、任意の集合 \(A\) から \(X^\prime× Y^\prime\) への関数を得るには、2つの関数、すなわち \(f : A →X^\prime\) と \(g : A →Y^\prime\) が必要である。ここでは \(A:= X × Y\) を用いる。
+</span> 
+
+</p><p>
+What we have readily available are the two projections \(π_1: X × Y→X\) and \(π_2: X × Y→Y\). But we also have \(m: X→X^\prime\) and \(n: Y→Y^\prime\). Composing, we set \(f := m \circ π_1\) and \(g := n \circ π_2\). 
+
+<br><span style="color:blue;">
+私たちがすぐに利用できるのは、2つの射影写像 \(π_1: X × Y→X\) と \(π_2: X × Y→Y\) です。さらに、\(m: X→X^\prime\) と \(n: Y→Y^\prime\) も与えられています。これらの写像を合成して、\(f := m \circ π_1\) および \(g := n \circ π_2\) と定義します。
+</span> 
+
+</p>
+
+<center><img src="images/CT4S_fig3_1_1_15.svg"></center>
+
+<p>
+The dotted arrow is often called the product of \(m: X→ X^\prime\) and \(n: Y→ Y^\prime\). Here it is denoted \(\langle f, g \rangle\), but \(f\) and \(g\) were not given variables. Since writing \(\langle m \circ π_1, n \circ π_2 \rangle\) is clunky notation, we instead denote this function<br> 
+\(m×n: X×Y → X^\prime×Y^\prime\). 
+
+<br><span style="color:blue;">
+点線の矢印は、しばしば \(m: X→ X^\prime\) と \(n: Y→ Y^\prime\) の積と呼ばれます。ここでは \(\langle f, g \rangle\) と表記されていますが、\(f\) と \(g\) は与えられた変数ではありません。 \(\langle m \circ π_1, n \circ π_2 \rangle\) という表記は煩雑なので、代わりにこの関数を
+\(m×n: X×Y → X^\prime×Y^\prime\) と表記します。
+</span> 
+</p>
+
+<h5>3.1.1.16  Ologging products <span style="color:blue;">オログ積</span> </h5>
+<p>
+Given two objects \(c, d\) in an olog, there is a canonical label \(\langle\langle c × d \rangle\rangle\) for their product \(c × d\), written in terms of the labels \(\langle\langle c \rangle\rangle\) and \(\langle\langle d \rangle\rangle\). Namely, \(\langle\langle c×d \rangle\rangle :=\)“a pair \((x,y)\), where \(x\) is \(\langle\langle c \rangle\rangle\) and \(y\) is \(\langle\langle d \rangle\rangle\).”
+
+<br><span style="color:blue;">
+オログにおける2つのオブジェクト \(c, d\) が与えられたとき、それらの積 \(c × d\) には、ラベル \(\langle\langle c \rangle\rangle\) と \(\langle\langle d \rangle\rangle\) を用いて記述される標準的なラベル \(\langle\langle c × d \rangle\rangle\) が存在する。具体的には、\(\langle\langle c×d \rangle\rangle :=\)「ペア \((x,y)\) であり、\(x\) は \(\langle\langle c \rangle\rangle\) であり、\(y\) は \(\langle\langle d \rangle\rangle\) である」と定義される。<br>
+</span> 
+<br>
+
+The projections \(c← c × d → d\)  can be labeled “yields, as \(x\),” and “yields, as \(y\),” respectively. 
+
+<br><span style="color:blue;">
+射影 \(c← c × d → d\) は、それぞれ「\(x\) としての結果」および「\(y\) としての結果」とラベル付けすることができる。
+</span> 
+
+</p><p>
+Suppose that \(e\) is another object, and \(p: e → c\) and \(q: e →  d\) are two arrows. By the universal property for products (Proposition 3.1.1.10), \(p\) and \(q\) induce a unique arrow \(e→ c × d\), making the evident diagrams commute. This arrow can be labeled <br>
+“yields, insofar as it \(\langle\langle p \rangle\rangle \langle\langle c \rangle\rangle\) and \(\langle\langle q \rangle\rangle \langle\langle d \rangle\rangle\),”. 
+
+<br><span style="color:blue;">
+\(e\)を別の対象とし、\(p: e → c\)および\(q: e → d\)を2つの射とします。積の普遍性（命題3.1.1.10）により、\(p\)と\(q\)は、自明な可換図式を満たすような一意的な射\(e→ c × d\)を誘導します。この射は、次のように表記できます。
+「これは、\(\langle\langle p \rangle\rangle \langle\langle c \rangle\rangle\)と\(\langle\langle q \rangle\rangle \langle\langle d \rangle\rangle\)である限りにおいて得られる。」
+</span> 
+</p>
+
+<h5>Example 3.1.1.17. <span style="color:blue;">例 3.1.1.17.</span> </h5>
+<p>
+Every car owner owns at least one car, but th ere is no obvious function 「a car owner」→ 「a car」 because he or she may own more than one. One good choice would be the car that the person drives most often, which can be called his or her primary car. Also, given a person and a car, an economist could ask how much utility the person would get out of the car. From all this we can put together the following olog involving products: 
+
+<br><span style="color:blue;">
+すべての車の所有者は少なくとも1台の車を所有していますが、「車の所有者」から「車」への明確な関数関係は存在しません。なぜなら、所有者は複数の車を所有している可能性があるからです。一つの良い選択肢は、その人が最も頻繁に運転する車、つまり「主要な車」と呼べる車を選ぶことです。また、ある人とある車が与えられた場合、経済学者はその人がその車からどれだけの効用を得るかを問うことができます。これらすべてを考慮すると、製品に関連する以下のオントロジーを構築できます。
+</span> 
+</p>
+
+<center><img src="images/CT4S_fig3_1_1_17.svg"></center>
+
+
+<p>
+The composite map \(O → V\)  tells us the utility a car owner gets out of their primary car. 
+
+<br><span style="color:blue;">
+合成写像 \(O → V\) は、自動車所有者が自分の主要な車から得られる効用を示している。
+</span> 
+</p>
+
+<h4>3.1.2  Coproducts <span style="color:blue;">余積</span> </h4>
+<p>
+We can characterize the coproduct of two sets with its own universal property.
+
+<br><span style="color:blue;">
+2つの集合の直和は、それ自身の普遍性によって特徴づけることができる。
+</span> 
+</p>
+ 
+<h5>Definition 3.1.2.1. <span style="color:blue;">定義 3.1.2.1.</span> </h5>
+<p>
+ Let \(X\) and \(Y\) be sets. The coproduct of \(X\) and \(Y\), denoted \(X \sqcup Y\), is defined as the disjoint union of \(X\) and \(Y\), i.e., the set for which an element is either an element of \(X\) or an element of \(Y\). If something is an element of both \(X\) and \(Y\), then we include both copies, and distinguish between them, in \(X \sqcup Y\). See Example 3.1.2.2. 
+
+<br><span style="color:blue;">
+\(X\)と\(Y\)を集合とする。\(X\)と\(Y\)の余積（または直和）は、\(X \sqcup Y\)と表記され、\(X\)と\(Y\)の非交和として定義される。すなわち、その要素が\(X\)の要素であるか、または\(Y\)の要素であるような集合である。もしある要素が\(X\)と\(Y\)の両方に属している場合、\(X \sqcup Y\)においては、それらの要素をそれぞれ別のものとして区別して含める。例3.1.2.2を参照のこと。
+</span> 
+</p><p>
+There are two natural inclusion functions, \(i_1: X → X \sqcup Y\) and \(i_2: Y → X \sqcup Y\). 
+
+<br><span style="color:blue;">
+自然な包含写像が2つ存在する。すなわち、\(i_1: X → X \sqcup Y\) と \(i_2: Y → X \sqcup Y\) である。
+</span> 
+
+</p>
+
+<center><img src="images/CT4S_fig3_1_2_2.svg"></center>
+
+<h5>Example 3.1.2.2. <span style="color:blue;">例 3.1.2.2.</span> </h5>
+<p>
+ The coproduct of \(X := \{ a, b, c, d\}\) and \(Y := \{1, 2, 3\}\) is 
+\(X \sqcup Y \simeq \{ a,b,c,d,1,2,3 \}\).
+
+<br><span style="color:blue;">
+集合 \(X := \{ a, b, c, d\}\) と \(Y := \{1, 2, 3\}\) の直和は、
+\(X \sqcup Y \simeq \{ a,b,c,d,1,2,3 \}\) となります。
+</span> 
+
+</p><p> 
+The coproduct of X and itself is 
+\(X \sqcup X \simeq \{ a_1,b_1,c_1,d_1,a_2,b_2,c_2,d_2 \}\).
+
+<br><span style="color:blue;">
+XとX自身の余積は \(X \sqcup X \simeq \{ a_1,b_1,c_1,d_1,a_2,b_2,c_2,d_2 \}\) である。
+</span> 
+
+</p><p> 
+The names of the elements in \(X \sqcup Y\) are not so important. What is important are the inclusion maps \(i_1, i_2\)  from (3.3), which ensure that we know where each element of \(X \sqcup Y\) came from. 
+
+<br><span style="color:blue;">
+集合 \(X \sqcup Y\) の要素の名前自体はそれほど重要ではありません。重要なのは、(3.3)で定義されている包含​​写像 \(i_1, i_2\) であり、これによって \(X \sqcup Y\) の各要素がどこから来たのかを知ることができるのです。
+</span> 
+</p>
+
+<h5>Example 3.1.2.3 (Airplane seats). <span style="color:blue;">例 3.1.2.3 (飛行機の席)</span> </h5>
+
+<center><img src="images/CT4S_fig3_1_2_3.svg"></center> 
+
+<h5><a href="Exercise_3_1_2_4.html">Exercise 3.1.2.4.</a> <span style="color:blue;">演習 3.1.2.4.</span> </h5>
+<p>
+Would you say that 「a phone」 is the coproduct of 「a cell phone」 and 「a landline phone」? 
+
+<br><span style="color:blue;">
+「電話」は「携帯電話」と「固定電話」の余積であると言えるでしょうか？
+</span> 
+</p>
+
+<h5>Example 3.1.2.5 (Disjoint union of dots). <span style="color:blue;">例 3.1.2.5 (点の直和集合)</span> </h5>
+
+<p>
+ Below, \(X\) and \(Y\) are sets, having six and four elements respectively, and \(X \sqcup Y\) is their coproduct, which has ten elements. 
+
+<br><span style="color:blue;">
+以下において、\(X\)と\(Y\)はそれぞれ6つと4つの要素を持つ集合であり、\(X \sqcup Y\)はそれらの直和であり、10個の要素を持ちます。
+</span> 
+</p>
+
+<center><img src="images/CT4S_fig3_1_2_5.svg"></center>
+
+<h5>3.1.2.6  Universal property for coproducts <span style="color:blue;">双対積に関する普遍性 </span> </h5>
+<p>
+
+<h5>Proposition 3.1.2.7 (Universal property for coproduct) <span style="color:blue;">命題3.1.2.7（双対積に関する普遍性）</span> </h5>
+<p>
+Let \(X\) and \(Y\) be sets. For any set \(A\) and functions \(f: X → A\) and \(g: Y → A\), there exists a unique function \(X \sqcup Y → A\) such that the following diagram commutes: 
+
+<br><span style="color:blue;">
+\(X\)と\(Y\)を集合とする。任意の集合\(A\)と関数\(f: X → A\)および\(g: Y → A\)に対し、次の図式が可換となるような一意な関数\(X \sqcup Y → A\)が存在する。
+</span> 
+</p>
+
+<center><img src="images/CT4S_fig3_1_2_7.svg"></center>
+
+<p>
+We say this function is induced by \(f\) and \(g\), and we denote it<sup>1</sup>
+
+<br><span style="color:blue;">
+この関数は\(f\)と\(g\)によって誘導されるといい、それを次のように表記します<sup>1</sup>。
+
+</span> 
+
+</p><p style="padding-left: 4em;">
+<sup>1</sup>
+
+</p>
+<p>
+\[
+\left\{
+\begin{array}{c}
+f \\
+g
+\end{array}
+\right.
+:X \sqcup Y →A
+\]
+
+That is, we have \(\left\{\begin{array}{c}f\\g\end{array}\right. \circ i_1=f\) and \(\left\{\begin{array}{c}f\\g\end{array}\right. \circ i_2=g\), and \(\left\{\begin{array}{c}f\\g\end{array}\right.\) is the only function for which that is so. 
+
+<br><span style="color:blue;">
+つまり、\(\left\{\begin{array}{c}f\\g\end{array}\right. \circ i_1=f\) および \(\left\{\begin{array}{c}f\\g\end{array}\right. \circ i_2=g\) が成り立ち、\(\left\{\begin{array}{c}f\\g\end{array}\right.\) はこれらの条件を満たす唯一の関数である。
+</span> 
+
+<h5>Proof. <span style="color:blue;">証明</span></h5>
+<p>
+ Suppose given \(f, g\) as in the proposition statement. To provide a func tion \(ℓ: X \sqcup Y → A\) is equivalent to providing an element \(f(m) \in  A\) for each \(m \in X \sqcup Y\). We need such a function \(ℓ=\left\{\begin{array}{c}f\\g\end{array}\right.\) such that \(\left\{\begin{array}{c}f\\g\end{array}\right. \circ i_1=f\) and \(\left\{\begin{array}{c}f\\g\end{array}\right. \circ i_2=g\) . But each element \(m \in X \sqcup Y\) is either of the form \(i_1x\) or \(i_2y\) and cannot be of both forms. So we assign 
+
+<br><span style="color:blue;">
+命題の記述にあるように、関数 \(f, g\) が与えられているとします。関数 \(ℓ: X \sqcup Y → A\) を与えることは、各 \(m \in X \sqcup Y\) に対して要素 \(f(m) \in A\) を与えることと同等です。我々は、\(\left\{\begin{array}{c}f\\g\end{array}\right. \circ i_1=f\) および \(\left\{\begin{array}{c}f\\g\end{array}\right. \circ i_2=g\) を満たすような関数 \(ℓ=\left\{\begin{array}{c}f\\g\end{array}\right.\) を必要とします。しかし、各要素 \(m \in X \sqcup Y\) は \(i_1x\) または \(i_2y\) のいずれかの形であり、両方の形であることはありません。したがって、次のように定義します。
+</span> 
+
+\[
+\begin{cases}
+f \\
+g
+\end{cases}
+(m)=
+\begin{cases}
+f(x) & if & m=i_1x \\
+g(y) & if & m=i_2y
+\end{cases}
+\tag{3.6}
+\]
+ 
+This assignment is necessary and sufficient to make  all relevant diagrams commute. 
+
+<br><span style="color:blue;">
+この定義は、関連するすべての図式が可換になるために必要十分です。
+</span> 
+
+</p>
+
+<h5>Slogan 3.1.2.8. <span style="color:blue;">スローガン 3.1.2.8.</span> </h5>
+<p>
+Any time behavior is determined by cases, there is a coproduct involved. 
+
+<br><span style="color:blue;">
+動作が状況によって決定される場合、必ず余積が関与している。
+</span> 
+</p>
+
+<h5><a href="Exercise_3_1_2_9.html">Exercise 3.1.2.9.</a> <span style="color:blue;">演習 3.1.2.9.</span> </h5>
+<p>
+Let \(f: \mathbb{Z}→\mathbb{N}\) be the function defined by
+
+<br><span style="color:blue;">
+\(f: \mathbb{Z}→\mathbb{N}\) を次のように定義される関数とする。
+</span> 
+
+\[
+f(n)=
+\begin{cases}
+n & if & n \geq 0\\
+−n & if & n \lt 0
+\end{cases}
+\] 
+
+<div class="styleBullet">
+<ul><li>
+a. What is the standard name for \(f\) ? 
+
+<br><span style="color:blue;">
+\(f\) の標準的な名称は何か？
+</span> 
+</li><br><li>
+b. In the terminology of Proposition 3.1.2.7, what are \(A, X, Y\) and \(X \sqcup Y\) ? 
+
+<br><span style="color:blue;">
+命題3.1.2.7の用語を用いると、\(A, X, Y\) および \(X \sqcup Y\) はそれぞれ何を表しているか？
+</span> 
+
+</li></ul></div></p>
+
+<h5>Application  3.1.2.10 (Piecewise defined curves) <span style="color:blue;">応用例 3.1.2.10（区分的に定義された曲線）</span></h5>
+<p>
+ In science, curves  are often defined or considered piecewise. For example, in testing the mechanical properties of a material, we might be interested in various regions of deformation, such as elastic, plastic, or post-fracture. These are three intervals on which the material displays different kinds of properties. 
+
+<br><span style="color:blue;">
+科学分野では、曲線はしばしば区分的に定義されたり、考察されたりします。例えば、材料の機械的特性を試験する場合、弾性領域、塑性領域、破壊後領域など、様々な変形領域に関心を持つことがあります。これらは、材料がそれぞれ異なる種類の特性を示す3つの区間です。
+</span> 
+
+</p><p>
+For real numbers \(a \leq b \in \mathbb{R}\), let \([a, b] := \{ x \in \mathbb{R} | a \leq x \leq b \}\) denote the closed interval. Given a function \([a, b]\)\overset{f}{→}\mathbb{R}\)  and a function \([c, d] \overset{g}{→}\mathbb{R}\), the universal property for coproducts implies that they extend uniquely to a function \([a, b] \sqcup [c, d]→\mathbb{R}\), which will appear as a piecewise defined curve, 
+
+<br><span style="color:blue;">
+実数 \(a \leq b \in \mathbb{R}\) に対して、閉区間を \([a, b] := \{ x \in \mathbb{R} | a \leq x \leq b \}\) と定義する。関数 \([a, b]\overset{f}{→}\mathbb{R}\) と関数 \([c, d] \overset{g}{→}\mathbb{R}\) が与えられたとき、余積の普遍性により、これらは関数 \([a, b] \sqcup [c, d]→\mathbb{R}\) に一意的に拡張される。この関数は区分的に定義された曲線として表される。
+</span> 
+
+\[
+\begin{cases}
+f \\
+g
+\end{cases}
+(x)=
+\begin{cases}
+f(x) & if & x \in [a, b]\\
+g(x) & if & x \in [c, d]
+\end{cases} 
+\]
+
+</p><p>
+Often we are given a curve on \([a, b]\) and another on \([b, c]\), where the two curves agree at the point b. This situation is described by pushouts, which are mild generalizations of coproducts (see Section 3.3.2). 
+
+<br><span style="color:blue;">
+多くの場合、区間 \([a, b]\) 上の曲線と区間 \([b, c]\) 上の曲線が与えられ、両方の曲線は点bで一致します。このような状況はプッシュアウトによって記述され、プッシュアウトはコプロダクトを少し一般化したものです（セクション3.3.2を参照）。
+</span> 
+
+</p>
+
+<h5>Example  3.1.2.11 (Airplane seats, continued) <span style="color:blue;">例 3.1.2.11（飛行機の座席、続き）</span> </h5>
+<p>
+ The universal pr operty for coproducts says the following. Any time we have a function \(X → A\) and a function \(Y → A\), we get a unique function \(X \sqcup Y → A\). For example, every economy-class seat in an airplane and every first-class seat in an airplane is actually in a particular airplane. Every economy-class seat has a price, as does every first-class seat.
+
+<br><span style="color:blue;">
+余積の普遍性とは、次のような性質のことです。任意の関数 \(X → A\) と関数 \(Y → A\) が与えられたとき、必ず一意的な関数 \(X \sqcup Y → A\) が存在します。例えば、飛行機のエコノミークラスの座席もファーストクラスの座席も、実際にはすべて特定の飛行機の中にあります。エコノミークラスの座席にはそれぞれ価格があり、ファーストクラスの座席にもそれぞれ価格があります。
+</span> 
+</p>
+
+<center><img src="images/CT4S_fig3_1_2_11.svg"></center>
+ 
+<p>
+The universal property for coproducts formalizes the following intuitively obvious fact: 
+
+<br><span style="color:blue;">
+双対積の普遍性とは、以下の直感的にも明らかな事実を形式化したものである。
+</span> 
+
+</p><p style="padding-left: 4em;">
+
+If we know how economy-class seats are priced and we know how first- class seats are priced, and if we know that every seat is either economy class or first class, then we automatically know how all seats are priced. 
+
+<br><span style="color:blue;">
+エコノミークラスの座席の価格とファーストクラスの座席の価格が分かっていて、すべての座席がエコノミークラスかファーストクラスのどちらかであると分かっていれば、すべての座席の価格が自動的に分かることになる。
+</span> 
+
+</p><p>
+To say it another way (and using the other induced map), 
+
+<br><span style="color:blue;">
+別の言い方をすれば（そして、もう一方の誘導写像を用いると）、
+</span> 
+
+</p><p style="padding-left: 4em;">
+If we keep track of which airplane every economy-class seat is in and we keep track of which airplane every first-class seat is in, and if we know that every seat is either economy class or first class, then we require no additional tracking for any airplane seat whatsoever. 
+
+<br><span style="color:blue;">
+もし私たちが、エコノミークラスの各座席がどの飛行機にあるかを把握し、ファーストクラスの各座席がどの飛行機にあるかを把握しており、さらにすべての座席がエコノミークラスかファーストクラスのどちらかであることを知っているならば、どの飛行機の座席についても、それ以上の追跡は一切必要ありません。
+</span> 
+
+</p>
+
+<h5><a href="Exercise_3_1_2_12.html">Exercise 3.1.2.12.</a> <span style="color:blue;">演習 3.1.2.12.</span> </h5>
+<p>
+Write the universal property for coproduct, in terms of a relationship between the following three sets: 
+
+<br><span style="color:blue;">
+余積に関する普遍性について、以下の3つの集合間の関係を用いて記述しなさい。
+</span>  
+\[
+Hom_{Set}(X,A) \quad  Hom_{Set}(Y,A) \quad Hom_{Set}(X \sqcup Y,A)
+\]
+
+</p>
+
+<h5>Example  3.1.2.13. <span style="color:blue;">例 3.1.2.13.</span> </h5>
+<p>
+ In the following olog the types \(A\)  and \(B\)  are disjoint, so the coproduct \(C = A \sqcup B\) is just the union. 
+
+<br><span style="color:blue;">
+以下の記述において、型 \(A\) と \(B\) は互いに素であるため、直和 \(C = A \sqcup B\) は単なる和集合となる。
+</span> 
+
+</p>
+
+<center><img src="images/CT4S_fig3_1_2_13.svg"></center>
+
+<h5>Example 3.1.2.14. <span style="color:blue;">例 3.1.2.14.</span> </h5>
+<p>
+ In the following olog \(A\) and \(B\) are not disjoint, so care must be taken to differentiate common elements. 
+
+<br><span style="color:blue;">
+以下の記述において、集合 \(A\) と \(B\) は互いに素ではないため、共通要素を区別する際には注意が必要です。
+</span> 
+</p>
+
+<center><img src="images/CT4S_fig3_1_2_14.svg"></center>
+
+<p>
+Since ducks can both swim and fly, each duck is found twice in \(C\), once labeled “\(A\)”, a flyer, and once labeled “\(B\)”, a swimmer. The types \(A\) and \(B\) are kept disjoint in \(C\), which justifies the name disjoint union. 
+
+<br><span style="color:blue;">
+アヒルは泳ぐことも飛ぶこともできるため、各アヒルは集合 \(C\) の中に2回現れます。1回は「\(A\)」というラベルが付いた飛ぶものとして、もう1回は「\(B\)」というラベルが付いた泳ぐものとして含まれています。タイプ \(A\) と \(B\) は集合 \(C\) の中で互いに重複しないように区別されているため、「非交和」という名称が適切です。
+</span> 
+
+</p>
+
+<h5><a href="Exercise_3_1_2_15.html">Exercise 3.1.2.15.</a> <span style="color:blue;">演習 3.1.2.15.</span></h5>
+<p>
+Following Section 3.1.1.16, devise a naming system for coproducts, the inclusions, and the universal maps. Try it out by making an olog (involving coproducts) that discusses the idea that both a .wav file and an .mp3 file can be played on a modern computer. Be careful that your arrows are valid (see Section 2.3.2.1). 
+
+<br><span style="color:blue;">
+セクション3.1.1.16に続いて、コプロダクト、包含写像、および普遍写像のための命名規則を考案してください。現代のコンピュータでは.wavファイルと.mp3ファイルの両方を再生できるという考え方を説明するオログ（コプロダクトを含む）を作成して、その命名規則を試してみてください。矢印が有効であることを確認してください（セクション2.3.2.1を参照）。
+</span> 
+
+</p>
+  </body>
+</html>

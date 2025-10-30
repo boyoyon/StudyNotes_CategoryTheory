@@ -4,7 +4,7 @@
         <script type="text/javascript" id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
         <meta charset="utf-8" />
-        <title>Exercise 2.1.1.2.</title>
+        <title>Exercise 3.1.1.4.</title>
         <style type="text/css">
             p
             {
@@ -55,41 +55,64 @@
     <body>
         <h1><center>Category Theory for the Sciences<br><span style="color:blue;">科学のための圏論</span></center></h1>
 
-<h5>Exercise 2.1.1.2. <span style="color:blue;">演習2.1.1.2.</span></h5>
+<h5>Exercise 3.1.2.9. <span style="color:blue;">演習 3.1.2.9.</span> </h5>
 <p>
-Let \(A:=\{1, 2, 3\}\). What are all the subsets of \(A\)? Hint: There are eight. 
-A set can have other sets as elements. For example, the set \(X:=\{\{1,2\},\{4\},\{1,3,6\}\}\) has three elements, each of which is a set. 
-<br><span style="color:blue;"> 
+Let \(f: \mathbb{Z}→\mathbb{N}\) be the function defined by
 
-\(A:=\{1, 2, 3\}\) とします。\(A\) の部分集合はすべて何でしょうか？ヒント：8つあります。
-集合は他の集合を要素として持つことができます。例えば、集合 \(X:=\{\{1,2\},\{4\},\{1,3,6\}\}\) には3つの要素があり、それぞれが集合です。
-</span>
-</p>
+<br><span style="color:blue;">
+\(f: \mathbb{Z}→\mathbb{N}\) を次のように定義される関数とする。
+</span> 
+
+\[
+f(n)=
+\begin{cases}
+n & if & n \geq 0\\
+−n & if & n \lt 0
+\end{cases}
+\] 
+
+<div class="styleBullet">
+<ul><li>
+a. What is the standard name for \(f\) ? 
+
+<br><span style="color:blue;">
+\(f\) の標準的な名称は何か？
+</span> 
+
+</li><br><li>
+b. In the terminology of Proposition 3.1.2.7, what are \(A, X, Y\) and \(X \sqcup Y\) ? 
+
+<br><span style="color:blue;">
+命題3.1.2.7の用語を用いると、\(A, X, Y\) および \(X \sqcup Y\) はそれぞれ何を表しているか？
+</span> 
+
+</li></ul></div></p>
 
 <p>
 <span style="color:purple;">
 ●解答<br>
-<br>
-　集合 \(A=\{1,2,3\}\) の各要素に対して, ある部分集合に属す(1), 属さない(0)とすると2進数で表現できる。
+</span> 
 
-\[
-\begin{array}{l l}
-\text{{1,2,3}}\\
-\text{  0 0 0} & \varnothing \\
-\text{  0 0 1} & \{3\} \\
-\text{  0 1 0} & \{2\} \\
-\text{  0 1 1} & \{2,3\} \\
-\text{  1 0 0} & \{1\} \\
-\text{  1 0 1} & \{1,3\} \\
-\text{  1 1 0} & \{1,2\} \\
-\text{  1 1 1} & \{1,2,3\}=A \\
-\end{array}
-\]
+<div class="styleBullet">
+<ul><li>
+a. The standard name for \(f\) is absolute value, also written \(f(n)= |n|\).
 
-\(A\) の部分集合の集合 = \(\{\varnothing,\{3\}, \{2\}, \{2,3\}, \{1\}, \{1,3\}, \{1,2\}, \{1,2,3\}=A\}\)<br>
-<br>
-ある集合の、すべての部分集合を要素として持つ集合を<strong>べき集合(power set)</strong>という。
-</span>
+<br><span style="color:purple;">
+関数\(f\)の標準的な名称は絶対値であり、\(f(n)= |n|\)とも表記される。
+</span> 
+
+</li><br><li>
+b. Here \(A = \mathbb{N}, X = \{n \in \mathbb{Z} | n \geq 0\}, Y = \{n \in \mathbb{Z}| n \lt  0\}\), so we have a natural
+isomorphism \(X \sqcup Y \simeq \mathbb{Z}\).
+
+<br><span style="color:purple;">
+ここで、\(A = \mathbb{N}\)、\(X = \{n \in \mathbb{Z} | n \geq 0\}\)、\(Y = \{n \in \mathbb{Z}| n \lt 0\}\) とすると、自然な同型写像 \(X \sqcup Y \simeq \mathbb{Z}\) が得られる。
+</span> 
+
+</li></ul></div>
+
 </p>
-    </body>
+
+
+   </body>
 </html>
